@@ -24,9 +24,10 @@ function ActionButton({ icon, label, panel }: ActionButtonProps) {
       aria-label={label}
       onClick={() => togglePanel(panel)}
       className={cn(
-        'flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg transition-colors duration-150',
+        'flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg transition-all duration-150',
         isActive ? 'text-accent' : 'text-muted hover:text-primary'
       )}
+      style={isActive ? { boxShadow: '0 0 10px rgba(214,168,83,0.25)' } : undefined}
     >
       {icon}
       <span className="text-xs">{label}</span>
@@ -37,6 +38,7 @@ function ActionButton({ icon, label, panel }: ActionButtonProps) {
 /**
  * Fixed bottom bar with navigation and action buttons.
  * Height: 56px. Next is on left, Previous on right (Mushaf RTL convention).
+ * Glass effect with frosted background and gold accent border.
  */
 export function BottomBar() {
   const currentPage = useAppStore((s) => s.currentPage);
@@ -48,7 +50,7 @@ export function BottomBar() {
 
   return (
     <nav
-      className="fixed right-0 bottom-0 left-0 z-sidebar flex h-bottombar items-center justify-between border-t border-border bg-surface px-2"
+      className="fixed right-0 bottom-0 left-0 z-sidebar flex h-bottombar items-center justify-between bottom-bar-glass px-2"
       data-testid="bottom-bar"
     >
       {/* Left: Next (Mushaf convention — next page is to the left) */}
@@ -58,14 +60,22 @@ export function BottomBar() {
         disabled={nextPage === null}
         onClick={() => nextPage !== null && setCurrentPage(nextPage)}
         className={cn(
-          'flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+          'group flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
           nextPage === null
             ? 'cursor-not-allowed opacity-50 text-muted'
             : 'text-primary hover:bg-surface-hover'
         )}
         data-testid="next-page-btn"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="transition-transform duration-150 group-hover:-translate-x-[3px]"
+        >
           <path d="M15 18l-6-6 6-6" />
         </svg>
         Next
@@ -120,7 +130,7 @@ export function BottomBar() {
         disabled={prevPage === null}
         onClick={() => prevPage !== null && setCurrentPage(prevPage)}
         className={cn(
-          'flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+          'group flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
           prevPage === null
             ? 'cursor-not-allowed opacity-50 text-muted'
             : 'text-primary hover:bg-surface-hover'
@@ -128,7 +138,15 @@ export function BottomBar() {
         data-testid="prev-page-btn"
       >
         Previous
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="transition-transform duration-150 group-hover:translate-x-[3px]"
+        >
           <path d="M9 18l6-6-6-6" />
         </svg>
       </button>

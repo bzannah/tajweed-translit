@@ -24,7 +24,7 @@ export function JuzList() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto scrollbar-thin" data-testid="juz-list">
+    <div className="flex-1 overflow-y-auto scrollbar-thin scroll-fade" data-testid="juz-list">
       {juzData.map((j) => (
         <JuzItem
           key={j.number}

@@ -12,6 +12,7 @@ import { TranslationPanel } from '@/components/features/translation-panel';
 import { AudioPlayer } from '@/components/features/audio-player';
 import { SettingsPanel } from '@/components/features/settings-panel';
 import { NotesEditor } from '@/components/features/notes-editor';
+import { ResumeToast } from '@/components/ui/resume-toast';
 
 /** Props for the AppShell component. */
 export interface AppShellProps {
@@ -45,6 +46,7 @@ export function AppShell({ children }: AppShellProps) {
       <SettingsPanel />
       <NotesEditor />
 
+      <ResumeToast />
       <ZoomControls />
       <BottomBar />
     </div>

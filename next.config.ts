@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
 
   // Enable typed routes
   typedRoutes: true,
+
+  // Prevent stale route cache in development
+  experimental: {
+    staleTimes: {
+      dynamic: 0,
+      static: 0,
+    },
+  },
 };
 
 export default nextConfig;

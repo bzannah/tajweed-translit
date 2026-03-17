@@ -37,7 +37,7 @@ export function SurahList() {
   };
 
   return (
-    <div ref={listRef} className="flex-1 overflow-y-auto scrollbar-thin" data-testid="surah-list">
+    <div ref={listRef} className="flex-1 overflow-y-auto scrollbar-thin scroll-fade" data-testid="surah-list">
       {surahs.map((surah) => {
         const isActive = surah.number === activeSurah.number;
         return (

@@ -26,9 +26,10 @@ export function SurahItem({ surah, isActive, onClick }: SurahItemProps) {
       className={cn(
         'flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors duration-150',
         isActive
-          ? 'bg-surface-active text-accent'
-          : 'text-primary hover:bg-surface-hover'
+          ? 'border-l-[3px] border-l-accent text-accent'
+          : 'border-l-[3px] border-l-transparent text-primary sidebar-item-hover'
       )}
+      style={isActive ? { backgroundColor: 'rgba(214,168,83,0.08)' } : undefined}
     >
       {/* Number */}
       <span className="w-8 text-right text-sm text-muted">{surah.number}</span>

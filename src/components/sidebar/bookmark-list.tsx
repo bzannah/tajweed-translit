@@ -31,7 +31,7 @@ export function BookmarkList() {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto scrollbar-thin" data-testid="bookmark-list">
+    <div className="flex-1 overflow-y-auto scrollbar-thin scroll-fade" data-testid="bookmark-list">
       {bookmarks.map((bm) => (
         <BookmarkItem
           key={bm.id}

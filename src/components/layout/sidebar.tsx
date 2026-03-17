@@ -40,7 +40,7 @@ export function Sidebar() {
         aria-label="Navigation sidebar"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-border">
+        <div className="flex items-center justify-between p-4">
           <div>
             <h2 className="text-sm font-semibold text-primary">Tajweed Mushaf</h2>
             <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-surface px-2.5 py-0.5 text-xs font-medium text-muted">
@@ -58,6 +58,9 @@ export function Sidebar() {
             onClick={() => setSidebarOpen(false)}
           />
         </div>
+
+        {/* Ornamental divider */}
+        <div className="ornamental-divider" />
 
         {/* Tabs */}
         <TabSwitcher />

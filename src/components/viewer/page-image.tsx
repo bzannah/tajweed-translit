@@ -13,10 +13,11 @@ export interface PageImageProps {
 
 /**
  * Renders a single Quran transliteration page image.
- * Falls back to a styled placeholder if the image fails to load.
+ * Shows a pulsing skeleton while loading. Falls back to a styled placeholder on error.
  */
 export function PageImage({ page }: PageImageProps) {
   const [hasError, setHasError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const { primarySurah } = usePageContext(page);
 
   if (hasError) {
@@ -33,7 +34,10 @@ export function PageImage({ page }: PageImageProps) {
         <span className="mt-4 text-xs text-muted">Tajweed Translit</span>
         <button
           type="button"
-          onClick={() => setHasError(false)}
+          onClick={() => {
+            setHasError(false);
+            setIsLoaded(false);
+          }}
           className="mt-4 rounded-lg bg-surface-hover px-4 py-2 text-sm text-accent hover:bg-surface-active transition-colors"
           aria-label="Retry loading page"
         >
@@ -45,11 +49,17 @@ export function PageImage({ page }: PageImageProps) {
 
   return (
     <div className="page-surface relative flex items-center justify-center" data-testid={`page-image-${page}`}>
+      {/* Loading skeleton — shown until image fires onLoad */}
+      {!isLoaded && (
+        <div className="page-skeleton aspect-[3/4] w-full rounded-sm" />
+      )}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={getPageImagePath(page)}
         alt={`Quran transliteration page ${page}`}
+        onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
+        className={isLoaded ? undefined : 'absolute inset-0 opacity-0'}
       />
     </div>
   );
