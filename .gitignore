@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# Build
+dist/
+build/
+
+# Source PDFs (too large for git — use LFS or external storage)
+content/pdfs/
+
+# Generated page images (regenerated from PDFs)
+public/pages/
+public/thumbnails/
+
+# Placeholder SVGs for dev
+public/pages/*.svg
+
+# Environment
+.env
+.env.local
+.env.production
+CLAUDE.local.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+coverage/
+playwright-report/
+test-results/
+
+# Misc
+*.log
+npm-debug.log*

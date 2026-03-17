@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* ─── Custom theme configuration for Tailwind CSS 4 ──── */
+@theme {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-surface-active: var(--color-surface-active);
+  --color-sidebar: var(--color-sidebar);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-green: var(--color-accent-green);
+  --color-accent-amber: var(--color-accent-amber);
+  --color-border: var(--color-border);
+  --color-danger: var(--color-danger);
+
+  --width-sidebar: 280px;
+  --height-topbar: 48px;
+  --height-bottombar: 56px;
+  --spacing-topbar: 48px;
+  --spacing-bottombar: 56px;
+  --spacing-sidebar: 280px;
+
+  --z-index-overlay: 30;
+  --z-index-sidebar: 40;
+  --z-index-panel: 50;
+  --z-index-modal: 60;
+}
+
+/* ─── Dark Theme (Default) ──────────────────────────────── */
+:root {
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-surface-hover: #2a2a2a;
+  --color-surface-active: #333333;
+  --color-sidebar: #1a1a1a;
+  --color-primary: #f0f0f0;
+  --color-secondary: #c0c0c0;
+  --color-muted: #808080;
+  --color-accent: #d4a853;
+  --color-accent-green: #4caf50;
+  --color-accent-amber: #c0862b;
+  --color-border: #333333;
+  --color-danger: #e74c3c;
+  --color-reading-surface: #1a1614;
+  --color-warm-glow: rgba(214,168,83,0.03);
+  --color-page-cream: #e8dcc8;
+  --color-book-shadow: rgba(0,0,0,0.4);
+  --color-binding: rgba(0,0,0,0.15);
+  --color-page-stack: #d8ccb4;
+}
+
+/* ─── Light Theme ───────────────────────────────────────── */
+.light {
+  --color-bg: #f5f0e8;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f0f0f0;
+  --color-surface-active: #e5e5e5;
+  --color-sidebar: #fafafa;
+  --color-primary: #1a1a1a;
+  --color-secondary: #4a4a4a;
+  --color-muted: #8a8a8a;
+  --color-accent: #b8860b;
+  --color-accent-green: #2e7d32;
+  --color-accent-amber: #a06c1a;
+  --color-border: #e0e0e0;
+  --color-danger: #c0392b;
+  --color-reading-surface: #f5f0e8;
+  --color-warm-glow: rgba(180,140,60,0.04);
+  --color-page-cream: #d4c5a9;
+  --color-book-shadow: rgba(0,0,0,0.25);
+  --color-binding: rgba(0,0,0,0.10);
+  --color-page-stack: #c9b898;
+}
+
+/* ─── Base Styles ───────────────────────────────────────── */
+html,
+body {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for sidebar lists */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle thin scrollbar for sidebar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 2px;
+}
+
+/* ─── Slide-up Panel Animation ──────────────────────────── */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 300ms ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 300ms ease-in forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 200ms ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fade-out 200ms ease-in forwards;
+}
+
+/* ─── Reading Surface ──────────────────────────────────── */
+.reading-surface {
+  background-color: var(--color-reading-surface);
+  background-image:
+    /* Warm desk-lamp glow */
+    radial-gradient(ellipse at 50% 45%, var(--color-warm-glow) 0%, transparent 70%),
+    /* Vignette — darker edges */
+    radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(0,0,0,0.15) 100%),
+    /* CSS noise texture */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ─── Book Container ───────────────────────────────────── */
+.book-container {
+  box-shadow:
+    1px 1px 0 0 var(--color-page-stack),
+    3px 3px 0 0 color-mix(in srgb, var(--color-page-stack) 80%, transparent),
+    5px 5px 0 0 color-mix(in srgb, var(--color-page-stack) 60%, transparent),
+    6px 10px 25px var(--color-book-shadow),
+    2px 4px 8px rgba(0,0,0,0.3);
+  border: 1px solid rgba(139,119,86,0.25);
+  border-radius: 2px 6px 6px 2px;
+  background: var(--color-page-cream);
+  max-height: calc(100vh - 48px - 56px - 16px);
+  max-width: calc(100vw - 16px);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ─── Page Image Sizing ────────────────────────────────── */
+/* Single-page mode */
+.single-page img {
+  max-height: calc(100vh - 48px - 56px - 20px);
+  max-width: 92vw;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Dual-page mode */
+.dual-spread {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-height: calc(100vh - 48px - 56px - 20px);
+  max-width: calc(100vw - 16px);
+}
+.dual-spread img {
+  max-height: calc(100vh - 48px - 56px - 20px);
+  max-width: 48vw;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ─── Responsive Overrides ─────────────────────────────── */
+@media (max-width: 767px) {
+  .single-page img {
+    max-height: calc(100vh - 48px - 56px - 16px);
+    max-width: 98vw;
+  }
+}
+
+/* ─── Page Surface Treatment ───────────────────────────── */
+.page-surface {
+  position: relative;
+}
+.page-surface::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.06), inset 0 0 8px rgba(0,0,0,0.03);
+  border-radius: 1px;
+}
+.page-surface img {
+  border: 1px solid var(--color-page-cream);
+}
+
+/* Desktop hover glow on pages — no transform to avoid layout jitter */
+@media (hover: hover) and (min-width: 1024px) {
+  .page-surface img {
+    transition: box-shadow 200ms ease;
+  }
+  .page-surface:hover img {
+    box-shadow: 0 0 12px rgba(212,168,83,0.08);
+  }
+}
+
+/* ─── Binding Gutter ───────────────────────────────────── */
+.book-gutter {
+  width: 14px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.12) 0%,
+    rgba(0,0,0,0.03) 35%,
+    rgba(0,0,0,0) 50%,
+    rgba(0,0,0,0.03) 65%,
+    rgba(0,0,0,0.12) 100%
+  );
+}
+
+/* Gutter-side inset shadow on pages in dual spread */
+.page-gutter-right {
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.04);
+}
+.page-gutter-left {
+  box-shadow: inset 4px 0 8px rgba(0,0,0,0.04);
+}

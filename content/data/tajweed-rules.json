@@ -1,0 +1,98 @@
+[
+  {
+    "id": "madd-necessary",
+    "name": "Necessary Prolongation",
+    "name_arabic": "المد اللازم",
+    "colour": "#FF0000",
+    "tailwind_class": "text-red-600",
+    "description": "Madd 6 harakah",
+    "explanation": "A prolongation of exactly 6 counts. Occurs when a letter of madd is followed by a sukoon or shaddah in the same word. Always elongated to its full length.",
+    "duration": "6 harakah"
+  },
+  {
+    "id": "madd-obligatory",
+    "name": "Obligatory Prolongation",
+    "name_arabic": "المد الواجب المتصل",
+    "colour": "#8B0000",
+    "tailwind_class": "text-red-900",
+    "description": "4 or 5 harakah",
+    "explanation": "A prolongation of 4 or 5 counts. Occurs when a letter of madd is followed by a hamzah within the same word. Must be elongated — not optional.",
+    "duration": "4-5 harakah"
+  },
+  {
+    "id": "madd-permissible",
+    "name": "Permissible Prolongation",
+    "name_arabic": "المد الجائز المنفصل",
+    "colour": "#FF8C00",
+    "tailwind_class": "text-orange-500",
+    "description": "2, 4, or 6 harakah",
+    "explanation": "A prolongation of 2, 4, or 6 counts at the reader's choice. Occurs when a letter of madd at the end of one word is followed by a hamzah at the start of the next word.",
+    "duration": "2, 4, or 6 harakah"
+  },
+  {
+    "id": "ghunnah",
+    "name": "Nasalisation (Ghunnah)",
+    "name_arabic": "الغنة",
+    "colour": "#00AA00",
+    "tailwind_class": "text-green-600",
+    "description": "Ghunnah 2 harakah",
+    "explanation": "A nasal sound held for 2 counts. Accompanies noon and meem with shaddah, idghaam with ghunnah, and ikhfaa. The sound resonates from the nasal passage.",
+    "duration": "2 harakah"
+  },
+  {
+    "id": "tafkheem",
+    "name": "Emphatic Pronunciation",
+    "name_arabic": "التفخيم",
+    "colour": "#0066CC",
+    "tailwind_class": "text-blue-600",
+    "description": "Heavy/emphatic sound",
+    "explanation": "Letters pronounced with a full, heavy sound where the tongue rises towards the hard palate. Applies to the letters Saad, Daad, Taa, Dhaa, Khaa, Ghain, Qaf, and Laam in the name of Allah after fathah or dammah."
+  },
+  {
+    "id": "silent",
+    "name": "Silent Letters",
+    "name_arabic": "الحروف غير الملفوظة",
+    "colour": "#808080",
+    "tailwind_class": "text-gray-500",
+    "description": "Un-announced (silent)",
+    "explanation": "Letters written in the Mushaf but not pronounced during recitation. Typically alif letters that serve grammatical purposes or historical spelling conventions."
+  },
+  {
+    "id": "qalqalah",
+    "name": "Echoing Sound (Qalqalah)",
+    "name_arabic": "القلقلة",
+    "colour": "#4B0082",
+    "tailwind_class": "text-purple-800",
+    "description": "Bouncing/echoing sound",
+    "explanation": "A slight bouncing or echoing when pronouncing the five Qalqalah letters (Qaf, Taa, Baa, Jiim, Daal) when they carry a sukoon. The echo is stronger at the end of a verse (Qalqalah Kubra) than in the middle of a word (Qalqalah Sughra)."
+  },
+  {
+    "id": "madd-normal",
+    "name": "Normal Prolongation",
+    "name_arabic": "المد الطبيعي",
+    "colour": "#000000",
+    "tailwind_class": "text-current",
+    "description": "2 harakah (natural)",
+    "explanation": "The natural prolongation of 2 counts that occurs with every letter of madd (alif, waw, yaa) when not followed by a hamzah or sukoon. This is the baseline length for all prolongation.",
+    "duration": "2 harakah"
+  },
+  {
+    "id": "idgham",
+    "name": "Merging (Idgham)",
+    "name_arabic": "الإدغام",
+    "colour": "#8B4513",
+    "tailwind_class": "text-amber-800",
+    "description": "Merging of noon/tanween",
+    "explanation": "When noon saakinah or tanween is followed by Ya, Ra, Meem, Laam, Waw, or Noon. The noon merges into the following letter. With Ya, Noon, Meem, Waw: merging with ghunnah. With Ra, Laam: merging without ghunnah."
+  },
+  {
+    "id": "ikhfaa",
+    "name": "Concealment (Ikhfaa)",
+    "name_arabic": "الإخفاء",
+    "colour": "#00AA00",
+    "tailwind_class": "text-green-600",
+    "description": "Hidden noon with ghunnah",
+    "explanation": "When noon saakinah or tanween is followed by one of 15 specific letters, the noon is partially hidden (not fully pronounced and not fully merged). A nasal ghunnah of 2 counts accompanies it.",
+    "duration": "2 harakah"
+  }
+]
