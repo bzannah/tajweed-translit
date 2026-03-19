@@ -1,10 +1,10 @@
-# Tajweed Translit
+# Quran Tajweed Transliteration
 
 A comprehensive English transliteration of the Quran with Tajweed colour-coded markings, presented in a beautiful, immersive web reading experience.
 
 ## About
 
-Tajweed Translit renders 1,275 pages of Quran transliteration with full Tajweed colour coding. It mirrors the experience of reading a physical Tajweed Mushaf — but optimised for screens with surah navigation, bookmarks, audio playback, and offline support.
+Quran Tajweed Transliteration renders 1,275 pages of Quran transliteration with full Tajweed colour coding. It mirrors the experience of reading a physical Tajweed Mushaf — but optimised for screens with surah navigation, bookmarks, audio playback, and offline support.
 
 ## Features
 

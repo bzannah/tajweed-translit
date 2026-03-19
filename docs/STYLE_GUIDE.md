@@ -1,6 +1,6 @@
-# Style Guide — Tajweed Translit
+# Style Guide — Quran Tajweed Transliteration
 
-Visual design specifications extracted from the reference Tajweed Mushaf app screenshots.
+Visual design specifications extracted from the reference Quran Tajweed Transliteration app screenshots.
 
 ## Overall Aesthetic
 - Dark, immersive reading experience — minimise distraction from the content

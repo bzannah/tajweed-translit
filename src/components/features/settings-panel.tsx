@@ -148,7 +148,7 @@ export function SettingsPanel() {
 
         {/* About */}
         <div className="border-t border-border pt-4">
-          <p className="text-xs text-muted">Tajweed Translit v1.0</p>
+          <p className="text-xs text-muted">Quran Tajweed Transliteration v1.0</p>
           <p className="text-xs text-muted">Quran transliteration reader with Tajweed colour coding</p>
         </div>
       </div>

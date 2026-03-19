@@ -1,4 +1,4 @@
-# Tajweed Translit
+# Quran Tajweed Transliteration
 
 Quran transliteration reader with Tajweed colour coding. Renders 1,275 pre-converted PDF page images in an immersive reading experience.
 

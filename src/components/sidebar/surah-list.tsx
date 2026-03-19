@@ -8,25 +8,24 @@ import { SurahItem } from './surah-item';
 
 /**
  * Scrollable list of all 114 surahs.
- * Auto-scrolls to the active surah when the page changes.
+ * Auto-scrolls to the active surah when the page changes or sidebar opens.
  */
 export function SurahList() {
   const currentPage = useAppStore((s) => s.currentPage);
+  const sidebarOpen = useAppStore((s) => s.sidebarOpen);
   const setCurrentPage = useAppStore((s) => s.setCurrentPage);
   const setSidebarOpen = useAppStore((s) => s.setSidebarOpen);
   const listRef = useRef<HTMLDivElement>(null);
 
   const activeSurah = getSurahForPage(currentPage, surahs);
 
-  // Auto-scroll to active surah
+  // Auto-scroll to active surah on page change or sidebar open
   useEffect(() => {
-    const el = listRef.current;
-    if (!el) return;
-    const activeEl = el.querySelector('[data-active="true"]');
+    const activeEl = document.querySelector('[data-active-surah="true"]');
     if (activeEl) {
       activeEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
-  }, [currentPage]);
+  }, [currentPage, sidebarOpen]);
 
   const handleClick = (page: number) => {
     setCurrentPage(page);
@@ -41,7 +40,7 @@ export function SurahList() {
       {surahs.map((surah) => {
         const isActive = surah.number === activeSurah.number;
         return (
-          <div key={surah.number} data-active={isActive}>
+          <div key={surah.number} data-active-surah={isActive || undefined}>
             <SurahItem
               surah={surah}
               isActive={isActive}

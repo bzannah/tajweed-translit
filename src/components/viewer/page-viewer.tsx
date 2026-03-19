@@ -1,74 +1,175 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useResponsiveMode } from '@/hooks/use-responsive-mode';
 import { useSwipeNav } from '@/hooks/use-swipe-nav';
+import { usePageContext } from '@/hooks/use-page-context';
+import { getNextPage, getPreviousPage } from '@/lib/page-utils';
 import { PageImage } from './page-image';
 import { DualPageSpread } from './dual-page-spread';
 
 /**
  * Orchestrates the page display — single or dual mode based on settings and viewport.
  * Applies zoom transform from the store. Supports swipe navigation.
- * Page turn animation is CSS-only, triggered by React key change.
+ * Uses a two-layer system for flicker-free page turn animation:
+ * the new page is always visible underneath, and the old page animates away on top.
+ * Floating Next/Previous buttons flank the book on left/right edges.
  */
 export function PageViewer() {
   const currentPage = useAppStore((s) => s.currentPage);
+  const setCurrentPage = useAppStore((s) => s.setCurrentPage);
   const zoomLevel = useAppStore((s) => s.zoomLevel);
   const isDualMode = useResponsiveMode();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track navigation direction for animation class — purely visual
+  // Two-layer animation state
+  const [exitingPage, setExitingPage] = useState<number | null>(null);
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
   const prevPageRef = useRef(currentPage);
+  const animatingRef = useRef(false);
+
+  // Dimension locking to prevent flicker during page transitions
+  const bookRef = useRef<HTMLDivElement>(null);
+  const lockedDimensions = useRef<{ width: number; height: number } | null>(null);
 
   useEffect(() => {
-    if (currentPage !== prevPageRef.current) {
+    if (currentPage !== prevPageRef.current && !animatingRef.current) {
+      // Lock container dimensions before transition starts
+      if (bookRef.current) {
+        const rect = bookRef.current.getBoundingClientRect();
+        lockedDimensions.current = { width: rect.width, height: rect.height };
+        bookRef.current.style.width = `${rect.width}px`;
+        bookRef.current.style.height = `${rect.height}px`;
+      }
       setDirection(currentPage > prevPageRef.current ? 'forward' : 'backward');
+      setExitingPage(prevPageRef.current);
+      animatingRef.current = true;
+      prevPageRef.current = currentPage;
+    } else if (currentPage !== prevPageRef.current && animatingRef.current) {
       prevPageRef.current = currentPage;
     }
   }, [currentPage]);
 
+  const handleAnimationEnd = useCallback(() => {
+    setExitingPage(null);
+    animatingRef.current = false;
+    // Unlock dimensions after transition completes
+    if (bookRef.current) {
+      bookRef.current.style.width = '';
+      bookRef.current.style.height = '';
+      lockedDimensions.current = null;
+    }
+  }, []);
+
+  const { primarySurah } = usePageContext(currentPage);
+  const nextPage = getNextPage(currentPage, isDualMode);
+  const prevPage = getPreviousPage(currentPage, isDualMode);
+
   useSwipeNav(isDualMode, containerRef);
+
+  /** Renders the page content (single or dual) for a given page number. */
+  const renderPageContent = (page: number) =>
+    isDualMode ? (
+      <DualPageSpread page={page} />
+    ) : (
+      <div className="single-page">
+        <PageImage key={page} page={page} />
+      </div>
+    );
 
   return (
     <div
       ref={containerRef}
       className="main-content w-full"
+      style={{ gap: '10px' }}
       data-testid="page-viewer"
     >
-      <div className="book-container book-entrance">
-        <div
-          style={{
-            transform: zoomLevel !== 100 ? `scale(${zoomLevel / 100})` : undefined,
-            transformOrigin: 'center center',
-          }}
-        >
+      {/* Nav: Next (LEFT — Mushaf convention) */}
+      <button
+        type="button"
+        className="nav-float"
+        aria-label="Next page"
+        disabled={nextPage === null}
+        onClick={() => nextPage !== null && setCurrentPage(nextPage)}
+        data-testid="next-page-btn"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+
+      {/* Book + surah label */}
+      <div className="flex flex-1 flex-col items-center min-w-0 overflow-hidden">
+        <div ref={bookRef} className="book-container book-entrance" style={{ position: 'relative', overflow: 'hidden' }}>
           <div
-            key={currentPage}
-            className={direction === 'forward' ? 'page-turn-forward' : 'page-turn-backward'}
+            style={{
+              transform: zoomLevel !== 100 ? `scale(${zoomLevel / 100})` : undefined,
+              transformOrigin: 'center center',
+            }}
           >
-            {isDualMode ? (
-              <DualPageSpread page={currentPage} />
-            ) : (
-              <div className="single-page">
-                <PageImage page={currentPage} />
+            {/* LAYER 1 (BACK): Current page — always visible, no animation */}
+            <div style={{
+              position: 'relative',
+              zIndex: 1,
+              width: lockedDimensions.current?.width ?? undefined,
+              height: lockedDimensions.current?.height ?? undefined,
+              minHeight: lockedDimensions.current?.height ?? undefined,
+            }}>
+              {renderPageContent(currentPage)}
+            </div>
+
+            {/* LAYER 2 (FRONT): Previous page — animates away, then removed */}
+            {exitingPage !== null && (
+              <div
+                className={direction === 'forward' ? 'page-exit-forward' : 'page-exit-backward'}
+                onAnimationEnd={handleAnimationEnd}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: lockedDimensions.current?.width ?? '100%',
+                  height: lockedDimensions.current?.height ?? '100%',
+                  zIndex: 2,
+                }}
+              >
+                {renderPageContent(exitingPage)}
               </div>
             )}
           </div>
         </div>
-      </div>
 
-      {/* Page indicator with crossfade */}
-      <div className="absolute bottom-[60px] left-0 right-0 text-center pointer-events-none">
+        {/* Surah label below the book */}
         <span
           key={currentPage}
-          className="page-number-fade inline-block rounded-full bg-bg/80 px-3 py-1 text-muted backdrop-blur-sm"
-          style={{ fontFamily: 'Georgia, serif', fontSize: '12px', letterSpacing: '0.1em' }}
+          className="page-number-fade font-brand text-accent"
+          style={{
+            fontSize: '13px',
+            fontWeight: 400,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            height: '28px',
+            lineHeight: '28px',
+            flexShrink: 0,
+          }}
         >
-          &mdash; {currentPage} &mdash;
+          {primarySurah.surah_name}
         </span>
       </div>
+
+      {/* Nav: Previous (RIGHT — Mushaf convention) */}
+      <button
+        type="button"
+        className="nav-float"
+        aria-label="Previous page"
+        disabled={prevPage === null}
+        onClick={() => prevPage !== null && setCurrentPage(prevPage)}
+        data-testid="prev-page-btn"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
     </div>
   );
 }

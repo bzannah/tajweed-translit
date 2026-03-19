@@ -1,4 +1,4 @@
-# Product Requirements — Tajweed Translit
+# Product Requirements — Quran Tajweed Transliteration
 
 ## Problem
 Millions of Muslims cannot read Arabic but want to recite the Quran with correct Tajweed pronunciation. Existing transliteration resources are scattered, ugly, ad-heavy, and incomplete.
@@ -15,7 +15,7 @@ A purpose-built, immersive web reader serving the complete Quran (1,275 pages) i
 ## Features (extracted from reference screenshots)
 
 ### Navigation Sidebar (left panel)
-- App logo + "Tajweed Mushaf" branding
+- App logo + "Quran Tajweed Transliteration" branding
 - Page indicator badge ("PAGE 42")
 - 3 tabs: **Suras** | **Juz** | **Bookmarks**
 - Suras tab: 114 surahs — number, name, Meccan/Medinan icon, starting page. Click navigates.
@@ -49,7 +49,7 @@ A purpose-built, immersive web reader serving the complete Quran (1,275 pages) i
 
 ### Top Bar
 - Hamburger menu toggle
-- "Tajweed Translit" title
+- "Quran Tajweed Transliteration" title
 - Bookmark current page button
 - Notes button (open notes editor for current page)
 

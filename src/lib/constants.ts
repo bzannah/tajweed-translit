@@ -29,10 +29,10 @@ export const STORAGE_KEY = 'tajweed-translit-storage';
 export const SIDEBAR_WIDTH = 280;
 
 /** Top bar height in pixels. */
-export const TOPBAR_HEIGHT = 48;
+export const TOPBAR_HEIGHT = 54;
 
 /** Bottom bar height in pixels. */
-export const BOTTOMBAR_HEIGHT = 56;
+export const BOTTOMBAR_HEIGHT = 64;
 
 /** Viewport width breakpoint for dual-page mode in pixels. */
 export const DUAL_BREAKPOINT = 1024;

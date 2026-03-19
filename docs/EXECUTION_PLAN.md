@@ -1,4 +1,4 @@
-# Execution Plan — Tajweed Translit
+# Execution Plan — Quran Tajweed Transliteration
 
 Follow this plan sequentially. Check off each item as you complete it. Do NOT skip ahead. Each phase builds on the previous one.
 
@@ -42,7 +42,7 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 
 - [x] Create `src/app/layout.tsx` — root layout with: ThemeProvider, sidebar slot, main content, bottom bar
 - [x] Create `src/components/ui/theme-provider.tsx` — reads theme from store, applies `dark` class to `<html>`
-- [x] Create `src/components/layout/top-bar.tsx` — hamburger toggle, app title "Tajweed Translit", bookmark button, notes button
+- [x] Create `src/components/layout/top-bar.tsx` — hamburger toggle, app title "Quran Tajweed Transliteration", bookmark button, notes button
 - [x] Create `src/components/layout/sidebar.tsx` — left panel, collapsible, overlay on mobile, persistent on desktop (lg breakpoint)
 - [x] Create `src/components/layout/bottom-bar.tsx` — Previous | Explanation | Translation | Listen | Settings | Next
 - [x] Create `src/components/layout/zoom-controls.tsx` — zoom in, zoom out, fit width, fit page (positioned bottom-right)
@@ -168,4 +168,4 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Final `pnpm test` — all passing
 - [x] Final `pnpm lint` — no errors
 - [ ] Update README.md with: project description, screenshots, setup instructions, commands
-- [ ] Commit everything with message: `feat: complete Tajweed Translit v1.0`
+- [ ] Commit everything with message: `feat: complete Quran Tajweed Transliteration v1.0`

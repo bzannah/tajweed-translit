@@ -6,7 +6,7 @@ The current UI is a flat image pasted on a blank background. There is no atmosph
 
 ## The Vision
 
-When a user opens Tajweed Translit, they should feel like they just opened a beautiful, leather-bound Tajweed Mushaf on a warm reading desk. Every interaction — turning a page, opening the sidebar, tapping a bookmark — should feel intentional, weighted, and respectful of the sacred content.
+When a user opens Quran Tajweed Transliteration, they should feel like they just opened a beautiful, leather-bound Tajweed Mushaf on a warm reading desk. Every interaction — turning a page, opening the sidebar, tapping a bookmark — should feel intentional, weighted, and respectful of the sacred content.
 
 ## Design Direction: "Warm Study" Aesthetic
 

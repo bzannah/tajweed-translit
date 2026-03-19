@@ -28,12 +28,12 @@ const config: Config = {
         sidebar: '280px',
       },
       height: {
-        topbar: '48px',
-        bottombar: '56px',
+        topbar: '54px',
+        bottombar: '64px',
       },
       spacing: {
-        topbar: '48px',
-        bottombar: '56px',
+        topbar: '54px',
+        bottombar: '64px',
         sidebar: '280px',
       },
       zIndex: {

@@ -1,4 +1,4 @@
-# AGENTS.md — Tajweed Translit
+# AGENTS.md — Quran Tajweed Transliteration
 
 Quran transliteration reader with Tajweed colour coding. Next.js 15, TypeScript strict, Tailwind 4, Zustand, pnpm.
 

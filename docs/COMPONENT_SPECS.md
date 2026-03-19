@@ -6,7 +6,7 @@
 - Fixed at top, full width, height 48px
 - Dark surface background (`bg-sidebar`)
 - Left: hamburger menu icon (☰) — toggles sidebar via `useAppStore`
-- Center: "Tajweed Translit" text in accent gold colour
+- Center: "Quran Tajweed Transliteration" text in accent gold colour
 - Right: notes icon (pencil), bookmark icon (flag/bookmark)
 - Bookmark icon: filled when current page is bookmarked, outline when not
 - Notes icon: small dot indicator when current page has a note
@@ -16,7 +16,7 @@
 - Width: 280px on desktop, full-screen overlay on mobile
 - Background: `bg-sidebar` (slightly darker than main bg)
 - Header section:
-  - App logo (small mushaf image) + "Tajweed Mushaf" title
+  - App logo (small mushaf image) + "Quran Tajweed Transliteration" title
   - "Other Books" link (optional, can be placeholder)
   - Page indicator badge: "📄 PAGE {n}" in a rounded pill
 - Below header: TabSwitcher
@@ -137,7 +137,7 @@
   1. Theme: toggle switch "Dark" / "Light"
   2. Page Display: radio buttons "Single" / "Dual" / "Auto"
   3. Actions: "Clear All Bookmarks" button (danger), "Clear All Notes" button (danger)
-  4. About: "Tajweed Translit v1.0" + credits text
+  4. About: "Quran Tajweed Transliteration v1.0" + credits text
 - Danger buttons require confirmation: "Are you sure? This cannot be undone."
 
 ### NotesEditor (`src/components/features/notes-editor.tsx`)

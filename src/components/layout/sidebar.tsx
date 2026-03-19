@@ -1,17 +1,16 @@
 'use client';
 
 import { useAppStore } from '@/store/useAppStore';
+import { usePageContext } from '@/hooks/use-page-context';
 import { TabSwitcher } from '@/components/sidebar/tab-switcher';
 import { SurahList } from '@/components/sidebar/surah-list';
 import { JuzList } from '@/components/sidebar/juz-list';
 import { BookmarkList } from '@/components/sidebar/bookmark-list';
-import { IconButton } from '@/components/ui/icon-button';
-import { cn } from '@/lib/cn';
 
 /**
  * Collapsible sidebar with navigation tabs.
- * Width: 280px on desktop, full overlay on mobile.
- * Animated slide-in from left.
+ * Desktop (≥1024px): in document flow, pushes content over via width transition.
+ * Mobile/Tablet (<1024px): fixed overlay with dark backdrop.
  */
 export function Sidebar() {
   const sidebarOpen = useAppStore((s) => s.sidebarOpen);
@@ -19,12 +18,14 @@ export function Sidebar() {
   const activeTab = useAppStore((s) => s.activeTab);
   const currentPage = useAppStore((s) => s.currentPage);
 
+  const { primarySurah } = usePageContext(currentPage);
+
   return (
     <>
-      {/* Overlay (mobile only) */}
+      {/* Backdrop overlay — mobile/tablet only */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-overlay bg-black/50 lg:hidden animate-fade-in"
+          className="sidebar-backdrop fixed inset-0 z-overlay bg-black/50 animate-fade-in"
           onClick={() => setSidebarOpen(false)}
           aria-hidden="true"
         />
@@ -32,43 +33,64 @@ export function Sidebar() {
 
       {/* Sidebar panel */}
       <aside
-        className={cn(
-          'fixed top-0 left-0 z-sidebar flex h-full w-sidebar flex-col bg-sidebar transition-transform duration-300 ease-out',
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        )}
+        className={`sidebar-panel ${sidebarOpen ? 'open' : ''}`}
         data-testid="sidebar"
         aria-label="Navigation sidebar"
       >
-        {/* Header */}
-        <div className="flex items-center justify-between p-4">
-          <div>
-            <h2 className="text-sm font-semibold text-primary">Tajweed Mushaf</h2>
-            <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-surface px-2.5 py-0.5 text-xs font-medium text-muted">
+        {/* Inner container — always 280px wide, clipped by the outer shell */}
+        <div className="sidebar-inner flex h-full w-[280px] flex-col bg-sidebar">
+          {/* Header */}
+          <div
+            className="relative p-3"
+            style={{ background: 'rgba(0,0,0,0.15)' }}
+          >
+            <div className="flex items-start justify-between">
+              <div className="flex flex-col gap-1">
+                <h2 className="font-brand text-primary font-bold" style={{ fontSize: '16px' }}>
+                  Quran Tajweed Transliteration
+                </h2>
+                <span className="text-accent" style={{ fontSize: '12px' }}>
+                  Surah {primarySurah.surah_name}
+                </span>
+              </div>
+              {/* Close button */}
+              <button
+                type="button"
+                aria-label="Close sidebar"
+                onClick={() => setSidebarOpen(false)}
+                className="text-muted hover:text-primary transition-colors duration-150 p-1 rounded-md"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <span
+              className="mt-2 inline-block text-accent"
+              style={{
+                fontSize: '11px',
+                fontWeight: 500,
+                padding: '2px 8px',
+                borderRadius: '10px',
+                background: 'rgba(212,168,83,0.15)',
+                border: '1px solid rgba(212,168,83,0.3)',
+              }}
+            >
               PAGE {currentPage}
             </span>
           </div>
-          <IconButton
-            icon={
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M15 9l-6 6M9 9l6 6" />
-              </svg>
-            }
-            label="Close sidebar"
-            onClick={() => setSidebarOpen(false)}
-          />
+
+          {/* Gold gradient divider */}
+          <div className="sidebar-divider" />
+
+          {/* Tabs */}
+          <TabSwitcher />
+
+          {/* Content based on active tab */}
+          {activeTab === 'suras' && <SurahList />}
+          {activeTab === 'juz' && <JuzList />}
+          {activeTab === 'bookmarks' && <BookmarkList />}
         </div>
-
-        {/* Ornamental divider */}
-        <div className="ornamental-divider" />
-
-        {/* Tabs */}
-        <TabSwitcher />
-
-        {/* Content based on active tab */}
-        {activeTab === 'suras' && <SurahList />}
-        {activeTab === 'juz' && <JuzList />}
-        {activeTab === 'bookmarks' && <BookmarkList />}
       </aside>
     </>
   );

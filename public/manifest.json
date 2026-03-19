@@ -1,6 +1,6 @@
 {
-  "name": "Tajweed Translit",
-  "short_name": "Tajweed",
+  "name": "Quran Tajweed Transliteration",
+  "short_name": "Quran Tajweed",
   "description": "Quran transliteration reader with Tajweed colour coding",
   "start_url": "/",
   "display": "standalone",

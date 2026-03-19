@@ -24,7 +24,7 @@ export function DualPageSpread({ page }: DualPageSpreadProps) {
     >
       {/* Right page (odd) — displayed first in Mushaf convention */}
       <div className="page-gutter-right">
-        <PageImage page={rightPage} />
+        <PageImage key={rightPage} page={rightPage} />
       </div>
 
       {/* Binding gutter */}
@@ -33,7 +33,7 @@ export function DualPageSpread({ page }: DualPageSpreadProps) {
       {/* Left page (even) */}
       {leftPage !== null && (
         <div className="page-gutter-left">
-          <PageImage page={leftPage} />
+          <PageImage key={leftPage} page={leftPage} />
         </div>
       )}
     </div>

@@ -15,8 +15,8 @@ export function ResumeToast() {
   const [phase, setPhase] = useState<'enter' | 'exit' | 'gone'>('enter');
 
   useEffect(() => {
-    const stayTimer = setTimeout(() => setPhase('exit'), 3000);
-    const removeTimer = setTimeout(() => setPhase('gone'), 3500);
+    const stayTimer = setTimeout(() => setPhase('exit'), 2500);
+    const removeTimer = setTimeout(() => setPhase('gone'), 3000);
     return () => {
       clearTimeout(stayTimer);
       clearTimeout(removeTimer);
@@ -27,19 +27,19 @@ export function ResumeToast() {
 
   const isResume = currentPage > 1;
   const message = isResume
-    ? `Continuing from Page ${currentPage}`
+    ? 'Continuing'
     : 'Bismillah';
   const subtitle = isResume
-    ? primarySurah.surah_name
+    ? `Surah ${primarySurah.surah_name}`
     : 'Welcome';
 
   return (
     <div
-      className={`fixed bottom-[72px] left-1/2 z-panel -translate-x-1/2 ${phase === 'enter' ? 'toast-enter' : 'toast-exit'}`}
+      className={`fixed bottom-[80px] left-1/2 z-panel -translate-x-1/2 ${phase === 'enter' ? 'toast-enter' : 'toast-exit'}`}
     >
       <div
         className="flex items-center gap-2 rounded-lg border-l-[3px] border-l-accent px-4 py-2.5"
-        style={{ background: 'rgba(26,22,20,0.9)', backdropFilter: 'blur(8px)' }}
+        style={{ background: 'rgba(26,22,20,0.92)', backdropFilter: 'blur(8px)' }}
       >
         <span className="text-sm text-primary">{message}</span>
         <span className="text-sm text-accent" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>

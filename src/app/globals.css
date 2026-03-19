@@ -17,10 +17,10 @@
   --color-danger: var(--color-danger);
 
   --width-sidebar: 280px;
-  --height-topbar: 48px;
-  --height-bottombar: 56px;
-  --spacing-topbar: 48px;
-  --spacing-bottombar: 56px;
+  --height-topbar: 54px;
+  --height-bottombar: 64px;
+  --spacing-topbar: 54px;
+  --spacing-bottombar: 64px;
   --spacing-sidebar: 280px;
 
   --z-index-overlay: 30;
@@ -52,14 +52,15 @@
   --color-page-stack: #d8ccb4;
 
   /* Layout geometry — single source of truth for sizing */
-  --topbar-h: 48px;
-  --bottombar-h: 56px;
+  --topbar-h: 54px;
+  --bottombar-h: 64px;
   --pad-x: 20px;
   --pad-y: 8px;
   --gutter-w: 14px;
   --book-chrome: 32px; /* border + shadow bleed + asymmetric shadow compensation */
   --zoom-gutter: 0px; /* extra right-side clearance for zoom controls; overridden at md+ */
-  --available-h: calc(100vh - var(--topbar-h) - var(--bottombar-h) - var(--pad-y) * 2);
+  --label-h: 28px; /* surah label below the book */
+  --available-h: calc(100vh - var(--topbar-h) - var(--bottombar-h) - var(--pad-y) * 2 - var(--label-h));
   --available-w: calc(100vw - var(--pad-x) * 2 - var(--zoom-gutter));
 }
 
@@ -84,6 +85,11 @@
   --color-book-shadow: rgba(0,0,0,0.25);
   --color-binding: rgba(0,0,0,0.10);
   --color-page-stack: #c9b898;
+}
+
+/* ─── Brand Font ────────────────────────────────────────── */
+.font-brand {
+  font-family: var(--font-amiri), 'Amiri', Georgia, 'Times New Roman', serif;
 }
 
 /* ─── Base Styles ───────────────────────────────────────── */
@@ -203,14 +209,12 @@ body {
   box-sizing: border-box;
 }
 
-/* ─── Main Content Area — outer boundary ──────────────── */
-/* TopBar and BottomBar are position:fixed, so this element spans 100vh.
-   Padding absorbs the bars + breathing room so content sits between them. */
+/* ─── Main Content Area ──────────────────────────────────── */
+/* TopBar and BottomBar are in-flow flex siblings, so this fills remaining space. */
 .main-content {
-  height: 100vh;
-  padding-top: calc(var(--topbar-h) + var(--pad-y));
-  padding-bottom: calc(var(--bottombar-h) + var(--pad-y));
-  padding-left: var(--pad-x);
+  flex: 1;
+  min-height: 0;
+  padding: var(--pad-y) var(--pad-x);
   padding-right: calc(var(--pad-x) + var(--zoom-gutter));
   display: flex;
   align-items: center;
@@ -230,8 +234,7 @@ body {
   border: 1px solid rgba(139,119,86,0.25);
   border-radius: 2px 6px 6px 2px;
   background: var(--color-page-cream);
-  /* Safety buffer so shadows don't clip against overflow:hidden parent */
-  max-width: calc(100% - 12px);
+  max-width: 100%;
   max-height: 100%;
   width: fit-content;
   height: fit-content;
@@ -244,19 +247,78 @@ body {
   overflow: hidden;
 }
 
-/* ─── Page Turn Animation Wrapper — must not constrain sizing ── */
-.page-turn-forward,
-.page-turn-backward {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ─── Page Turn: Two-layer exit animation ─────────────────── */
+/* The NEW page sits in the back layer (no animation, always visible).
+   The OLD page sits in the front layer and animates away to reveal it. */
+
+@keyframes page-exit-forward {
+  0% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+  30% {
+    transform: perspective(1500px) rotateY(-25deg);
+    opacity: 1;
+    box-shadow: -15px 0 30px rgba(0,0,0,0.15);
+  }
+  70% {
+    transform: perspective(1500px) rotateY(-65deg);
+    opacity: 0.8;
+    box-shadow: -20px 0 40px rgba(0,0,0,0.2);
+  }
+  100% {
+    transform: perspective(1500px) rotateY(-90deg);
+    opacity: 0;
+    box-shadow: -5px 0 10px rgba(0,0,0,0.05);
+  }
+}
+
+@keyframes page-exit-backward {
+  0% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  }
+  30% {
+    transform: perspective(1500px) rotateY(25deg);
+    opacity: 1;
+    box-shadow: 15px 0 30px rgba(0,0,0,0.15);
+  }
+  70% {
+    transform: perspective(1500px) rotateY(65deg);
+    opacity: 0.8;
+    box-shadow: 20px 0 40px rgba(0,0,0,0.2);
+  }
+  100% {
+    transform: perspective(1500px) rotateY(90deg);
+    opacity: 0;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.05);
+  }
+}
+
+.page-exit-forward {
+  animation: page-exit-forward 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: left center;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.page-exit-backward {
+  animation: page-exit-backward 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: right center;
+  will-change: transform, opacity;
+  pointer-events: none;
 }
 
 /* ─── Page Image Sizing ────────────────────────────────── */
 /* Single-page mode */
+.single-page {
+  min-width: 0;
+}
 .single-page img {
   max-height: var(--available-h);
-  max-width: calc(var(--available-w) - var(--book-chrome));
+  max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -266,15 +328,16 @@ body {
 /* Dual-page mode */
 .dual-spread {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 0;
   max-height: var(--available-h);
-  max-width: calc(var(--available-w) - var(--book-chrome));
+  max-width: 100%;
+  min-width: 0;
 }
 .dual-spread img {
   max-height: var(--available-h);
-  max-width: calc((var(--available-w) - var(--book-chrome) - var(--gutter-w)) / 2);
+  max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -313,17 +376,17 @@ body {
 /* Tablet single-page cap (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .single-page img {
-    max-width: min(650px, calc(var(--available-w) - var(--book-chrome)));
+    max-width: min(650px, 100%);
   }
 }
 
 /* Desktop dual-page cap (1024px+) */
 @media (min-width: 1024px) {
   .dual-spread {
-    max-width: min(1200px, calc(var(--available-w) - var(--book-chrome)));
+    max-width: min(1200px, 100%);
   }
   .dual-spread img {
-    max-width: min(593px, calc((var(--available-w) - var(--book-chrome) - var(--gutter-w)) / 2));
+    max-width: min(589px, 100%);
   }
 }
 
@@ -360,6 +423,7 @@ body {
 }
 .page-surface img {
   border: 1px solid var(--color-page-cream);
+  min-height: 200px; /* prevent collapse while loading */
 }
 
 /* Desktop hover glow on pages — no transform to avoid layout jitter */
@@ -386,69 +450,41 @@ body {
   );
 }
 
-/* Gutter-side inset shadow on pages in dual spread */
+/* Gutter-side inset shadow + breathing room so content never clips the book edge */
 .page-gutter-right {
   box-shadow: inset -4px 0 8px rgba(0,0,0,0.04);
+  padding-right: 2px;
 }
 .page-gutter-left {
   box-shadow: inset 4px 0 8px rgba(0,0,0,0.04);
+  padding-left: 2px;
 }
 
-/* ─── Page Turn Animation — CSS-only, triggered by React key change ── */
-@keyframes page-enter-forward {
-  0% {
-    opacity: 0;
-    transform: perspective(1200px) rotateY(12deg) scale(0.95) translateX(15px);
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: perspective(1200px) rotateY(0deg) scale(1) translateX(0);
-  }
-}
-
-@keyframes page-enter-backward {
-  0% {
-    opacity: 0;
-    transform: perspective(1200px) rotateY(-12deg) scale(0.95) translateX(-15px);
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: perspective(1200px) rotateY(0deg) scale(1) translateX(0);
-  }
-}
-
-@keyframes page-enter-simple {
-  from {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.page-turn-forward {
-  animation: page-enter-forward 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.page-turn-backward {
-  animation: page-enter-backward 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Reduced motion handled by global rule at end of file */
-
+/* Mobile: simpler slide instead of 3D rotation for exit animation */
 @media (max-width: 767px) {
-  .page-turn-forward,
-  .page-turn-backward {
-    animation-name: page-enter-simple;
-    animation-duration: 300ms;
+  @keyframes page-exit-forward {
+    0% { transform: translateX(0); opacity: 1; }
+    60% { transform: translateX(-20px); opacity: 0.9; }
+    100% { transform: translateX(-50px); opacity: 0; }
+  }
+  @keyframes page-exit-backward {
+    0% { transform: translateX(0); opacity: 1; }
+    60% { transform: translateX(20px); opacity: 0.9; }
+    100% { transform: translateX(50px); opacity: 0; }
+  }
+  .page-exit-forward,
+  .page-exit-backward {
+    animation-duration: 600ms;
+  }
+  .page-exit-forward { transform-origin: center; }
+  .page-exit-backward { transform-origin: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-exit-forward,
+  .page-exit-backward {
+    animation: none;
+    display: none;
   }
 }
 
@@ -457,41 +493,125 @@ body {
   background-color: rgba(214,168,83,0.05);
 }
 
-/* ─── Ornamental Divider ──────────────────────────────────── */
-.ornamental-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent 0%, #d4a853 20%, #d4a853 80%, transparent 100%);
-  position: relative;
+/* ─── Sidebar Panel — dual behaviour ─────────────────────── */
+
+/* Mobile / Tablet (< 1024px): fixed overlay, slides in from left */
+.sidebar-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 300ms ease-out;
+  overflow: hidden;
 }
-.ornamental-divider::before {
-  content: '\u25C6';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #d4a853;
-  font-size: 8px;
-  line-height: 1;
-  background: var(--color-sidebar);
-  padding: 0 8px;
+.sidebar-panel.open {
+  transform: translateX(0);
+}
+
+/* Desktop (≥ 1024px): in-flow flex item, pushes content via width */
+@media (min-width: 1024px) {
+  .sidebar-panel {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 0;
+    flex-shrink: 0;
+    transition: width 300ms ease-out;
+    z-index: auto;
+  }
+  .sidebar-panel.open {
+    width: 280px;
+    transform: none;
+  }
+  /* No backdrop on desktop */
+  .sidebar-backdrop {
+    display: none !important;
+  }
+}
+
+/* ─── Sidebar Divider — pure gradient, no pseudo-elements ─── */
+.sidebar-divider {
+  height: 1px;
+  margin: 8px 16px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #d4a853 30%,
+    #d4a853 70%,
+    transparent 100%
+  );
 }
 
 /* ─── Sidebar Scroll Fade ─────────────────────────────────── */
 .scroll-fade {
-  mask-image: linear-gradient(to bottom, black calc(100% - 40px), transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to bottom, black calc(100% - 50px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 50px), transparent 100%);
 }
 
 /* ─── Bottom Bar Glass Effect ─────────────────────────────── */
 .bottom-bar-glass {
-  backdrop-filter: blur(12px) saturate(1.2);
-  -webkit-backdrop-filter: blur(12px) saturate(1.2);
-  background: rgba(26,22,20,0.85);
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(to right, transparent 0%, #d4a853 20%, #d4a853 80%, transparent 100%) 1;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  background: rgba(26,22,20,0.88);
+  border-top: 1px solid rgba(212,168,83,0.25);
 }
 .light .bottom-bar-glass {
-  background: rgba(250,246,238,0.88);
+  background: rgba(250,246,238,0.90);
+  border-top: 1px solid rgba(184,134,11,0.2);
+}
+
+/* ─── Page Navigation Buttons (flanking the book) ─────────── */
+.nav-float {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  color: var(--color-primary);
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: background 150ms, transform 150ms, box-shadow 150ms;
+}
+.nav-float:hover {
+  background: rgba(0,0,0,0.55);
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(212,168,83,0.2), 0 2px 6px rgba(0,0,0,0.15);
+}
+.nav-float:active {
+  transform: scale(0.95);
+}
+.nav-float:disabled {
+  opacity: 0.15;
+  pointer-events: none;
+  cursor: default;
+}
+
+.light .nav-float {
+  background: rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.08);
+  color: var(--color-primary);
+}
+.light .nav-float:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+/* Mobile: slightly smaller */
+@media (max-width: 767px) {
+  .nav-float {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* ─── Bookmark Particle Burst ─────────────────────────────── */
@@ -516,9 +636,39 @@ body {
   animation: burst-particle 400ms ease-out forwards;
 }
 
+/* ─── Bookmark Pulse Ring ────────────────────────────────── */
+@keyframes bookmark-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 rgba(212,168,83,0.5);
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    box-shadow: 0 0 0 12px rgba(212,168,83,0);
+  }
+}
+
+.bookmark-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  background: rgba(212,168,83,0.15);
+  pointer-events: none;
+  animation: bookmark-pulse 400ms ease-out forwards;
+}
+
 /* ─── Smooth Theme Transition ─────────────────────────────── */
 .theme-transitioning,
-.theme-transitioning * {
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
   transition: background-color 400ms ease, color 300ms ease, border-color 300ms ease, box-shadow 400ms ease !important;
 }
 
@@ -534,18 +684,18 @@ body {
 
 /* ─── Loading Skeleton ────────────────────────────────────── */
 @keyframes skeleton-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
 }
 
 .page-skeleton {
-  background-color: #f5f0e8;
+  background-color: var(--color-page-cream);
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0px,
-    transparent 18px,
-    rgba(0,0,0,0.06) 18px,
-    rgba(0,0,0,0.06) 20px
+    transparent 24px,
+    rgba(0,0,0,0.03) 24px,
+    rgba(0,0,0,0.03) 26px
   );
   animation: skeleton-pulse 1.5s ease-in-out infinite;
 }
@@ -557,7 +707,7 @@ body {
 @keyframes book-entrance {
   from {
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.97);
   }
   to {
     opacity: 1;
@@ -566,7 +716,7 @@ body {
 }
 
 .book-entrance {
-  animation: book-entrance 600ms ease-out both;
+  animation: book-entrance 500ms ease-out both;
 }
 
 /* ─── Resume Toast ────────────────────────────────────────── */
@@ -593,7 +743,7 @@ body {
 }
 
 .toast-enter {
-  animation: toast-in 400ms ease-out both;
+  animation: toast-in 300ms ease-out both;
 }
 
 .toast-exit {

@@ -8,7 +8,7 @@ Copy everything below the line into Claude Code. This is Session 1 — it will s
 
 ultrathink
 
-You are starting a greenfield project called Tajweed Translit — a Quran transliteration reader with Tajweed colour coding. The project skeleton has already been scaffolded with all planning docs, data files, source code foundations, store slices, hooks, tests, and configs. Your job is to make it all work.
+You are starting a greenfield project called Quran Tajweed Transliteration — a Quran transliteration reader with Tajweed colour coding. The project skeleton has already been scaffolded with all planning docs, data files, source code foundations, store slices, hooks, tests, and configs. Your job is to make it all work.
 
 **STEP 1 — Orient yourself (do NOT skip this)**
 
@@ -47,7 +47,7 @@ Read @docs/COMPONENT_SPECS.md and @docs/STYLE_GUIDE.md carefully, then build the
 
 3. Create `src/components/layout/top-bar.tsx` — fixed top bar with:
    - Left: hamburger menu button (toggles sidebar)
-   - Center: "Tajweed Translit" in accent gold
+   - Center: "Quran Tajweed Transliteration" in accent gold
    - Right: notes button + bookmark toggle button
    - Height: 48px, bg-sidebar background
    
@@ -87,7 +87,7 @@ Read @docs/COMPONENT_SPECS.md and @docs/STYLE_GUIDE.md carefully, then build the
    - Sets currentPage in the store
    - Renders PageViewer
    - Generates metadata with surah name
-3. Create `src/components/viewer/page-image.tsx` — renders a single page image. For now, since real WebP images may not exist yet, render a styled placeholder showing the page number with Arabic bismillah styling (dark card with page number, surah name, and "Tajweed Translit" text). When a real image exists at `/pages/{n}.webp`, render it with next/image.
+3. Create `src/components/viewer/page-image.tsx` — renders a single page image. For now, since real WebP images may not exist yet, render a styled placeholder showing the page number with Arabic bismillah styling (dark card with page number, surah name, and "Quran Tajweed Transliteration" text). When a real image exists at `/pages/{n}.webp`, render it with next/image.
 4. Create `src/components/viewer/page-viewer.tsx` — orchestrates single vs dual mode using the useResponsiveMode hook.
 5. Create `src/components/viewer/dual-page-spread.tsx` — two pages side by side. Right page first (odd number), left page second (even number).
 6. Wire zoom level from store to CSS transform on the page container.

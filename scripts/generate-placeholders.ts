@@ -23,7 +23,7 @@ function generateSvg(pageNumber: number): string {
   <rect x="30" y="30" width="${WIDTH - 60}" height="${HEIGHT - 60}" fill="none" stroke="#1a6b5a" stroke-width="1" rx="4"/>
   <text x="${WIDTH / 2}" y="120" font-family="Georgia, serif" font-size="24" fill="#1a6b5a" text-anchor="middle" font-weight="bold">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</text>
   <text x="${WIDTH / 2}" y="${HEIGHT / 2}" font-family="Georgia, serif" font-size="72" fill="#2c3e50" text-anchor="middle" dominant-baseline="central">${pageNumber}</text>
-  <text x="${WIDTH / 2}" y="${HEIGHT / 2 + 60}" font-family="system-ui, sans-serif" font-size="16" fill="#808080" text-anchor="middle">Tajweed Translit — Page ${pageNumber}</text>
+  <text x="${WIDTH / 2}" y="${HEIGHT / 2 + 60}" font-family="system-ui, sans-serif" font-size="16" fill="#808080" text-anchor="middle">Quran Tajweed Transliteration — Page ${pageNumber}</text>
   <text x="${WIDTH / 2}" y="${HEIGHT / 2 + 90}" font-family="system-ui, sans-serif" font-size="12" fill="#aaa" text-anchor="middle">(placeholder — replace with converted PDF)</text>
   <text x="${WIDTH / 2}" y="${HEIGHT - 50}" font-family="system-ui, sans-serif" font-size="14" fill="#808080" text-anchor="middle">${pageNumber}</text>
 </svg>`;

@@ -17,10 +17,11 @@ const BURST_PARTICLES = [
 
 /**
  * Fixed top bar with hamburger menu, app title, and action buttons.
- * Height: 48px. Background: sidebar colour.
+ * Height: 54px. Background: sidebar colour with subtle bottom shadow.
  */
 export function TopBar() {
   const currentPage = useAppStore((s) => s.currentPage);
+  const sidebarOpen = useAppStore((s) => s.sidebarOpen);
   const toggleSidebar = useAppStore((s) => s.toggleSidebar);
   const togglePanel = useAppStore((s) => s.togglePanel);
   const addBookmark = useAppStore((s) => s.addBookmark);
@@ -53,29 +54,41 @@ export function TopBar() {
 
   return (
     <header
-      className="fixed top-0 right-0 left-0 z-sidebar flex h-topbar items-center justify-between bg-sidebar px-3"
+      className="flex h-topbar flex-shrink-0 items-center justify-between bg-sidebar px-3 z-sidebar"
+      style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.15)', position: 'relative' }}
       data-testid="top-bar"
     >
-      {/* Left: hamburger */}
+      {/* Left: hamburger — hidden when sidebar is open on desktop */}
       <IconButton
         icon={
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M3 12h18M3 6h18M3 18h18" />
           </svg>
         }
         label="Toggle sidebar"
         onClick={toggleSidebar}
+        className={sidebarOpen ? 'lg:invisible' : ''}
       />
 
-      {/* Center: title */}
-      <h1 className="text-lg font-semibold text-accent">Tajweed Translit</h1>
+      {/* Center: title + page number */}
+      <div className="flex items-center gap-2">
+        <h1 className="font-brand text-accent font-bold" style={{ letterSpacing: '0.02em' }}>
+          <span className="hidden md:inline" style={{ fontSize: '20px' }}>Quran Tajweed Transliteration</span>
+          <span className="md:hidden" style={{ fontSize: '16px' }}>Quran Tajweed</span>
+        </h1>
+        {/* Page number — hidden on small mobile */}
+        <span className="hidden sm:flex items-center gap-2 text-muted" style={{ fontSize: '13px' }}>
+          <span className="inline-block h-4 w-px bg-muted/40" />
+          {currentPage}
+        </span>
+      </div>
 
       {/* Right: notes + bookmark */}
       <div className="flex items-center gap-1">
-        <div className="relative">
+        <div className="relative" title="Notes">
           <IconButton
             icon={
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
               </svg>
             }
@@ -87,12 +100,12 @@ export function TopBar() {
           )}
         </div>
 
-        <div className="relative">
+        <div className="relative" title="Bookmark this page">
           <IconButton
             icon={
               <svg
-                width="20"
-                height="20"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill={bookmarked ? 'currentColor' : 'none'}
                 stroke="currentColor"
@@ -106,7 +119,8 @@ export function TopBar() {
             onClick={handleBookmarkToggle}
             data-testid="bookmark-toggle"
           />
-          {/* Particle burst on bookmark */}
+          {/* Pulse ring + particle burst on bookmark */}
+          {showBurst && <span className="bookmark-pulse" />}
           {showBurst &&
             BURST_PARTICLES.map((style, i) => (
               <span
