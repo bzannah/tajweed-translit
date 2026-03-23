@@ -13,11 +13,10 @@ build/
 # Source PDFs (too large for git — use LFS or external storage)
 content/pdfs/
 
-# Generated page images (regenerated from PDFs)
-public/pages/
+# Thumbnails (not used in production)
 public/thumbnails/
 
-# Placeholder SVGs for dev
+# Placeholder SVGs for dev (keep WebP images tracked)
 public/pages/*.svg
 
 # Environment
