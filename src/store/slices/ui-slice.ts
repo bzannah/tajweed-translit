@@ -24,7 +24,7 @@ export const createUiSlice: StateCreator<UiSlice, [], [], UiSlice> = (
   set,
   get
 ) => ({
-  sidebarOpen: false,
+  sidebarOpen: true,
   activeTab: 'suras',
   activePanel: null,
 

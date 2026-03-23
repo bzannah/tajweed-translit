@@ -138,6 +138,10 @@ for (let i = 0; i < juzData.length; i++) {
     addError('juz.json', `Juz ${i}: expected number ${expected}, got ${j.number}`);
   }
 
+  if (!j.name_english || typeof j.name_english !== 'string') {
+    addError('juz.json', `Juz ${j.number}: missing or invalid name_english`);
+  }
+
   if (!Number.isInteger(j.starting_page) || j.starting_page < 1 || j.starting_page > 1275) {
     addError('juz.json', `Juz ${j.number}: invalid starting_page ${j.starting_page}`);
   }

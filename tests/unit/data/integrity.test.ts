@@ -49,9 +49,9 @@ describe('surahs.json data integrity', () => {
     });
   });
 
-  it('should start with Al-Fatiha on page 1', () => {
+  it('should start with Al-Fatiha on page 5', () => {
     expect(surahs[0].name_english).toBe('Al-Fatiha');
-    expect(surahs[0].starting_page).toBe(1);
+    expect(surahs[0].starting_page).toBe(5);
   });
 
   it('should end with An-Nas', () => {
@@ -85,8 +85,8 @@ describe('juz.json data integrity', () => {
     });
   });
 
-  it('should start Juz 1 on page 1', () => {
-    expect(juz[0].starting_page).toBe(1);
+  it('should start Juz 1 on page 5', () => {
+    expect(juz[0].starting_page).toBe(5);
     expect(juz[0].starting_surah).toBe(1);
   });
 });

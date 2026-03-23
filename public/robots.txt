@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://qurantajweedtransliteration.com/sitemap.xml
+Disallow: /admin/
+Sitemap: https://tajweedtranslit.com/sitemap.xml

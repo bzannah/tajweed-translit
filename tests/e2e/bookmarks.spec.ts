@@ -14,7 +14,7 @@ test.describe('Bookmarks', () => {
     await bookmarkBtn.click();
 
     // Open sidebar and check bookmarks tab
-    await page.getByRole('button', { name: /menu/i }).click();
+    await page.getByRole('button', { name: /sidebar/i }).click();
     await page.getByRole('tab', { name: /bookmarks/i }).click();
 
     await expect(page.getByText(/page 42/i)).toBeVisible();
@@ -29,7 +29,7 @@ test.describe('Bookmarks', () => {
     await page.goto('/page/1');
 
     // Navigate via bookmark
-    await page.getByRole('button', { name: /menu/i }).click();
+    await page.getByRole('button', { name: /sidebar/i }).click();
     await page.getByRole('tab', { name: /bookmarks/i }).click();
     await page.getByText(/page 42/i).click();
 
@@ -45,7 +45,7 @@ test.describe('Bookmarks', () => {
     await page.getByRole('button', { name: /bookmark/i }).click();
 
     // Check bookmarks tab is empty
-    await page.getByRole('button', { name: /menu/i }).click();
+    await page.getByRole('button', { name: /sidebar/i }).click();
     await page.getByRole('tab', { name: /bookmarks/i }).click();
 
     await expect(page.getByText(/no bookmarks/i)).toBeVisible();

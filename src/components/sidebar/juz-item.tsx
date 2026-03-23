@@ -31,7 +31,10 @@ export function JuzItem({ juz, isActive, onClick }: JuzItemProps) {
       )}
     >
       <span className="w-8 text-right text-sm text-muted">{juz.number}</span>
-      <span className="flex-1 text-sm font-medium" dir="rtl">{juz.name_arabic}</span>
+      <span className="flex-1 text-sm">
+        <span className="font-medium">Juz {juz.number}</span>
+        <span className="text-muted"> — {juz.name_english}</span>
+      </span>
       <span className="text-xs text-muted">{juz.starting_page}</span>
     </button>
   );

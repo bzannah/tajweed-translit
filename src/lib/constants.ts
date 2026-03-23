@@ -37,6 +37,9 @@ export const BOTTOMBAR_HEIGHT = 64;
 /** Viewport width breakpoint for dual-page mode in pixels. */
 export const DUAL_BREAKPOINT = 1024;
 
+/** Default starting page (Al-Fatiha) for first-time users and invalid URL fallback. */
+export const DEFAULT_PAGE = 5;
+
 /** Default audio reciter identifier for Al Quran Cloud API. */
 export const DEFAULT_RECITER = 'ar.alafasy';
 

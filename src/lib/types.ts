@@ -24,6 +24,8 @@ export interface Juz {
   number: number;
   /** Arabic name of the juz */
   name_arabic: string;
+  /** English transliterated name of the juz */
+  name_english: string;
   /** Page number where this juz starts */
   starting_page: number;
   /** Surah number where this juz starts */
@@ -48,6 +50,8 @@ export interface PageContent {
   surah: number;
   /** Surah name (English) */
   surah_name: string;
+  /** Surah name (Arabic) */
+  surah_name_arabic?: string;
   /** First verse number on this page for this surah */
   start_verse: number;
   /** Last verse number on this page for this surah */

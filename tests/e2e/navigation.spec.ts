@@ -36,10 +36,10 @@ test.describe('Page Navigation', () => {
 
   test('should navigate to a surah from sidebar', async ({ page }) => {
     // Open sidebar
-    await page.getByRole('button', { name: /menu/i }).click();
-    // Click Al-Imran (starts on page 50)
+    await page.getByRole('button', { name: /sidebar/i }).click();
+    // Click Al-Imran (starts on page 103)
     await page.getByText('Al-Imran').click();
-    await expect(page).toHaveURL(/\/page\/50/);
+    await expect(page).toHaveURL(/\/page\/103/);
   });
 
   test('should handle direct URL navigation', async ({ page }) => {

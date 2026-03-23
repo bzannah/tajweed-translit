@@ -66,6 +66,21 @@ export function PageViewer() {
   const nextPage = getNextPage(currentPage, isDualMode);
   const prevPage = getPreviousPage(currentPage, isDualMode);
 
+  // Dynamically set --available-h based on actual container height,
+  // so images respond to layout changes (e.g. donation banner) responsively.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) return;
+      const contentH = entry.contentRect.height;
+      el.style.setProperty('--available-h', `${contentH - 28}px`);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   useSwipeNav(isDualMode, containerRef);
 
   /** Renders the page content (single or dual) for a given page number. */
@@ -140,21 +155,34 @@ export function PageViewer() {
         </div>
 
         {/* Surah label below the book */}
-        <span
+        <div
           key={currentPage}
-          className="page-number-fade font-brand text-accent"
-          style={{
-            fontSize: '13px',
-            fontWeight: 400,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            height: '28px',
-            lineHeight: '28px',
-            flexShrink: 0,
-          }}
+          className="page-number-fade flex flex-shrink-0 items-center gap-3"
+          style={{ height: '28px' }}
         >
-          {primarySurah.surah_name}
-        </span>
+          <div className="surah-label-line" />
+          <div className="flex items-center gap-2">
+            {primarySurah.surah_name_arabic && (
+              <span className="font-brand text-accent" style={{ fontSize: '15px' }}>
+                {primarySurah.surah_name_arabic}
+              </span>
+            )}
+            <span
+              className="text-accent"
+              style={{ fontSize: '10px', opacity: 0.4 }}
+              aria-hidden="true"
+            >
+              ◆
+            </span>
+            <span
+              className="text-secondary"
+              style={{ fontSize: '12px', letterSpacing: '0.1em', textTransform: 'uppercase' }}
+            >
+              {primarySurah.surah_name}
+            </span>
+          </div>
+          <div className="surah-label-line" />
+        </div>
       </div>
 
       {/* Nav: Previous (RIGHT — Mushaf convention) */}

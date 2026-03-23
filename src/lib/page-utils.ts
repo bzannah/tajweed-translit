@@ -1,4 +1,4 @@
-import { TOTAL_PAGES } from './constants';
+import { DEFAULT_PAGE, TOTAL_PAGES } from './constants';
 import type { Surah } from './types';
 
 /**
@@ -114,14 +114,15 @@ export function getJuzForPage(
 
 /**
  * Parses a page number from a URL parameter string.
- * Returns 1 if the parameter is invalid.
+ * Returns DEFAULT_PAGE (Al-Fatiha) for invalid or sub-1 inputs.
+ * Clamps to TOTAL_PAGES for over-range values.
  * @param param - The URL parameter string
  * @returns A valid page number
  */
 export function parsePageParam(param: string | undefined): number {
-  if (!param) return 1;
+  if (!param) return DEFAULT_PAGE;
   const parsed = parseInt(param, 10);
-  if (Number.isNaN(parsed)) return 1;
+  if (Number.isNaN(parsed) || parsed < 1) return DEFAULT_PAGE;
   return clampPage(parsed);
 }
 

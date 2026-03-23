@@ -53,7 +53,7 @@ test.describe('Responsive Layout', () => {
     await expect(sidebar).not.toBeVisible();
 
     // Open via hamburger
-    await page.getByRole('button', { name: /menu/i }).click();
+    await page.getByRole('button', { name: /sidebar/i }).click();
     await expect(sidebar).toBeVisible();
 
     // Close via X button
@@ -70,12 +70,14 @@ test.describe('Responsive Layout', () => {
     const page = await context.newPage();
     await page.goto('/page/1');
 
-    // Open sidebar
-    await page.getByRole('button', { name: /menu/i }).click();
+    // Sidebar should be visible by default on desktop (persistent, in-flow)
     const sidebar = page.locator('[data-testid="sidebar"]');
     await expect(sidebar).toBeVisible();
 
-    // Should remain visible (no overlay, persistent)
+    // Close and reopen — should remain persistent
+    await page.getByRole('button', { name: /sidebar/i }).click();
+    await expect(sidebar).not.toBeVisible();
+    await page.getByRole('button', { name: /sidebar/i }).click();
     await expect(sidebar).toBeVisible();
 
     await context.close();

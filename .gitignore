@@ -41,3 +41,5 @@ test-results/
 # Misc
 *.log
 npm-debug.log*
+.env.development
+.env.development

@@ -6,14 +6,14 @@ import { useAppStore } from '@/store/useAppStore';
 
 /**
  * Home page that redirects to the last read page.
- * Defaults to page 1 for first-time users.
+ * Defaults to page 5 (Al-Fatiha) for first-time users.
  */
 export default function HomePage() {
   const router = useRouter();
   const lastReadPage = useAppStore((s) => s.lastReadPage);
 
   useEffect(() => {
-    router.replace(`/page/${lastReadPage || 1}`);
+    router.replace(`/page/${lastReadPage || 5}`);
   }, [router, lastReadPage]);
 
   return (

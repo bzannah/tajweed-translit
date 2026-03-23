@@ -180,15 +180,25 @@ describe('parsePageParam', () => {
     expect(parsePageParam('1275')).toBe(1275);
   });
 
-  it('should clamp out-of-range values', () => {
-    expect(parsePageParam('0')).toBe(1);
+  it('should redirect sub-1 values to default page (Al-Fatiha)', () => {
+    expect(parsePageParam('0')).toBe(5);
+    expect(parsePageParam('-1')).toBe(5);
+    expect(parsePageParam('-100')).toBe(5);
+  });
+
+  it('should clamp over-range values to last page', () => {
     expect(parsePageParam('9999')).toBe(1275);
   });
 
-  it('should return 1 for invalid inputs', () => {
-    expect(parsePageParam('abc')).toBe(1);
-    expect(parsePageParam(undefined)).toBe(1);
-    expect(parsePageParam('')).toBe(1);
+  it('should return default page for invalid inputs', () => {
+    expect(parsePageParam('abc')).toBe(5);
+    expect(parsePageParam(undefined)).toBe(5);
+    expect(parsePageParam('')).toBe(5);
+  });
+
+  it('should floor float strings to integer', () => {
+    expect(parsePageParam('3.7')).toBe(3);
+    expect(parsePageParam('100.9')).toBe(100);
   });
 });
 

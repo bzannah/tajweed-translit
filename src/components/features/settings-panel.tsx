@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useAppStore } from '@/store/useAppStore';
 import { Modal } from '@/components/ui/modal';
 import { cn } from '@/lib/cn';
@@ -150,6 +151,24 @@ export function SettingsPanel() {
         <div className="border-t border-border pt-4">
           <p className="text-xs text-muted">Quran Tajweed Transliteration v1.0</p>
           <p className="text-xs text-muted">Quran transliteration reader with Tajweed colour coding</p>
+        </div>
+
+        {/* Support */}
+        <div className="border-t border-border pt-4">
+          <div className="sidebar-divider mb-3" />
+          <h3 className="text-[15px] font-semibold text-accent">
+            Support This Project
+          </h3>
+          <p className="mt-1 text-[13px] text-secondary">
+            Help us keep this free and build new features.
+          </p>
+          <Link
+            href="/donate"
+            onClick={() => setActivePanel(null)}
+            className="mt-2 inline-block text-sm font-medium text-accent transition-colors hover:underline"
+          >
+            Donate →
+          </Link>
         </div>
       </div>
     </Modal>

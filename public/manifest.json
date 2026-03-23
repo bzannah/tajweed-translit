@@ -2,10 +2,10 @@
   "name": "Quran Tajweed Transliteration",
   "short_name": "Quran Tajweed",
   "description": "Quran transliteration reader with Tajweed colour coding",
-  "start_url": "/",
+  "start_url": "/page/5",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#d4a853",
+  "background_color": "#1a1614",
+  "theme_color": "#1a1614",
   "orientation": "any",
   "icons": [
     {

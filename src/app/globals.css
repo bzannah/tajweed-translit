@@ -189,6 +189,55 @@ body {
   animation: fade-out 200ms ease-in forwards;
 }
 
+/* ─── Surah Label Ornamental Lines ─────────────────────── */
+.surah-label-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(212,168,83,0.5) 50%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .surah-label-line {
+    width: 100px;
+  }
+}
+
+/* ─── Donation Banner Animation ────────────────────────── */
+@keyframes banner-slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes banner-slide-up {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.banner-enter {
+  animation: banner-slide-down 250ms ease-out forwards;
+}
+
+.banner-exit {
+  animation: banner-slide-up 250ms ease-in forwards;
+}
+
 /* ─── Reading Surface ──────────────────────────────────── */
 .reading-surface {
   background-color: var(--color-reading-surface);

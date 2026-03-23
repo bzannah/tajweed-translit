@@ -5,14 +5,16 @@ import Link from 'next/link';
  */
 export default function NotFound() {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-4 p-8 text-center">
-      <h1 className="text-4xl font-light text-muted">404</h1>
-      <p className="text-sm text-secondary">Page not found</p>
+    <div className="flex flex-1 flex-col items-center justify-center gap-6 p-8 text-center">
+      <h1 className="font-brand text-2xl text-accent">Page Not Found</h1>
+      <p className="text-sm text-secondary">
+        The page you&apos;re looking for doesn&apos;t exist.
+      </p>
       <Link
-        href="/page/1"
-        className="rounded-lg bg-accent px-6 py-2 text-sm font-medium text-bg hover:opacity-90 transition-opacity"
+        href="/page/5"
+        className="text-accent hover:underline text-sm"
       >
-        Go to Page 1
+        Go to Al-Fatiha &rarr;
       </Link>
     </div>
   );
