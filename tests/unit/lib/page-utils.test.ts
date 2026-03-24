@@ -206,13 +206,13 @@ describe('parsePageParam', () => {
 
 describe('getPageImagePath', () => {
   it('should return correct path for valid pages', () => {
-    expect(getPageImagePath(1)).toBe('/pages/1.webp');
-    expect(getPageImagePath(42)).toBe('/pages/42.webp');
-    expect(getPageImagePath(1275)).toBe('/pages/1275.webp');
+    expect(getPageImagePath(1)).toBe('/pages-reinked/1.webp');
+    expect(getPageImagePath(42)).toBe('/pages-reinked/42.webp');
+    expect(getPageImagePath(1275)).toBe('/pages-reinked/1275.webp');
   });
 
   it('should clamp invalid page numbers', () => {
-    expect(getPageImagePath(0)).toBe('/pages/1.webp');
-    expect(getPageImagePath(9999)).toBe('/pages/1275.webp');
+    expect(getPageImagePath(0)).toBe('/pages-reinked/1.webp');
+    expect(getPageImagePath(9999)).toBe('/pages-reinked/1275.webp');
   });
 });

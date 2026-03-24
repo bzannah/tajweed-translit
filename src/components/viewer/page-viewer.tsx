@@ -226,7 +226,6 @@ export function PageViewer() {
       </button>
 
       {/* Hidden prefetch images — forces browser to cache adjacent pages */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <div aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', pointerEvents: 'none' }}>
         {prefetchPages.map((p) => (
           // eslint-disable-next-line @next/next/no-img-element

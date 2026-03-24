@@ -128,9 +128,10 @@ export function parsePageParam(param: string | undefined): number {
 
 /**
  * Returns the path to a page image file.
+ * Uses re-inked pages for improved tajweed colour readability.
  * @param page - The page number
- * @returns Path string like "/pages/42.webp"
+ * @returns Path string like "/pages-reinked/42.webp"
  */
 export function getPageImagePath(page: number): string {
-  return `/pages/${clampPage(page)}.webp`;
+  return `/pages-reinked/${clampPage(page)}.webp`;
 }
