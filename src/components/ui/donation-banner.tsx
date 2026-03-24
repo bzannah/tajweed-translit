@@ -47,7 +47,7 @@ export function DonationBanner() {
 
   return (
     <div
-      className={`flex items-center justify-center gap-3 border-b px-4 py-2 ${exiting ? 'banner-exit' : 'banner-enter'}`}
+      className={`donation-banner flex items-center justify-center gap-3 border-b px-4 py-2 ${exiting ? 'banner-exit' : 'banner-enter'}`}
       style={{
         background: 'rgba(212,168,83,0.1)',
         backdropFilter: 'blur(8px)',

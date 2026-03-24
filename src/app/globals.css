@@ -398,8 +398,8 @@ body {
 /* Mobile (< 768px) — immersive reading mode */
 @media (max-width: 767px) {
   :root {
-    --pad-x: 4px;
-    --pad-y: 4px;
+    --pad-x: 2px;
+    --pad-y: 0px;
     --book-chrome: 0px;
     --topbar-h: 40px;
     --bottombar-h: 0px; /* bottom bar is fixed overlay, not in layout flow */
@@ -434,6 +434,18 @@ body {
   }
   .action-btn-label {
     display: none;
+  }
+
+  /* Main content: flush to top, minimal side padding */
+  .main-content {
+    align-items: flex-start;
+    padding: 0 2px;
+  }
+
+  /* Donation banner: compact on mobile */
+  .donation-banner {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   /* Nav buttons: hidden on mobile (swipe to navigate) */
