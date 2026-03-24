@@ -19,8 +19,7 @@ public/thumbnails/
 # Placeholder SVGs for dev (keep WebP images tracked)
 public/pages/*.svg
 
-# Re-inked pages (generated from originals — too large for git)
-public/pages-reinked/
+# Re-inked pages are tracked (needed for Vercel static deployment)
 
 # Environment
 .env
