@@ -70,8 +70,8 @@ export function TopBar() {
         className={sidebarOpen ? 'lg:invisible' : ''}
       />
 
-      {/* Center: title + page number */}
-      <div className="flex items-center gap-2">
+      {/* Center: title + page number — hidden on mobile for max reading space */}
+      <div className="hidden md:flex items-center gap-2">
         <h1 className="font-brand text-accent font-bold" style={{ letterSpacing: '0.02em' }}>
           <span className="hidden md:inline" style={{ fontSize: '20px' }}>Quran Tajweed Transliteration</span>
           <span className="md:hidden" style={{ fontSize: '16px' }}>Quran Tajweed</span>

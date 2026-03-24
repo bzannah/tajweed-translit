@@ -395,23 +395,96 @@ body {
 
 /* ─── Responsive Overrides ─────────────────────────────── */
 
-/* Mobile (< 768px) — tighter padding, simpler shadows */
+/* Mobile (< 768px) — immersive reading mode */
 @media (max-width: 767px) {
   :root {
-    --pad-x: 8px;
+    --pad-x: 4px;
     --pad-y: 4px;
-    --book-chrome: 16px;
+    --book-chrome: 0px;
+    --topbar-h: 40px;
+    --bottombar-h: 0px; /* bottom bar is fixed overlay, not in layout flow */
+    --label-h: 0px; /* label overlays the book */
+    --gutter-w: 0px;
+    --spacing-topbar: 40px;
+    --spacing-bottombar: 52px;
+    --height-topbar: 40px;
+    --height-bottombar: 52px;
   }
 
+  /* Top bar: compact, semi-transparent */
+  [data-testid="top-bar"] {
+    background: rgba(26, 22, 20, 0.9) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: opacity 300ms ease;
+  }
+  .light [data-testid="top-bar"] {
+    background: rgba(250, 246, 238, 0.92) !important;
+  }
+
+  /* Bottom bar: fixed overlay, compact, icon-only */
+  [data-testid="bottom-bar"] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    transition: transform 300ms ease;
+    max-width: none !important;
+  }
+  .action-btn-label {
+    display: none;
+  }
+
+  /* Nav buttons: hidden on mobile (swipe to navigate) */
+  .nav-float {
+    display: none !important;
+  }
+
+  /* Book container: edge-to-edge, no chrome */
   .book-container {
-    box-shadow:
-      3px 5px 12px var(--color-book-shadow),
-      1px 2px 4px rgba(0,0,0,0.2);
-    border-radius: 2px 4px 4px 2px;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
   }
 
   .page-surface::after {
     display: none;
+  }
+  .page-surface img {
+    border: none !important;
+  }
+
+  /* Surah label: overlay at bottom of book */
+  .book-label-wrapper {
+    position: relative;
+  }
+  .surah-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto !important;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(26, 22, 20, 0.7) 0%, transparent 100%);
+    padding: 16px 8px 6px;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .light .surah-label {
+    background: linear-gradient(to top, rgba(245, 240, 232, 0.7) 0%, transparent 100%);
+  }
+  .surah-label .surah-label-line {
+    display: none;
+  }
+
+  /* Auto-hide system: bottom bar slides off, top bar dims */
+  .mobile-tb-hidden [data-testid="bottom-bar"] {
+    transform: translateY(100%);
+  }
+  .mobile-tb-hidden [data-testid="top-bar"] {
+    opacity: 0.3;
   }
 }
 
@@ -523,7 +596,7 @@ body {
   }
   .page-exit-forward,
   .page-exit-backward {
-    animation-duration: 600ms;
+    animation-duration: 400ms;
   }
   .page-exit-forward { transform-origin: center; }
   .page-exit-backward { transform-origin: center; }
@@ -655,13 +728,7 @@ body {
   background: rgba(0,0,0,0.2);
 }
 
-/* Mobile: slightly smaller */
-@media (max-width: 767px) {
-  .nav-float {
-    width: 36px;
-    height: 36px;
-  }
-}
+/* Mobile nav buttons handled in main mobile block above (display: none) */
 
 /* ─── Bookmark Particle Burst ─────────────────────────────── */
 @keyframes burst-particle {

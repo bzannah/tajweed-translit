@@ -1,17 +1,15 @@
 'use client';
 
 import { useAppStore } from '@/store/useAppStore';
-import { usePageContext } from '@/hooks/use-page-context';
+import { ComingSoonContent } from './coming-soon-content';
 
 /**
  * Slide-up panel for translation content.
- * For v1, shows a placeholder message directing users to the page content.
+ * Currently displays a coming-soon placeholder while Ayah-level data is mapped.
  */
 export function TranslationPanel() {
   const activePanel = useAppStore((s) => s.activePanel);
   const setActivePanel = useAppStore((s) => s.setActivePanel);
-  const currentPage = useAppStore((s) => s.currentPage);
-  const { primarySurah } = usePageContext(currentPage);
 
   if (activePanel !== 'translation') return null;
 
@@ -33,9 +31,7 @@ export function TranslationPanel() {
       >
         {/* Header */}
         <div className="sticky top-0 flex items-center justify-between border-b border-border bg-surface p-4">
-          <h2 className="text-lg font-semibold text-primary">
-            Translation — {primarySurah.surah_name}
-          </h2>
+          <h2 className="text-lg font-semibold text-primary">Translation</h2>
           <button
             type="button"
             onClick={() => setActivePanel(null)}
@@ -48,13 +44,7 @@ export function TranslationPanel() {
           </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 text-center">
-          <p className="text-sm text-secondary">
-            Translation is displayed alongside the Arabic text on each page.
-            A dedicated text-only translation view is coming in a future update.
-          </p>
-        </div>
+        <ComingSoonContent />
       </div>
     </>
   );

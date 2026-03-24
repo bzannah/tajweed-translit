@@ -30,7 +30,7 @@ function ActionButton({ icon, label, panel }: ActionButtonProps) {
     >
       {icon}
       <span
-        className={cn('uppercase', isActive ? 'text-accent' : 'text-muted')}
+        className={cn('action-btn-label uppercase', isActive ? 'text-accent' : 'text-muted')}
         style={{ fontSize: '11px', letterSpacing: '0.04em' }}
       >
         {label}

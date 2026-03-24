@@ -18,6 +18,10 @@ export interface UiSlice {
   setActivePanel: (panel: FeaturePanel) => void;
   /** Toggle a feature panel — opens if closed, closes if already open. */
   togglePanel: (panel: FeaturePanel) => void;
+  /** Whether mobile toolbars are visible (auto-hides after timeout) */
+  mobileToolbarsVisible: boolean;
+  /** Set mobile toolbar visibility */
+  setMobileToolbarsVisible: (visible: boolean) => void;
 }
 
 export const createUiSlice: StateCreator<UiSlice, [], [], UiSlice> = (
@@ -40,4 +44,7 @@ export const createUiSlice: StateCreator<UiSlice, [], [], UiSlice> = (
     const current = get().activePanel;
     set({ activePanel: current === panel ? null : panel });
   },
+
+  mobileToolbarsVisible: true,
+  setMobileToolbarsVisible: (visible) => set({ mobileToolbarsVisible: visible }),
 });

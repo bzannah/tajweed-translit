@@ -2,8 +2,8 @@ import { useEffect, useRef, useCallback } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { getNextPage, getPreviousPage } from '@/lib/page-utils';
 
-const SWIPE_THRESHOLD = 50; // Minimum swipe distance in pixels
-const SWIPE_MAX_Y = 100; // Maximum vertical deviation
+const SWIPE_THRESHOLD = 30; // Minimum swipe distance in pixels (lower = snappier response)
+const SWIPE_MAX_Y = 80; // Maximum vertical deviation
 
 /**
  * Handles touch swipe gestures for page navigation on mobile.

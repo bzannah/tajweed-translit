@@ -1,11 +1,11 @@
 'use client';
 
 import { useAppStore } from '@/store/useAppStore';
-import { tajweedRules } from '@/data/tajweed-rules';
+import { ComingSoonContent } from './coming-soon-content';
 
 /**
- * Slide-up panel displaying all Tajweed colour-coding rules.
- * Each rule shows a colour swatch, name, duration, and description.
+ * Slide-up panel for Tajweed colour-coding rules.
+ * Currently displays a coming-soon placeholder while Ayah-level data is mapped.
  */
 export function ExplanationPanel() {
   const activePanel = useAppStore((s) => s.activePanel);
@@ -44,30 +44,7 @@ export function ExplanationPanel() {
           </button>
         </div>
 
-        {/* Rules list */}
-        <div className="p-4 space-y-3">
-          {tajweedRules.map((rule) => (
-            <div key={rule.id} className="flex items-start gap-3">
-              {/* Colour swatch */}
-              <span
-                className="mt-0.5 h-8 w-8 shrink-0 rounded-full border border-border"
-                style={{ backgroundColor: rule.colour }}
-                aria-hidden="true"
-              />
-
-              {/* Text */}
-              <div className="flex-1">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-sm font-medium text-primary">{rule.name}</span>
-                  {rule.duration && (
-                    <span className="text-xs text-accent">{rule.duration}</span>
-                  )}
-                </div>
-                <p className="mt-0.5 text-sm text-secondary">{rule.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ComingSoonContent />
       </div>
     </>
   );

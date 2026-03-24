@@ -1,10 +1,12 @@
 'use client';
 
-import { useLayoutEffect, useRef, type ReactNode } from 'react';
+import { useLayoutEffect, useEffect, useRef, type ReactNode } from 'react';
 import { useResponsiveMode } from '@/hooks/use-responsive-mode';
 import { useKeyboardNav } from '@/hooks/use-keyboard-nav';
+import { useMobileToolbar } from '@/hooks/use-mobile-toolbar';
 import { useAppStore } from '@/store/useAppStore';
 import { DUAL_BREAKPOINT } from '@/lib/constants';
+import { cn } from '@/lib/cn';
 import { TopBar } from './top-bar';
 import { Sidebar } from './sidebar';
 import { BottomBar } from './bottom-bar';
@@ -31,6 +33,7 @@ export interface AppShellProps {
 export function AppShell({ children }: AppShellProps) {
   const isDualMode = useResponsiveMode();
   const sidebarOpen = useAppStore((s) => s.sidebarOpen);
+  const mobileToolbarsVisible = useMobileToolbar();
   useKeyboardNav(isDualMode);
 
   // Close sidebar on mobile at first mount — it defaults to open (correct for desktop).
@@ -45,8 +48,17 @@ export function AppShell({ children }: AppShellProps) {
     }
   }, []);
 
+  // Register service worker for page image caching
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // SW registration failed — not critical, app works without it
+      });
+    }
+  }, []);
+
   return (
-    <div className="flex h-dvh bg-bg" data-testid="app-shell">
+    <div className={cn("flex h-dvh bg-bg", !mobileToolbarsVisible && "mobile-tb-hidden")} data-testid="app-shell">
       {/* Sidebar — in-flow on desktop, overlay on mobile */}
       <Sidebar />
 

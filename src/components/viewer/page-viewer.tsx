@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useResponsiveMode } from '@/hooks/use-responsive-mode';
 import { useSwipeNav } from '@/hooks/use-swipe-nav';
 import { usePageContext } from '@/hooks/use-page-context';
-import { getNextPage, getPreviousPage } from '@/lib/page-utils';
+import { getNextPage, getPreviousPage, getPageImagePath } from '@/lib/page-utils';
+import { TOTAL_PAGES } from '@/lib/constants';
 import { PageImage } from './page-image';
 import { DualPageSpread } from './dual-page-spread';
 
@@ -62,9 +63,19 @@ export function PageViewer() {
     }
   }, []);
 
+  const mobileToolbarsVisible = useAppStore((s) => s.mobileToolbarsVisible);
+  const setMobileToolbarsVisible = useAppStore((s) => s.setMobileToolbarsVisible);
+
   const { primarySurah } = usePageContext(currentPage);
   const nextPage = getNextPage(currentPage, isDualMode);
   const prevPage = getPreviousPage(currentPage, isDualMode);
+
+  /** Toggle mobile toolbar visibility on tap (mobile only). */
+  const handleContentTap = useCallback((e: React.MouseEvent) => {
+    if (typeof window === 'undefined' || window.innerWidth >= 768) return;
+    if ((e.target as HTMLElement).closest('button, a, input, textarea')) return;
+    setMobileToolbarsVisible(!mobileToolbarsVisible);
+  }, [mobileToolbarsVisible, setMobileToolbarsVisible]);
 
   // Dynamically set --available-h based on actual container height,
   // so images respond to layout changes (e.g. donation banner) responsively.
@@ -75,13 +86,28 @@ export function PageViewer() {
       const entry = entries[0];
       if (!entry) return;
       const contentH = entry.contentRect.height;
-      el.style.setProperty('--available-h', `${contentH - 28}px`);
+      const labelH = window.innerWidth < 768 ? 0 : 28;
+      el.style.setProperty('--available-h', `${contentH - labelH}px`);
     });
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   useSwipeNav(isDualMode, containerRef);
+
+  // Prefetch adjacent page images so they're cached before the user swipes.
+  // 3 pages ahead + 1 behind covers both forward reading and quick back-glances.
+  const prefetchPages = useMemo(() => {
+    const pages: number[] = [];
+    const step = isDualMode ? 2 : 1;
+    for (let i = 1; i <= 3; i++) {
+      const next = currentPage + i * step;
+      if (next <= TOTAL_PAGES) pages.push(next);
+    }
+    const prev = currentPage - step;
+    if (prev >= 1) pages.push(prev);
+    return pages;
+  }, [currentPage, isDualMode]);
 
   /** Renders the page content (single or dual) for a given page number. */
   const renderPageContent = (page: number) =>
@@ -115,7 +141,7 @@ export function PageViewer() {
       </button>
 
       {/* Book + surah label */}
-      <div className="flex flex-1 flex-col items-center min-w-0 overflow-hidden">
+      <div className="book-label-wrapper flex flex-1 flex-col items-center min-w-0 overflow-hidden" onClick={handleContentTap}>
         <div ref={bookRef} className="book-container book-entrance" style={{ position: 'relative', overflow: 'hidden' }}>
           <div
             style={{
@@ -154,10 +180,10 @@ export function PageViewer() {
           </div>
         </div>
 
-        {/* Surah label below the book */}
+        {/* Surah label — separate row on desktop, overlay on mobile */}
         <div
           key={currentPage}
-          className="page-number-fade flex flex-shrink-0 items-center gap-3"
+          className="surah-label page-number-fade flex flex-shrink-0 items-center gap-3"
           style={{ height: '28px' }}
         >
           <div className="surah-label-line" />
@@ -198,6 +224,15 @@ export function PageViewer() {
           <path d="M9 18l6-6-6-6" />
         </svg>
       </button>
+
+      {/* Hidden prefetch images — forces browser to cache adjacent pages */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <div aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+        {prefetchPages.map((p) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={`prefetch-${p}`} src={getPageImagePath(p)} alt="" loading="eager" />
+        ))}
+      </div>
     </div>
   );
 }
