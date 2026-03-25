@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { surahs } from '@/data/surahs';
-import { isIntroPage } from '@/data/intro-pages';
 import { getSurahForPage } from '@/lib/page-utils';
 import { SurahItem } from './surah-item';
 
@@ -38,28 +37,6 @@ export function SurahList() {
 
   return (
     <div ref={listRef} className="flex-1 overflow-y-auto scrollbar-thin scroll-fade" data-testid="surah-list">
-      {/* Tajweed Guide entry — navigates to intro pages */}
-      <button
-        type="button"
-        className={`flex w-full items-center gap-3 px-4 py-2.5 text-left transition-colors duration-150 ${
-          isIntroPage(currentPage)
-            ? 'bg-surface-active text-accent'
-            : 'text-secondary hover:bg-surface-hover'
-        }`}
-        onClick={() => handleClick(1)}
-        aria-current={isIntroPage(currentPage) ? 'page' : undefined}
-      >
-        <span className="flex h-5 w-8 items-center justify-center text-muted">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 16v-4M12 8h.01" />
-          </svg>
-        </span>
-        <span className="flex-1 text-sm italic">Tajweed Guide</span>
-        <span className="text-xs text-muted">1</span>
-      </button>
-      <div className="mx-3 border-b border-border" />
-
       {surahs.map((surah) => {
         const isActive = surah.number === activeSurah.number;
         return (

@@ -16,8 +16,8 @@ export const createNavigationSlice: StateCreator<
   [],
   NavigationSlice
 > = (set) => ({
-  currentPage: 1,
-  lastReadPage: 1,
+  currentPage: 5,
+  lastReadPage: 5,
   setCurrentPage: (page) => {
     const clamped = clampPage(page);
     set({ currentPage: clamped, lastReadPage: clamped });
