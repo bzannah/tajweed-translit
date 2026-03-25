@@ -398,13 +398,14 @@ body {
 /* Mobile (< 768px) — immersive reading mode */
 @media (max-width: 767px) {
   :root {
-    --pad-x: 2px;
+    --pad-x: 0px;
     --pad-y: 0px;
     --book-chrome: 0px;
     --topbar-h: 40px;
     --bottombar-h: 0px; /* bottom bar is fixed overlay, not in layout flow */
     --label-h: 0px; /* label overlays the book */
     --gutter-w: 0px;
+    --zoom-gutter: 0px;
     --spacing-topbar: 40px;
     --spacing-bottombar: 52px;
     --height-topbar: 40px;
@@ -436,10 +437,13 @@ body {
     display: none;
   }
 
-  /* Main content: flush to top, minimal side padding */
+  /* Main content: zero padding, centred, flush to top */
   .main-content {
     align-items: flex-start;
-    padding: 0 2px;
+    justify-content: center;
+    padding: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   /* Donation banner: compact on mobile */
@@ -453,22 +457,44 @@ body {
     display: none !important;
   }
 
-  /* Book container: edge-to-edge, no chrome */
+  /* Book container: edge-to-edge, centred, no chrome */
   .book-container {
     box-shadow: none;
     border: none;
     border-radius: 0;
     background: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  /* Page image: perfectly centred */
+  .single-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .page-surface {
+    display: flex;
+    justify-content: center;
+  }
+  .page-surface img,
+  .single-page img {
+    border: none !important;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   .page-surface::after {
     display: none;
   }
-  .page-surface img {
-    border: none !important;
-  }
 
-  /* Surah label: overlay at bottom of book */
+  /* Surah label: overlay at bottom of book, contained within image width */
   .book-label-wrapper {
     position: relative;
   }
@@ -483,12 +509,21 @@ body {
     padding: 16px 8px 6px;
     z-index: 3;
     pointer-events: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .light .surah-label {
     background: linear-gradient(to top, rgba(245, 240, 232, 0.7) 0%, transparent 100%);
   }
   .surah-label .surah-label-line {
     display: none;
+  }
+
+  /* Page exit animation: contained within book, no layout impact */
+  .page-exit-forward,
+  .page-exit-backward {
+    overflow: hidden;
   }
 
   /* Auto-hide system: bottom bar slides off, top bar dims */
