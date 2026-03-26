@@ -4,7 +4,7 @@ import Link from 'next/link';
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface Props {
-  params: Promise<{ number: string; slug: string }>;
+  params: Promise<{ number: string; slug: string };
 }
 
 // ── Static Params ─────────────────────────────────────────────────────────────
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 
 // ── Metadata ─────────────────────────────────────────────────────────────────
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { number: num } = await params;
+export async function generateMetadata({ params }: Props): Promise<Metadata {
+  const { number: _numIgnored } = await params;
   return {
     title: "Surah Al-Insan (الإنسان) — The Human | TajweedTranslit",
     description: "Read Surah Al-Insan (The Human) — 31 verses, Medinan revelation. English transliteration with expert Tajweed colour coding. Free online reader.",
@@ -45,159 +45,159 @@ export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground"
 
       {/* Breadcrumb */}
-      <nav className="border-b border-border px-4 py-3 text-sm" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-muted">
-          <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-          <li>/</li>
-          <li><Link href="/surahs" className="hover:text-accent transition-colors">Surahs</Link></li>
-          <li>/</li>
-          <li className="text-foreground" aria-current="page">Surah Al-Insan</li>
-        </ol>
-      </nav>
+      <nav className="border-b border-border px-4 py-3 text-sm" aria-label="Breadcrumb"
+        <ol className="flex items-center gap-2 text-muted"
+          <li<Link href="/" className="hover:text-accent transition-colors"Home</Link</li
+          <li/</li
+          <li<Link href="/surahs" className="hover:text-accent transition-colors"Surahs</Link</li
+          <li/</li
+          <li className="text-foreground" aria-current="page"Surah Al-Insan</li
+        </ol
+      </nav
 
       {/* Hero */}
-      <header className="px-4 py-12 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3">
+      <header className="px-4 py-12 text-center"
+        <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3"
           Surah 76th of 114
-        </p>
-        <h1 className="font-brand text-4xl text-accent mb-2">الإنسان</h1>
-        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-Insan</h2>
-        <p className="text-lg text-secondary italic mb-4">The Human</p>
-        <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted">
-          <span>🏙️ Medinan Revelation</span>
-          <span>•</span>
-          <span>31 verses</span>
-          <span>•</span>
-          <span>Page 1159</span>
-        </div>
+        </p
+        <h1 className="font-brand text-4xl text-accent mb-2"الإنسان</h1
+        <h2 className="font-brand text-2xl text-foreground mb-1"Surah Al-Insan</h2
+        <p className="text-lg text-secondary italic mb-4"The Human</p
+        <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted"
+          <span🏙️ Medinan Revelation</span
+          <span•</span
+          <span31 verses</span
+          <span•</span
+          <spanPage 1159</span
+        </div
 
-        <div className="mt-8">
+        <div className="mt-8"
           <Link
             href="/page/1159"
             className="inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-3 font-semibold text-[#1a1614] transition-all hover:brightness-110"
-          >
+          
             Read Surah Al-Insan with Tajweed →
-          </Link>
-          <p className="mt-2 text-xs text-muted">
+          </Link
+          <p className="mt-2 text-xs text-muted"
             Colour-coded transliteration · Page 1159
-          </p>
-        </div>
-      </header>
+          </p
+        </div
+      </header
 
-      <div className="mx-auto max-w-4xl px-4 pb-16 space-y-12">
+      <div className="mx-auto max-w-4xl px-4 pb-16 space-y-12"
 
         {/* About */}
-        <section>
-          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Insan</h3>
-          <p className="text-secondary leading-relaxed">Describes the believers in Paradise and the People of the Ditch.</p>
-        </section>
+        <section
+          <h3 className="font-brand text-xl text-accent mb-4"About Surah Al-Insan</h3
+          <p className="text-secondary leading-relaxed"Describes the believers in Paradise and the People of the Ditch.</p
+        </section
 
         {/* Significance */}
-        <section className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Insan is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the verse about the people of the ditch who burned others in fire.</p>
-        </section>
+        <section className="rounded-xl border border-border bg-surface p-6"
+          <h3 className="font-brand text-lg text-accent mb-3"Why Surah Al-Insan is Special</h3
+          <p className="text-secondary leading-relaxed"Contains the verse about the people of the ditch who burned others in fire.</p
+        </section
 
         {/* Quick Facts */}
-        <section>
-          <h3 className="font-brand text-xl text-accent mb-4">Quick Facts</h3>
-          <dl className="grid grid-cols-2 gap-4 text-sm">
-            <div className="rounded-lg border border-border bg-surface p-4">
-              <dt className="text-muted text-xs uppercase tracking-wide">Surah Number</dt>
-              <dd className="mt-1 text-lg font-semibold text-foreground">76</dd>
-            </div>
-            <div className="rounded-lg border border-border bg-surface p-4">
-              <dt className="text-muted text-xs uppercase tracking-wide">Verses</dt>
-              <dd className="mt-1 text-lg font-semibold text-foreground">31</dd>
-            </div>
-            <div className="rounded-lg border border-border bg-surface p-4">
-              <dt className="text-muted text-xs uppercase tracking-wide">Revelation</dt>
-              <dd className="mt-1 text-lg font-semibold text-foreground">Medinan</dd>
-            </div>
-            <div className="rounded-lg border border-border bg-surface p-4">
-              <dt className="text-muted text-xs uppercase tracking-wide">Meaning</dt>
-              <dd className="mt-1 text-lg font-semibold text-foreground italic">The Human</dd>
-            </div>
-            <div className="rounded-lg border border-border bg-surface p-4 col-span-2">
-              <dt className="text-muted text-xs uppercase tracking-wide">Reading Page</dt>
-              <dd className="mt-1 text-lg font-semibold text-foreground">
-                <Link href="/page/1159" className="text-accent hover:underline">
+        <section
+          <h3 className="font-brand text-xl text-accent mb-4"Quick Facts</h3
+          <dl className="grid grid-cols-2 gap-4 text-sm"
+            <div className="rounded-lg border border-border bg-surface p-4"
+              <dt className="text-muted text-xs uppercase tracking-wide"Surah Number</dt
+              <dd className="mt-1 text-lg font-semibold text-foreground"76</dd
+            </div
+            <div className="rounded-lg border border-border bg-surface p-4"
+              <dt className="text-muted text-xs uppercase tracking-wide"Verses</dt
+              <dd className="mt-1 text-lg font-semibold text-foreground"31</dd
+            </div
+            <div className="rounded-lg border border-border bg-surface p-4"
+              <dt className="text-muted text-xs uppercase tracking-wide"Revelation</dt
+              <dd className="mt-1 text-lg font-semibold text-foreground"Medinan</dd
+            </div
+            <div className="rounded-lg border border-border bg-surface p-4"
+              <dt className="text-muted text-xs uppercase tracking-wide"Meaning</dt
+              <dd className="mt-1 text-lg font-semibold text-foreground italic"The Human</dd
+            </div
+            <div className="rounded-lg border border-border bg-surface p-4 col-span-2"
+              <dt className="text-muted text-xs uppercase tracking-wide"Reading Page</dt
+              <dd className="mt-1 text-lg font-semibold text-foreground"
+                <Link href="/page/1159" className="text-accent hover:underline"
                   Page 1159 →
-                </Link>
-              </dd>
-            </div>
-          </dl>
-        </section>
+                </Link
+              </dd
+            </div
+          </dl
+        </section
 
         {/* Tajweed Legend */}
-        <section>
-          <h3 className="font-brand text-xl text-accent mb-4">Tajweed Colour Coding</h3>
-          <p className="text-sm text-secondary mb-4">
+        <section
+          <h3 className="font-brand text-xl text-accent mb-4"Tajweed Colour Coding</h3
+          <p className="text-sm text-secondary mb-4"
             When reading Surah Al-Insan at TajweedTranslit.com, these Tajweed rules are colour-coded:
-          </p>
-          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
-          <span class="text-sm">Necessary Prolongation</span>
-          <span class="text-xs text-muted">(المد اللازم)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
-          <span class="text-sm">Obligatory Prolongation</span>
-          <span class="text-xs text-muted">(المد الواجب المتصل)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
-          <span class="text-sm">Permissible Prolongation</span>
-          <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
-          <span class="text-sm">Nasalisation (Ghunnah)</span>
-          <span class="text-xs text-muted">(الغنة)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
-          <span class="text-sm">Emphatic Pronunciation</span>
-          <span class="text-xs text-muted">(التفخيم)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
-          <span class="text-sm">Silent Letters</span>
-          <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
-          <span class="text-sm">Echoing Sound (Qalqalah)</span>
-          <span class="text-xs text-muted">(القلقلة)</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
-          <span class="text-sm">Normal Prolongation</span>
-          <span class="text-xs text-muted">(المد الطبيعي)</span>
-        </li>
-          </ul>
-          <p className="mt-4 text-xs text-muted">
+          </p
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2"
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"</span
+          <span class="text-sm"Necessary Prolongation</span
+          <span class="text-xs text-muted"(المد اللازم)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"</span
+          <span class="text-sm"Obligatory Prolongation</span
+          <span class="text-xs text-muted"(المد الواجب المتصل)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"</span
+          <span class="text-sm"Permissible Prolongation</span
+          <span class="text-xs text-muted"(المد الجائز المنفصل)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"</span
+          <span class="text-sm"Nasalisation (Ghunnah)</span
+          <span class="text-xs text-muted"(الغنة)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"</span
+          <span class="text-sm"Emphatic Pronunciation</span
+          <span class="text-xs text-muted"(التفخيم)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"</span
+          <span class="text-sm"Silent Letters</span
+          <span class="text-xs text-muted"(الحروف غير الملفوظة)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"</span
+          <span class="text-sm"Echoing Sound (Qalqalah)</span
+          <span class="text-xs text-muted"(القلقلة)</span
+        </li
+        <li class="flex items-center gap-2"
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"</span
+          <span class="text-sm"Normal Prolongation</span
+          <span class="text-xs text-muted"(المد الطبيعي)</span
+        </li
+          </ul
+          <p className="mt-4 text-xs text-muted"
             Tap any highlighted word in the reader to see a detailed explanation of the rule.
-          </p>
-        </section>
+          </p
+        </section
 
         {/* Navigation */}
-        <section className="grid grid-cols-2 gap-4">
-          <Link href="/surah/75/al-qiyama" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
-            <span className="text-xs text-muted">← Previous</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Qiyama</p>
-          </Link>
-          <Link href="/surah/77/al-mursalat" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
-            <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Mursalat</p>
-          </Link>
-        </section>
+        <section className="grid grid-cols-2 gap-4"
+          <Link href="/surah/75/al-qiyama" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors"
+            <span className="text-xs text-muted"← Previous</span
+            <p className="mt-1 font-semibold text-foreground"Surah Al-Qiyama</p
+          </Link
+          <Link href="/surah/77/al-mursalat" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors"
+            <span className="text-xs text-muted"Next →</span
+            <p className="mt-1 font-semibold text-foreground"Surah Al-Mursalat</p
+          </Link
+        </section
 
-      </div>
-    </div>
+      </div
+    </div
   );
 }
