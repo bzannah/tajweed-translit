@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -55,7 +54,7 @@ export default async function SurahPage({ params }: Props) {
           <li>/</li>
           <li><Link href="/surahs" className="hover:text-accent transition-colors">Surahs</Link></li>
           <li>/</li>
-          <li className="text-foreground" aria-current="page">Surah Al-Ma'ida</li>
+          <li className="text-foreground" aria-current="page">Surah Al-Ma&#39;ida</li>
         </ol>
       </nav>
 
@@ -65,7 +64,7 @@ export default async function SurahPage({ params }: Props) {
           Surah 5th of 114
         </p>
         <h1 className="font-brand text-4xl text-accent mb-2">المائدة</h1>
-        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-Ma'ida</h2>
+        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-Ma&#39;ida</h2>
         <p className="text-lg text-secondary italic mb-4">The Table Spread</p>
         <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted">
           <span>🏙️ Medinan Revelation</span>
@@ -92,13 +91,13 @@ export default async function SurahPage({ params }: Props) {
 
         {/* About */}
         <section>
-          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Ma'ida</h3>
-          <p className="text-secondary leading-relaxed">Al-Ma'ida addresses lawful and unlawful food, the story of the table spread from heaven, and the covenant with the People of the Book.</p>
+          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Ma&#39;ida</h3>
+          <p className="text-secondary leading-relaxed">Al-Ma&#39;ida addresses lawful and unlawful food, the story of the table spread from heaven, and the covenant with the People of the Book.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Ma'ida is Special</h3>
+          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Ma&#39;ida is Special</h3>
           <p className="text-secondary leading-relaxed">Establishes the rules of halal food and the obligation to uphold previous scriptures.</p>
         </section>
 
@@ -194,7 +193,7 @@ export default async function SurahPage({ params }: Props) {
           </Link>
           <Link href="/surah/6/al-anam" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-An'am</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-An&#39;am</p>
           </Link>
         </section>
 

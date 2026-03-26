@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -99,7 +98,7 @@ export default async function SurahPage({ params }: Props) {
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Fath is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'Muhammad is the Messenger of Allah; and those with him are firm.'</p>
+          <p className="text-secondary leading-relaxed">Contains: &#39;Muhammad is the Messenger of Allah; and those with him are firm.'</p>
         </section>
 
         {/* Quick Facts */}

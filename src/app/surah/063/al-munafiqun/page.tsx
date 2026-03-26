@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -99,7 +98,7 @@ export default async function SurahPage({ params }: Props) {
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Munafiqun is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the hadith qudsi: 'When I love My servant, I am his hearing, his sight.'</p>
+          <p className="text-secondary leading-relaxed">Contains the hadith qudsi: &#39;When I love My servant, I am his hearing, his sight.'</p>
         </section>
 
         {/* Quick Facts */}
@@ -190,7 +189,7 @@ export default async function SurahPage({ params }: Props) {
         <section className="grid grid-cols-2 gap-4">
           <Link href="/surah/62/al-jumua" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Jumu'a</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Jumu&#39;a</p>
           </Link>
           <Link href="/surah/64/at-taghabun" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>

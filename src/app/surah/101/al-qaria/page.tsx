@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -55,7 +54,7 @@ export default async function SurahPage({ params }: Props) {
           <li>/</li>
           <li><Link href="/surahs" className="hover:text-accent transition-colors">Surahs</Link></li>
           <li>/</li>
-          <li className="text-foreground" aria-current="page">Surah Al-Qari'a</li>
+          <li className="text-foreground" aria-current="page">Surah Al-Qari&#39;a</li>
         </ol>
       </nav>
 
@@ -65,7 +64,7 @@ export default async function SurahPage({ params }: Props) {
           Surah 101th of 114
         </p>
         <h1 className="font-brand text-4xl text-accent mb-2">القارعة</h1>
-        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-Qari'a</h2>
+        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-Qari&#39;a</h2>
         <p className="text-lg text-secondary italic mb-4">The Calamity</p>
         <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted">
           <span>🏔️ Meccan Revelation</span>
@@ -92,13 +91,13 @@ export default async function SurahPage({ params }: Props) {
 
         {/* About */}
         <section>
-          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Qari'a</h3>
-          <p className="text-secondary leading-relaxed">Describes the Day of Judgment as 'the striking Calamity.'</p>
+          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Qari&#39;a</h3>
+          <p className="text-secondary leading-relaxed">Describes the Day of Judgment as &#39;the striking Calamity.'</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Qari'a is Special</h3>
+          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Qari&#39;a is Special</h3>
           <p className="text-secondary leading-relaxed">The name gives the Day of Judgment its most terrifying description.</p>
         </section>
 

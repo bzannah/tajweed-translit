@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -190,7 +189,7 @@ export default async function SurahPage({ params }: Props) {
         <section className="grid grid-cols-2 gap-4">
           <Link href="/surah/23/al-muminun" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Mu'minun</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Mu&#39;minun</p>
           </Link>
           <Link href="/surah/25/al-furqan" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>

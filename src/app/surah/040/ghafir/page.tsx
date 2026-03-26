@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Ghafir</h3>
-          <p className="text-secondary leading-relaxed">Named after one of the names of Allah. Addresses the proof of resurrection and the stories of Musa and Fir'awn.</p>
+          <p className="text-secondary leading-relaxed">Named after one of the names of Allah. Addresses the proof of resurrection and the stories of Musa and Fir&#39;awn.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Ghafir is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the famous dua: 'Lord, forgive me.'</p>
+          <p className="text-secondary leading-relaxed">Contains the famous dua: &#39;Lord, forgive me.'</p>
         </section>
 
         {/* Quick Facts */}

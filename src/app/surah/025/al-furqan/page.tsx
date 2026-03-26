@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,7 +92,7 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Furqan</h3>
-          <p className="text-secondary leading-relaxed">Al-Furqan distinguishes truth from falsehood. It gives the Quran its name 'Al-Furqan.'</p>
+          <p className="text-secondary leading-relaxed">Al-Furqan distinguishes truth from falsehood. It gives the Quran its name &#39;Al-Furqan.'</p>
         </section>
 
         {/* Significance */}
@@ -194,7 +193,7 @@ export default async function SurahPage({ params }: Props) {
           </Link>
           <Link href="/surah/26/ash-shuara" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Ash-Shu'ara</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Ash-Shu&#39;ara</p>
           </Link>
         </section>
 

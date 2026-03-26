@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah An-Najm</h3>
-          <p className="text-secondary leading-relaxed">Contains the account of the Prophet's journey of Isra and Mi'raj.</p>
+          <p className="text-secondary leading-relaxed">Contains the account of the Prophet&#39;s journey of Isra and Mi'raj.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah An-Najm is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the verse in which Prophet Muhammad saw his Lord with his heart during the Mi'raj.</p>
+          <p className="text-secondary leading-relaxed">Contains the verse in which Prophet Muhammad saw his Lord with his heart during the Mi&#39;raj.</p>
         </section>
 
         {/* Quick Facts */}

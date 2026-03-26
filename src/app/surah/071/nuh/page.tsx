@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Nuh</h3>
-          <p className="text-secondary leading-relaxed">Recounts the prophet Nuh's 950 years of calling his people to worship Allah alone.</p>
+          <p className="text-secondary leading-relaxed">Recounts the prophet Nuh&#39;s 950 years of calling his people to worship Allah alone.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Nuh is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the dua of Nuh: 'My Lord, forgive me and my parents.'</p>
+          <p className="text-secondary leading-relaxed">Contains the dua of Nuh: &#39;My Lord, forgive me and my parents.'</p>
         </section>
 
         {/* Quick Facts */}
@@ -190,7 +189,7 @@ export default async function SurahPage({ params }: Props) {
         <section className="grid grid-cols-2 gap-4">
           <Link href="/surah/70/al-maarij" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Ma'arij</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Ma&#39;arij</p>
           </Link>
           <Link href="/surah/72/al-jinn" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>

@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Fussilat</h3>
-          <p className="text-secondary leading-relaxed">Explains the signs of Allah in creation and the Quran's clarity.</p>
+          <p className="text-secondary leading-relaxed">Explains the signs of Allah in creation and the Quran&#39;s clarity.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Fussilat is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'This is a mercy from your Lord.'</p>
+          <p className="text-secondary leading-relaxed">Contains: &#39;This is a mercy from your Lord.'</p>
         </section>
 
         {/* Quick Facts */}

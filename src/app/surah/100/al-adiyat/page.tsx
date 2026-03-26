@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -99,7 +98,7 @@ export default async function SurahPage({ params }: Props) {
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Adiyat is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'Indeed, mankind is ungrateful to his Lord.'</p>
+          <p className="text-secondary leading-relaxed">Contains: &#39;Indeed, mankind is ungrateful to his Lord.'</p>
         </section>
 
         {/* Quick Facts */}
@@ -194,7 +193,7 @@ export default async function SurahPage({ params }: Props) {
           </Link>
           <Link href="/surah/101/al-qaria" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Qari'a</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Qari&#39;a</p>
           </Link>
         </section>
 

@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -55,7 +54,7 @@ export default async function SurahPage({ params }: Props) {
           <li>/</li>
           <li><Link href="/surahs" className="hover:text-accent transition-colors">Surahs</Link></li>
           <li>/</li>
-          <li className="text-foreground" aria-current="page">Surah Al-An'am</li>
+          <li className="text-foreground" aria-current="page">Surah Al-An&#39;am</li>
         </ol>
       </nav>
 
@@ -65,7 +64,7 @@ export default async function SurahPage({ params }: Props) {
           Surah 6th of 114
         </p>
         <h1 className="font-brand text-4xl text-accent mb-2">الأنعام</h1>
-        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-An'am</h2>
+        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Al-An&#39;am</h2>
         <p className="text-lg text-secondary italic mb-4">The Cattle</p>
         <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted">
           <span>🏔️ Meccan Revelation</span>
@@ -92,13 +91,13 @@ export default async function SurahPage({ params }: Props) {
 
         {/* About */}
         <section>
-          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-An'am</h3>
-          <p className="text-secondary leading-relaxed">One of the earliest Meccan surahs, Al-An'am deepens the proof of monotheism and addresses pagan practices.</p>
+          <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-An&#39;am</h3>
+          <p className="text-secondary leading-relaxed">One of the earliest Meccan surahs, Al-An&#39;am deepens the proof of monotheism and addresses pagan practices.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-An'am is Special</h3>
+          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-An&#39;am is Special</h3>
           <p className="text-secondary leading-relaxed">One of the first surahs revealed; strongly reinforces the oneness of Allah.</p>
         </section>
 
@@ -190,11 +189,11 @@ export default async function SurahPage({ params }: Props) {
         <section className="grid grid-cols-2 gap-4">
           <Link href="/surah/5/al-maida" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Ma'ida</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Ma&#39;ida</p>
           </Link>
           <Link href="/surah/7/al-araf" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-A'raf</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-A&#39;raf</p>
           </Link>
         </section>
 

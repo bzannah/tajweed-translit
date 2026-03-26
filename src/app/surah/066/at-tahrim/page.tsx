@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah At-Tahrim</h3>
-          <p className="text-secondary leading-relaxed">Addresses the story of the Prophet's wives and the prohibition of making lawful what Allah has made unlawful.</p>
+          <p className="text-secondary leading-relaxed">Addresses the story of the Prophet&#39;s wives and the prohibition of making lawful what Allah has made unlawful.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah At-Tahrim is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the verse of the Prophet's concern for his wives.</p>
+          <p className="text-secondary leading-relaxed">Contains the verse of the Prophet&#39;s concern for his wives.</p>
         </section>
 
         {/* Quick Facts */}

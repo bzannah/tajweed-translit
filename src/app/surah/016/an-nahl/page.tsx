@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah An-Nahl</h3>
-          <p className="text-secondary leading-relaxed">Contains the evidences of Allah's creation including the bee, the seasons, and the water cycle.</p>
+          <p className="text-secondary leading-relaxed">Contains the evidences of Allah&#39;s creation including the bee, the seasons, and the water cycle.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah An-Nahl is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'Allah does not forbid you from being good to those who have not fought you.'</p>
+          <p className="text-secondary leading-relaxed">Contains: &#39;Allah does not forbid you from being good to those who have not fought you.'</p>
         </section>
 
         {/* Quick Facts */}

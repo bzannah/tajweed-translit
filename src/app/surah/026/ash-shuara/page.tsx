@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -55,7 +54,7 @@ export default async function SurahPage({ params }: Props) {
           <li>/</li>
           <li><Link href="/surahs" className="hover:text-accent transition-colors">Surahs</Link></li>
           <li>/</li>
-          <li className="text-foreground" aria-current="page">Surah Ash-Shu'ara</li>
+          <li className="text-foreground" aria-current="page">Surah Ash-Shu&#39;ara</li>
         </ol>
       </nav>
 
@@ -65,7 +64,7 @@ export default async function SurahPage({ params }: Props) {
           Surah 26th of 114
         </p>
         <h1 className="font-brand text-4xl text-accent mb-2">الشعراء</h1>
-        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Ash-Shu'ara</h2>
+        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Ash-Shu&#39;ara</h2>
         <p className="text-lg text-secondary italic mb-4">The Poets</p>
         <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted">
           <span>🏔️ Meccan Revelation</span>
@@ -92,14 +91,14 @@ export default async function SurahPage({ params }: Props) {
 
         {/* About */}
         <section>
-          <h3 className="font-brand text-xl text-accent mb-4">About Surah Ash-Shu'ara</h3>
-          <p className="text-secondary leading-relaxed">Contains the stories of Musa, Ibrahim, Nuh, Hud, Salih, Lut, and Shu'ayb.</p>
+          <h3 className="font-brand text-xl text-accent mb-4">About Surah Ash-Shu&#39;ara</h3>
+          <p className="text-secondary leading-relaxed">Contains the stories of Musa, Ibrahim, Nuh, Hud, Salih, Lut, and Shu&#39;ayb.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Ash-Shu'ara is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'And your Lord is the Most Blessed and Exalted.'</p>
+          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Ash-Shu&#39;ara is Special</h3>
+          <p className="text-secondary leading-relaxed">Contains: &#39;And your Lord is the Most Blessed and Exalted.'</p>
         </section>
 
         {/* Quick Facts */}

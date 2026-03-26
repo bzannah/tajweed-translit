@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Jathiya</h3>
-          <p className="text-secondary leading-relaxed">Presents evidence of Allah's power in creation and the Day of Judgment.</p>
+          <p className="text-secondary leading-relaxed">Presents evidence of Allah&#39;s power in creation and the Day of Judgment.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Jathiya is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'Do they not travel through the earth and see what was the end of those before them?'</p>
+          <p className="text-secondary leading-relaxed">Contains: &#39;Do they not travel through the earth and see what was the end of those before them?'</p>
         </section>
 
         {/* Quick Facts */}

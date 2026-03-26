@@ -172,12 +172,12 @@ def generate_page(surah):
     prev_link = f"""          <Link href="/surah/{n-1}/{slugify(prev_surah["name"])}" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
             <p className="mt-1 font-semibold text-foreground">Surah {prev_surah["name"]}</p>
-          </Link>""" if prev_surah else "          <div />"
+          </Link>""" if prev_surah else "          <div></div>"
     
     next_link = f"""          <Link href="/surah/{n+1}/{slugify(next_surah["name"])}" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
             <p className="mt-1 font-semibold text-foreground">Surah {next_surah["name"]}</p>
-          </Link>""" if next_surah else "          <div />"
+          </Link>""" if next_surah else "          <div></div>"
     
     page = f"""import type {{ Metadata }} from 'next';
 import Link from 'next/link';

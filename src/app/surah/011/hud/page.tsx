@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Hud</h3>
-          <p className="text-secondary leading-relaxed">Hud addresses the prophet Hud and his people of 'Ad, presenting parables and proofs of Allah's power.</p>
+          <p className="text-secondary leading-relaxed">Hud addresses the prophet Hud and his people of &#39;Ad, presenting parables and proofs of Allah's power.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Hud is Special</h3>
-          <p className="text-secondary leading-relaxed">One of the surahs of warning sent to the people of 'Ad.</p>
+          <p className="text-secondary leading-relaxed">One of the surahs of warning sent to the people of &#39;Ad.</p>
         </section>
 
         {/* Quick Facts */}

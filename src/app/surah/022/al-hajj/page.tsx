@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Hajj</h3>
-          <p className="text-secondary leading-relaxed">Addresses the pilgrimage to Mecca, the rituals of Hajj and Umrah, and the Prophet's Farewell Pilgrimage address.</p>
+          <p className="text-secondary leading-relaxed">Addresses the pilgrimage to Mecca, the rituals of Hajj and Umrah, and the Prophet&#39;s Farewell Pilgrimage address.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Hajj is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the verse of the Farewell Pilgrimage establishing the Prophet's authority ends with the Quran.</p>
+          <p className="text-secondary leading-relaxed">Contains the verse of the Farewell Pilgrimage establishing the Prophet&#39;s authority ends with the Quran.</p>
         </section>
 
         {/* Quick Facts */}
@@ -194,7 +193,7 @@ export default async function SurahPage({ params }: Props) {
           </Link>
           <Link href="/surah/23/al-muminun" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Mu'minun</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Mu&#39;minun</p>
           </Link>
         </section>
 

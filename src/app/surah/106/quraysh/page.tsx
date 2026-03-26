@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Quraysh</h3>
-          <p className="text-secondary leading-relaxed">Establishes the obligation of the Quraysh to worship the Lord of the Ka'bah.</p>
+          <p className="text-secondary leading-relaxed">Establishes the obligation of the Quraysh to worship the Lord of the Ka&#39;bah.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Quraysh is Special</h3>
-          <p className="text-secondary leading-relaxed">Establishes the special status of the Quraysh as the keepers of the Ka'bah.</p>
+          <p className="text-secondary leading-relaxed">Establishes the special status of the Quraysh as the keepers of the Ka&#39;bah.</p>
         </section>
 
         {/* Quick Facts */}
@@ -194,7 +193,7 @@ export default async function SurahPage({ params }: Props) {
           </Link>
           <Link href="/surah/107/al-maun" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-Ma'un</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-Ma&#39;un</p>
           </Link>
         </section>
 

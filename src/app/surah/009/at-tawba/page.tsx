@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,7 +92,7 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah At-Tawba</h3>
-          <p className="text-secondary leading-relaxed">At-Tawba is the declaration of immunity from polytheism. Also called Al-Bar'a.</p>
+          <p className="text-secondary leading-relaxed">At-Tawba is the declaration of immunity from polytheism. Also called Al-Bar&#39;a.</p>
         </section>
 
         {/* Significance */}

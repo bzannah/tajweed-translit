@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -93,13 +92,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Ghashiya</h3>
-          <p className="text-secondary leading-relaxed">Asks: 'Has there come upon you the description of the overwhelming event?'</p>
+          <p className="text-secondary leading-relaxed">Asks: &#39;Has there come upon you the description of the overwhelming event?'</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Ghashiya is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains: 'Is one who is obedient to the believers and the harmful as equal?'</p>
+          <p className="text-secondary leading-relaxed">Contains: &#39;Is one who is obedient to the believers and the harmful as equal?'</p>
         </section>
 
         {/* Quick Facts */}
@@ -190,7 +189,7 @@ export default async function SurahPage({ params }: Props) {
         <section className="grid grid-cols-2 gap-4">
           <Link href="/surah/87/al-ala" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
-            <p className="mt-1 font-semibold text-foreground">Surah Al-A'la</p>
+            <p className="mt-1 font-semibold text-foreground">Surah Al-A&#39;la</p>
           </Link>
           <Link href="/surah/89/al-fajr" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>

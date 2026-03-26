@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SurahPage({ params }: Props) {
   const { number: num } = await params;
-  const surahNum = parseInt(num, 10);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -55,7 +54,7 @@ export default async function SurahPage({ params }: Props) {
           <li>/</li>
           <li><Link href="/surahs" className="hover:text-accent transition-colors">Surahs</Link></li>
           <li>/</li>
-          <li className="text-foreground" aria-current="page">Surah Ar-Ra'd</li>
+          <li className="text-foreground" aria-current="page">Surah Ar-Ra&#39;d</li>
         </ol>
       </nav>
 
@@ -65,7 +64,7 @@ export default async function SurahPage({ params }: Props) {
           Surah 13th of 114
         </p>
         <h1 className="font-brand text-4xl text-accent mb-2">الرعد</h1>
-        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Ar-Ra'd</h2>
+        <h2 className="font-brand text-2xl text-foreground mb-1">Surah Ar-Ra&#39;d</h2>
         <p className="text-lg text-secondary italic mb-4">The Thunder</p>
         <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted">
           <span>🏙️ Medinan Revelation</span>
@@ -92,13 +91,13 @@ export default async function SurahPage({ params }: Props) {
 
         {/* About */}
         <section>
-          <h3 className="font-brand text-xl text-accent mb-4">About Surah Ar-Ra'd</h3>
+          <h3 className="font-brand text-xl text-accent mb-4">About Surah Ar-Ra&#39;d</h3>
           <p className="text-secondary leading-relaxed">Contains profound arguments for faith through the signs in nature and the concept of life after death.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Ar-Ra'd is Special</h3>
+          <h3 className="font-brand text-lg text-accent mb-3">Why Surah Ar-Ra&#39;d is Special</h3>
           <p className="text-secondary leading-relaxed">Contains the verse establishing that Faith increases and decreases.</p>
         </section>
 
