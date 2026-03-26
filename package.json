@@ -19,7 +19,12 @@
     "validate:data": "tsx scripts/validate-data.ts",
     "convert:pdfs": "tsx scripts/convert-pdfs.ts",
     "generate:placeholders": "tsx scripts/generate-placeholders.ts",
-    "map:surahs": "tsx scripts/map-surahs-ai.ts"
+    "map:surahs": "tsx scripts/map-surahs-ai.ts",
+    "generate:sitemap": "tsx scripts/generate-sitemap.ts",
+    "generate:jsonld": "tsx scripts/generate-jsonld-schemas.ts",
+    "generate:surah-pages": "tsx scripts/generate-surah-intro-pages.ts",
+    "generate:faq": "tsx scripts/generate-faq-schema.ts",
+    "generate:all-seo": "tsx scripts/generate-sitemap.ts && tsx scripts/generate-jsonld-schemas.ts && tsx scripts/generate-faq-schema.ts && tsx scripts/generate-surah-intro-pages.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
