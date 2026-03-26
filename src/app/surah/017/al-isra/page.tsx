@@ -10,31 +10,31 @@ interface Props {
 // ── Static Params ─────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return [{ number: '017', slug: 'al-isra' }];
+  return [{ number: "017", slug: "al-isra" }];
 }
 
-// ── Metadata ───────────────────────────────────────────────────────────────────
+// ── Metadata ─────────────────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { number: num } = await params;
   return {
-    title: 'Surah Al-Isra (الإسراء) — The Night Journey | TajweedTranslit',
-    description: 'Read Surah Al-Isra (The Night Journey) — 111 verses, Meccan revelation. English transliteration with expert Tajweed colour coding. Free online reader.',
+    title: "Surah Al-Isra (الإسراء) — The Night Journey | TajweedTranslit",
+    description: "Read Surah Al-Isra (The Night Journey) — 111 verses, Meccan revelation. English transliteration with expert Tajweed colour coding. Free online reader.",
     keywords: [
-      'Surah Al-Isra transliteration',
-      'Surah 17 tajweed',
-      'Al-Isra meaning',
-      'Quran al-isra transliteration',
-      'learn quran al-isra',
-      'quran recitation al-isra',
-      'tajweed al-isra',
+      "Surah Al-Isra transliteration",
+      "Surah 17 tajweed",
+      "Al-Isra meaning",
+      "Quran al-isra transliteration",
+      "learn quran al-isra",
+      "quran recitation al-isra",
+      "tajweed al-isra",
     ],
-    alternates: { canonical: '/surah/17/al-isra' },
+    alternates: { canonical: `/surah/17/al-isra` },
     openGraph: {
-      title: 'Surah Al-Isra (الإسراء) — The Night Journey',
-      description: 'Read Surah Al-Isra in English transliteration with Tajweed colour coding. 111 verses, Meccan.',
-      url: '/surah/17/al-isra',
-      type: 'article',
+      title: "Surah Al-Isra (الإسراء) — The Night Journey",
+      description: "Read Surah Al-Isra in English transliteration with Tajweed colour coding. 111 verses, Meccan.",
+      url: `/surah/17/al-isra`,
+      type: "article",
     },
   };
 }
@@ -99,7 +99,7 @@ export default async function SurahPage({ params }: Props) {
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Al-Isra is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the famous command: "No soul shall die except by Allah's permission."</p>
+          <p className="text-secondary leading-relaxed">Contains: 'No soul shall die except by Allah's permission.'</p>
         </section>
 
         {/* Quick Facts */}
@@ -140,46 +140,46 @@ export default async function SurahPage({ params }: Props) {
             When reading Surah Al-Isra at TajweedTranslit.com, these Tajweed rules are colour-coded:
           </p>
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
-        <span class="text-sm">Necessary Prolongation</span>
-        <span class="text-xs text-muted">(المد اللازم)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
-        <span class="text-sm">Obligatory Prolongation</span>
-        <span class="text-xs text-muted">(المد الواجب المتصل)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
-        <span class="text-sm">Permissible Prolongation</span>
-        <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
-        <span class="text-sm">Nasalisation (Ghunnah)</span>
-        <span class="text-xs text-muted">(الغنة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
-        <span class="text-sm">Emphatic Pronunciation</span>
-        <span class="text-xs text-muted">(التفخيم)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
-        <span class="text-sm">Silent Letters</span>
-        <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
-        <span class="text-sm">Echoing Sound (Qalqalah)</span>
-        <span class="text-xs text-muted">(القلقلة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
-        <span class="text-sm">Normal Prolongation</span>
-        <span class="text-xs text-muted">(المد الطبيعي)</span>
-      </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
+          <span class="text-sm">Necessary Prolongation</span>
+          <span class="text-xs text-muted">(المد اللازم)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
+          <span class="text-sm">Obligatory Prolongation</span>
+          <span class="text-xs text-muted">(المد الواجب المتصل)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
+          <span class="text-sm">Permissible Prolongation</span>
+          <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
+          <span class="text-sm">Nasalisation (Ghunnah)</span>
+          <span class="text-xs text-muted">(الغنة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
+          <span class="text-sm">Emphatic Pronunciation</span>
+          <span class="text-xs text-muted">(التفخيم)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
+          <span class="text-sm">Silent Letters</span>
+          <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
+          <span class="text-sm">Echoing Sound (Qalqalah)</span>
+          <span class="text-xs text-muted">(القلقلة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
+          <span class="text-sm">Normal Prolongation</span>
+          <span class="text-xs text-muted">(المد الطبيعي)</span>
+        </li>
           </ul>
           <p className="mt-4 text-xs text-muted">
             Tap any highlighted word in the reader to see a detailed explanation of the rule.
@@ -188,11 +188,11 @@ export default async function SurahPage({ params }: Props) {
 
         {/* Navigation */}
         <section className="grid grid-cols-2 gap-4">
-          <Link href={"/surah/16/" + "an-nahl"} className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
+          <Link href="/surah/16/an-nahl" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
             <p className="mt-1 font-semibold text-foreground">Surah An-Nahl</p>
           </Link>
-          <Link href={"/surah/18/" + "al-kahf"} className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
+          <Link href="/surah/18/al-kahf" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
             <p className="mt-1 font-semibold text-foreground">Surah Al-Kahf</p>
           </Link>

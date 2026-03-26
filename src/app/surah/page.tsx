@@ -11,7 +11,7 @@ const SURAHS = [
   {
     "number": 1,
     "name": "Al-Fatiha",
-    "name_arabic": "الفاتحة",
+    "name_arabic": "\u0627\u0644\u0641\u0627\u062a\u062d\u0629",
     "meaning": "The Opening",
     "revelation_type": "Meccan",
     "verses": 7,
@@ -20,7 +20,7 @@ const SURAHS = [
   {
     "number": 2,
     "name": "Al-Baqara",
-    "name_arabic": "البقرة",
+    "name_arabic": "\u0627\u0644\u0628\u0642\u0631\u0629",
     "meaning": "The Cow",
     "revelation_type": "Medinan",
     "verses": 286,
@@ -29,7 +29,7 @@ const SURAHS = [
   {
     "number": 3,
     "name": "Al-Imran",
-    "name_arabic": "آل عمران",
+    "name_arabic": "\u0622\u0644 \u0639\u0645\u0631\u0627\u0646",
     "meaning": "The Family of Imran",
     "revelation_type": "Medinan",
     "verses": 200,
@@ -38,7 +38,7 @@ const SURAHS = [
   {
     "number": 4,
     "name": "An-Nisa",
-    "name_arabic": "النساء",
+    "name_arabic": "\u0627\u0644\u0646\u0633\u0627\u0621",
     "meaning": "The Women",
     "revelation_type": "Medinan",
     "verses": 176,
@@ -47,7 +47,7 @@ const SURAHS = [
   {
     "number": 5,
     "name": "Al-Ma'ida",
-    "name_arabic": "المائدة",
+    "name_arabic": "\u0627\u0644\u0645\u0627\u0626\u062f\u0629",
     "meaning": "The Table Spread",
     "revelation_type": "Medinan",
     "verses": 120,
@@ -56,7 +56,7 @@ const SURAHS = [
   {
     "number": 6,
     "name": "Al-An'am",
-    "name_arabic": "الأنعام",
+    "name_arabic": "\u0627\u0644\u0623\u0646\u0639\u0627\u0645",
     "meaning": "The Cattle",
     "revelation_type": "Meccan",
     "verses": 165,
@@ -65,7 +65,7 @@ const SURAHS = [
   {
     "number": 7,
     "name": "Al-A'raf",
-    "name_arabic": "الأعراف",
+    "name_arabic": "\u0627\u0644\u0623\u0639\u0631\u0627\u0641",
     "meaning": "The Heights",
     "revelation_type": "Meccan",
     "verses": 206,
@@ -74,7 +74,7 @@ const SURAHS = [
   {
     "number": 8,
     "name": "Al-Anfal",
-    "name_arabic": "الأنفال",
+    "name_arabic": "\u0627\u0644\u0623\u0646\u0641\u0627\u0644",
     "meaning": "The Spoils of War",
     "revelation_type": "Medinan",
     "verses": 75,
@@ -83,7 +83,7 @@ const SURAHS = [
   {
     "number": 9,
     "name": "At-Tawba",
-    "name_arabic": "التوبة",
+    "name_arabic": "\u0627\u0644\u062a\u0648\u0628\u0629",
     "meaning": "The Repentance",
     "revelation_type": "Medinan",
     "verses": 129,
@@ -92,7 +92,7 @@ const SURAHS = [
   {
     "number": 10,
     "name": "Yunus",
-    "name_arabic": "يونس",
+    "name_arabic": "\u064a\u0648\u0646\u0633",
     "meaning": "Jonah",
     "revelation_type": "Meccan",
     "verses": 109,
@@ -101,7 +101,7 @@ const SURAHS = [
   {
     "number": 11,
     "name": "Hud",
-    "name_arabic": "هود",
+    "name_arabic": "\u0647\u0648\u062f",
     "meaning": "Hud",
     "revelation_type": "Meccan",
     "verses": 123,
@@ -110,7 +110,7 @@ const SURAHS = [
   {
     "number": 12,
     "name": "Yusuf",
-    "name_arabic": "يوسف",
+    "name_arabic": "\u064a\u0648\u0633\u0641",
     "meaning": "Joseph",
     "revelation_type": "Meccan",
     "verses": 111,
@@ -119,7 +119,7 @@ const SURAHS = [
   {
     "number": 13,
     "name": "Ar-Ra'd",
-    "name_arabic": "الرعد",
+    "name_arabic": "\u0627\u0644\u0631\u0639\u062f",
     "meaning": "The Thunder",
     "revelation_type": "Medinan",
     "verses": 43,
@@ -128,7 +128,7 @@ const SURAHS = [
   {
     "number": 14,
     "name": "Ibrahim",
-    "name_arabic": "إبراهيم",
+    "name_arabic": "\u0625\u0628\u0631\u0627\u0647\u064a\u0645",
     "meaning": "Abraham",
     "revelation_type": "Meccan",
     "verses": 52,
@@ -137,7 +137,7 @@ const SURAHS = [
   {
     "number": 15,
     "name": "Al-Hijr",
-    "name_arabic": "الحجر",
+    "name_arabic": "\u0627\u0644\u062d\u062c\u0631",
     "meaning": "The Rocky Tract",
     "revelation_type": "Meccan",
     "verses": 99,
@@ -146,7 +146,7 @@ const SURAHS = [
   {
     "number": 16,
     "name": "An-Nahl",
-    "name_arabic": "النحل",
+    "name_arabic": "\u0627\u0644\u0646\u062d\u0644",
     "meaning": "The Bee",
     "revelation_type": "Meccan",
     "verses": 128,
@@ -155,7 +155,7 @@ const SURAHS = [
   {
     "number": 17,
     "name": "Al-Isra",
-    "name_arabic": "الإسراء",
+    "name_arabic": "\u0627\u0644\u0625\u0633\u0631\u0627\u0621",
     "meaning": "The Night Journey",
     "revelation_type": "Meccan",
     "verses": 111,
@@ -164,7 +164,7 @@ const SURAHS = [
   {
     "number": 18,
     "name": "Al-Kahf",
-    "name_arabic": "الكهف",
+    "name_arabic": "\u0627\u0644\u0643\u0647\u0641",
     "meaning": "The Cave",
     "revelation_type": "Meccan",
     "verses": 110,
@@ -173,7 +173,7 @@ const SURAHS = [
   {
     "number": 19,
     "name": "Maryam",
-    "name_arabic": "مريم",
+    "name_arabic": "\u0645\u0631\u064a\u0645",
     "meaning": "Mary",
     "revelation_type": "Meccan",
     "verses": 98,
@@ -182,7 +182,7 @@ const SURAHS = [
   {
     "number": 20,
     "name": "Taha",
-    "name_arabic": "طه",
+    "name_arabic": "\u0637\u0647",
     "meaning": "Ta-Ha",
     "revelation_type": "Meccan",
     "verses": 135,
@@ -191,7 +191,7 @@ const SURAHS = [
   {
     "number": 21,
     "name": "Al-Anbiya",
-    "name_arabic": "الأنبياء",
+    "name_arabic": "\u0627\u0644\u0623\u0646\u0628\u064a\u0627\u0621",
     "meaning": "The Prophets",
     "revelation_type": "Meccan",
     "verses": 112,
@@ -200,7 +200,7 @@ const SURAHS = [
   {
     "number": 22,
     "name": "Al-Hajj",
-    "name_arabic": "الحج",
+    "name_arabic": "\u0627\u0644\u062d\u062c",
     "meaning": "The Pilgrimage",
     "revelation_type": "Medinan",
     "verses": 78,
@@ -209,7 +209,7 @@ const SURAHS = [
   {
     "number": 23,
     "name": "Al-Mu'minun",
-    "name_arabic": "المؤمنون",
+    "name_arabic": "\u0627\u0644\u0645\u0624\u0645\u0646\u0648\u0646",
     "meaning": "The Believers",
     "revelation_type": "Meccan",
     "verses": 118,
@@ -218,7 +218,7 @@ const SURAHS = [
   {
     "number": 24,
     "name": "An-Nur",
-    "name_arabic": "النور",
+    "name_arabic": "\u0627\u0644\u0646\u0648\u0631",
     "meaning": "The Light",
     "revelation_type": "Medinan",
     "verses": 64,
@@ -227,7 +227,7 @@ const SURAHS = [
   {
     "number": 25,
     "name": "Al-Furqan",
-    "name_arabic": "الفرقان",
+    "name_arabic": "\u0627\u0644\u0641\u0631\u0642\u0627\u0646",
     "meaning": "The Criterion",
     "revelation_type": "Meccan",
     "verses": 77,
@@ -236,7 +236,7 @@ const SURAHS = [
   {
     "number": 26,
     "name": "Ash-Shu'ara",
-    "name_arabic": "الشعراء",
+    "name_arabic": "\u0627\u0644\u0634\u0639\u0631\u0627\u0621",
     "meaning": "The Poets",
     "revelation_type": "Meccan",
     "verses": 227,
@@ -245,7 +245,7 @@ const SURAHS = [
   {
     "number": 27,
     "name": "An-Naml",
-    "name_arabic": "النمل",
+    "name_arabic": "\u0627\u0644\u0646\u0645\u0644",
     "meaning": "The Ant",
     "revelation_type": "Meccan",
     "verses": 93,
@@ -254,7 +254,7 @@ const SURAHS = [
   {
     "number": 28,
     "name": "Al-Qasas",
-    "name_arabic": "القصص",
+    "name_arabic": "\u0627\u0644\u0642\u0635\u0635",
     "meaning": "The Stories",
     "revelation_type": "Meccan",
     "verses": 88,
@@ -263,7 +263,7 @@ const SURAHS = [
   {
     "number": 29,
     "name": "Al-Ankabut",
-    "name_arabic": "العنكبوت",
+    "name_arabic": "\u0627\u0644\u0639\u0646\u0643\u0628\u0648\u062a",
     "meaning": "The Spider",
     "revelation_type": "Meccan",
     "verses": 69,
@@ -272,7 +272,7 @@ const SURAHS = [
   {
     "number": 30,
     "name": "Ar-Rum",
-    "name_arabic": "الروم",
+    "name_arabic": "\u0627\u0644\u0631\u0648\u0645",
     "meaning": "The Romans",
     "revelation_type": "Meccan",
     "verses": 60,
@@ -281,7 +281,7 @@ const SURAHS = [
   {
     "number": 31,
     "name": "Luqman",
-    "name_arabic": "لقمان",
+    "name_arabic": "\u0644\u0642\u0645\u0627\u0646",
     "meaning": "Luqman",
     "revelation_type": "Meccan",
     "verses": 34,
@@ -290,7 +290,7 @@ const SURAHS = [
   {
     "number": 32,
     "name": "As-Sajda",
-    "name_arabic": "السجدة",
+    "name_arabic": "\u0627\u0644\u0633\u062c\u062f\u0629",
     "meaning": "The Prostration",
     "revelation_type": "Meccan",
     "verses": 30,
@@ -299,7 +299,7 @@ const SURAHS = [
   {
     "number": 33,
     "name": "Al-Ahzab",
-    "name_arabic": "الأحزاب",
+    "name_arabic": "\u0627\u0644\u0623\u062d\u0632\u0627\u0628",
     "meaning": "The Confederates",
     "revelation_type": "Medinan",
     "verses": 73,
@@ -308,7 +308,7 @@ const SURAHS = [
   {
     "number": 34,
     "name": "Saba",
-    "name_arabic": "سبأ",
+    "name_arabic": "\u0633\u0628\u0623",
     "meaning": "Sheba",
     "revelation_type": "Meccan",
     "verses": 54,
@@ -317,7 +317,7 @@ const SURAHS = [
   {
     "number": 35,
     "name": "Fatir",
-    "name_arabic": "فاطر",
+    "name_arabic": "\u0641\u0627\u0637\u0631",
     "meaning": "The Originator",
     "revelation_type": "Meccan",
     "verses": 45,
@@ -326,7 +326,7 @@ const SURAHS = [
   {
     "number": 36,
     "name": "Ya-Sin",
-    "name_arabic": "يس",
+    "name_arabic": "\u064a\u0633",
     "meaning": "Ya-Sin",
     "revelation_type": "Meccan",
     "verses": 83,
@@ -335,7 +335,7 @@ const SURAHS = [
   {
     "number": 37,
     "name": "As-Saffat",
-    "name_arabic": "الصافات",
+    "name_arabic": "\u0627\u0644\u0635\u0627\u0641\u0627\u062a",
     "meaning": "Those Ranged in Ranks",
     "revelation_type": "Meccan",
     "verses": 182,
@@ -344,7 +344,7 @@ const SURAHS = [
   {
     "number": 38,
     "name": "Sad",
-    "name_arabic": "ص",
+    "name_arabic": "\u0635",
     "meaning": "Sad",
     "revelation_type": "Meccan",
     "verses": 88,
@@ -353,7 +353,7 @@ const SURAHS = [
   {
     "number": 39,
     "name": "Az-Zumar",
-    "name_arabic": "الزمر",
+    "name_arabic": "\u0627\u0644\u0632\u0645\u0631",
     "meaning": "The Groups",
     "revelation_type": "Meccan",
     "verses": 75,
@@ -362,7 +362,7 @@ const SURAHS = [
   {
     "number": 40,
     "name": "Ghafir",
-    "name_arabic": "غافر",
+    "name_arabic": "\u063a\u0627\u0641\u0631",
     "meaning": "The Forgiver",
     "revelation_type": "Meccan",
     "verses": 85,
@@ -371,7 +371,7 @@ const SURAHS = [
   {
     "number": 41,
     "name": "Fussilat",
-    "name_arabic": "فصلت",
+    "name_arabic": "\u0641\u0635\u0644\u062a",
     "meaning": "Explained in Detail",
     "revelation_type": "Meccan",
     "verses": 54,
@@ -380,7 +380,7 @@ const SURAHS = [
   {
     "number": 42,
     "name": "Ash-Shura",
-    "name_arabic": "الشورى",
+    "name_arabic": "\u0627\u0644\u0634\u0648\u0631\u0649",
     "meaning": "The Consultation",
     "revelation_type": "Meccan",
     "verses": 53,
@@ -389,7 +389,7 @@ const SURAHS = [
   {
     "number": 43,
     "name": "Az-Zukhruf",
-    "name_arabic": "الزخرف",
+    "name_arabic": "\u0627\u0644\u0632\u062e\u0631\u0641",
     "meaning": "The Gold Adornments",
     "revelation_type": "Meccan",
     "verses": 89,
@@ -398,7 +398,7 @@ const SURAHS = [
   {
     "number": 44,
     "name": "Ad-Dukhan",
-    "name_arabic": "الدخان",
+    "name_arabic": "\u0627\u0644\u062f\u062e\u0627\u0646",
     "meaning": "The Smoke",
     "revelation_type": "Meccan",
     "verses": 59,
@@ -407,7 +407,7 @@ const SURAHS = [
   {
     "number": 45,
     "name": "Al-Jathiya",
-    "name_arabic": "الجاثية",
+    "name_arabic": "\u0627\u0644\u062c\u0627\u062b\u064a\u0629",
     "meaning": "The Kneeling",
     "revelation_type": "Meccan",
     "verses": 37,
@@ -416,7 +416,7 @@ const SURAHS = [
   {
     "number": 46,
     "name": "Al-Ahqaf",
-    "name_arabic": "الأحقاف",
+    "name_arabic": "\u0627\u0644\u0623\u062d\u0642\u0627\u0641",
     "meaning": "The Sand Dunes",
     "revelation_type": "Meccan",
     "verses": 35,
@@ -425,7 +425,7 @@ const SURAHS = [
   {
     "number": 47,
     "name": "Muhammad",
-    "name_arabic": "محمد",
+    "name_arabic": "\u0645\u062d\u0645\u062f",
     "meaning": "Muhammad",
     "revelation_type": "Medinan",
     "verses": 38,
@@ -434,7 +434,7 @@ const SURAHS = [
   {
     "number": 48,
     "name": "Al-Fath",
-    "name_arabic": "الفتح",
+    "name_arabic": "\u0627\u0644\u0641\u062a\u062d",
     "meaning": "The Victory",
     "revelation_type": "Medinan",
     "verses": 29,
@@ -443,7 +443,7 @@ const SURAHS = [
   {
     "number": 49,
     "name": "Al-Hujurat",
-    "name_arabic": "الحجرات",
+    "name_arabic": "\u0627\u0644\u062d\u062c\u0631\u0627\u062a",
     "meaning": "The Rooms",
     "revelation_type": "Medinan",
     "verses": 18,
@@ -452,7 +452,7 @@ const SURAHS = [
   {
     "number": 50,
     "name": "Qaf",
-    "name_arabic": "ق",
+    "name_arabic": "\u0642",
     "meaning": "Qaf",
     "revelation_type": "Meccan",
     "verses": 45,
@@ -461,7 +461,7 @@ const SURAHS = [
   {
     "number": 51,
     "name": "Adh-Dhariyat",
-    "name_arabic": "الذاريات",
+    "name_arabic": "\u0627\u0644\u0630\u0627\u0631\u064a\u0627\u062a",
     "meaning": "The Scattering Winds",
     "revelation_type": "Meccan",
     "verses": 60,
@@ -470,7 +470,7 @@ const SURAHS = [
   {
     "number": 52,
     "name": "At-Tur",
-    "name_arabic": "الطور",
+    "name_arabic": "\u0627\u0644\u0637\u0648\u0631",
     "meaning": "The Mount",
     "revelation_type": "Meccan",
     "verses": 49,
@@ -479,7 +479,7 @@ const SURAHS = [
   {
     "number": 53,
     "name": "An-Najm",
-    "name_arabic": "النجم",
+    "name_arabic": "\u0627\u0644\u0646\u062c\u0645",
     "meaning": "The Star",
     "revelation_type": "Meccan",
     "verses": 62,
@@ -488,7 +488,7 @@ const SURAHS = [
   {
     "number": 54,
     "name": "Al-Qamar",
-    "name_arabic": "القمر",
+    "name_arabic": "\u0627\u0644\u0642\u0645\u0631",
     "meaning": "The Moon",
     "revelation_type": "Meccan",
     "verses": 55,
@@ -497,7 +497,7 @@ const SURAHS = [
   {
     "number": 55,
     "name": "Ar-Rahman",
-    "name_arabic": "الرحمن",
+    "name_arabic": "\u0627\u0644\u0631\u062d\u0645\u0646",
     "meaning": "The Most Merciful",
     "revelation_type": "Medinan",
     "verses": 78,
@@ -506,7 +506,7 @@ const SURAHS = [
   {
     "number": 56,
     "name": "Al-Waqi'a",
-    "name_arabic": "الواقعة",
+    "name_arabic": "\u0627\u0644\u0648\u0627\u0642\u0639\u0629",
     "meaning": "The Inevitable",
     "revelation_type": "Meccan",
     "verses": 96,
@@ -515,7 +515,7 @@ const SURAHS = [
   {
     "number": 57,
     "name": "Al-Hadid",
-    "name_arabic": "الحديد",
+    "name_arabic": "\u0627\u0644\u062d\u062f\u064a\u062f",
     "meaning": "The Iron",
     "revelation_type": "Medinan",
     "verses": 29,
@@ -524,7 +524,7 @@ const SURAHS = [
   {
     "number": 58,
     "name": "Al-Mujadila",
-    "name_arabic": "المجادلة",
+    "name_arabic": "\u0627\u0644\u0645\u062c\u0627\u062f\u0644\u0629",
     "meaning": "The Pleading Woman",
     "revelation_type": "Medinan",
     "verses": 22,
@@ -533,7 +533,7 @@ const SURAHS = [
   {
     "number": 59,
     "name": "Al-Hashr",
-    "name_arabic": "الحشر",
+    "name_arabic": "\u0627\u0644\u062d\u0634\u0631",
     "meaning": "The Gathering",
     "revelation_type": "Medinan",
     "verses": 24,
@@ -542,7 +542,7 @@ const SURAHS = [
   {
     "number": 60,
     "name": "Al-Mumtahina",
-    "name_arabic": "الممتحنة",
+    "name_arabic": "\u0627\u0644\u0645\u0645\u062a\u062d\u0646\u0629",
     "meaning": "The Examined Woman",
     "revelation_type": "Medinan",
     "verses": 13,
@@ -551,7 +551,7 @@ const SURAHS = [
   {
     "number": 61,
     "name": "As-Saff",
-    "name_arabic": "الصف",
+    "name_arabic": "\u0627\u0644\u0635\u0641",
     "meaning": "The Ranks",
     "revelation_type": "Medinan",
     "verses": 14,
@@ -560,7 +560,7 @@ const SURAHS = [
   {
     "number": 62,
     "name": "Al-Jumu'a",
-    "name_arabic": "الجمعة",
+    "name_arabic": "\u0627\u0644\u062c\u0645\u0639\u0629",
     "meaning": "Friday",
     "revelation_type": "Medinan",
     "verses": 11,
@@ -569,7 +569,7 @@ const SURAHS = [
   {
     "number": 63,
     "name": "Al-Munafiqun",
-    "name_arabic": "المنافقون",
+    "name_arabic": "\u0627\u0644\u0645\u0646\u0627\u0641\u0642\u0648\u0646",
     "meaning": "The Hypocrites",
     "revelation_type": "Medinan",
     "verses": 11,
@@ -578,7 +578,7 @@ const SURAHS = [
   {
     "number": 64,
     "name": "At-Taghabun",
-    "name_arabic": "التغابن",
+    "name_arabic": "\u0627\u0644\u062a\u063a\u0627\u0628\u0646",
     "meaning": "The Mutual Disillusion",
     "revelation_type": "Medinan",
     "verses": 18,
@@ -587,7 +587,7 @@ const SURAHS = [
   {
     "number": 65,
     "name": "At-Talaq",
-    "name_arabic": "الطلاق",
+    "name_arabic": "\u0627\u0644\u0637\u0644\u0627\u0642",
     "meaning": "Divorce",
     "revelation_type": "Medinan",
     "verses": 12,
@@ -596,7 +596,7 @@ const SURAHS = [
   {
     "number": 66,
     "name": "At-Tahrim",
-    "name_arabic": "التحريم",
+    "name_arabic": "\u0627\u0644\u062a\u062d\u0631\u064a\u0645",
     "meaning": "The Prohibition",
     "revelation_type": "Medinan",
     "verses": 12,
@@ -605,7 +605,7 @@ const SURAHS = [
   {
     "number": 67,
     "name": "Al-Mulk",
-    "name_arabic": "الملك",
+    "name_arabic": "\u0627\u0644\u0645\u0644\u0643",
     "meaning": "The Sovereignty",
     "revelation_type": "Meccan",
     "verses": 30,
@@ -614,7 +614,7 @@ const SURAHS = [
   {
     "number": 68,
     "name": "Al-Qalam",
-    "name_arabic": "القلم",
+    "name_arabic": "\u0627\u0644\u0642\u0644\u0645",
     "meaning": "The Pen",
     "revelation_type": "Meccan",
     "verses": 52,
@@ -623,7 +623,7 @@ const SURAHS = [
   {
     "number": 69,
     "name": "Al-Haqqa",
-    "name_arabic": "الحاقة",
+    "name_arabic": "\u0627\u0644\u062d\u0627\u0642\u0629",
     "meaning": "The Reality",
     "revelation_type": "Meccan",
     "verses": 52,
@@ -632,7 +632,7 @@ const SURAHS = [
   {
     "number": 70,
     "name": "Al-Ma'arij",
-    "name_arabic": "المعارج",
+    "name_arabic": "\u0627\u0644\u0645\u0639\u0627\u0631\u062c",
     "meaning": "The Ascending Stairways",
     "revelation_type": "Meccan",
     "verses": 44,
@@ -641,7 +641,7 @@ const SURAHS = [
   {
     "number": 71,
     "name": "Nuh",
-    "name_arabic": "نوح",
+    "name_arabic": "\u0646\u0648\u062d",
     "meaning": "Noah",
     "revelation_type": "Meccan",
     "verses": 52,
@@ -650,7 +650,7 @@ const SURAHS = [
   {
     "number": 72,
     "name": "Al-Jinn",
-    "name_arabic": "الجن",
+    "name_arabic": "\u0627\u0644\u062c\u0646",
     "meaning": "The Jinn",
     "revelation_type": "Meccan",
     "verses": 28,
@@ -659,7 +659,7 @@ const SURAHS = [
   {
     "number": 73,
     "name": "Al-Muzzammil",
-    "name_arabic": "المزمل",
+    "name_arabic": "\u0627\u0644\u0645\u0632\u0645\u0644",
     "meaning": "The Enshrouded One",
     "revelation_type": "Meccan",
     "verses": 20,
@@ -668,7 +668,7 @@ const SURAHS = [
   {
     "number": 74,
     "name": "Al-Muddaththir",
-    "name_arabic": "المدثر",
+    "name_arabic": "\u0627\u0644\u0645\u062f\u062b\u0631",
     "meaning": "The Cloaked One",
     "revelation_type": "Meccan",
     "verses": 56,
@@ -677,7 +677,7 @@ const SURAHS = [
   {
     "number": 75,
     "name": "Al-Qiyama",
-    "name_arabic": "القيامة",
+    "name_arabic": "\u0627\u0644\u0642\u064a\u0627\u0645\u0629",
     "meaning": "The Resurrection",
     "revelation_type": "Meccan",
     "verses": 40,
@@ -686,7 +686,7 @@ const SURAHS = [
   {
     "number": 76,
     "name": "Al-Insan",
-    "name_arabic": "الإنسان",
+    "name_arabic": "\u0627\u0644\u0625\u0646\u0633\u0627\u0646",
     "meaning": "The Human",
     "revelation_type": "Medinan",
     "verses": 31,
@@ -695,7 +695,7 @@ const SURAHS = [
   {
     "number": 77,
     "name": "Al-Mursalat",
-    "name_arabic": "المرسلات",
+    "name_arabic": "\u0627\u0644\u0645\u0631\u0633\u0644\u0627\u062a",
     "meaning": "The Emissaries",
     "revelation_type": "Meccan",
     "verses": 50,
@@ -704,7 +704,7 @@ const SURAHS = [
   {
     "number": 78,
     "name": "An-Naba",
-    "name_arabic": "النبأ",
+    "name_arabic": "\u0627\u0644\u0646\u0628\u0623",
     "meaning": "The Tidings",
     "revelation_type": "Meccan",
     "verses": 40,
@@ -713,7 +713,7 @@ const SURAHS = [
   {
     "number": 79,
     "name": "An-Nazi'at",
-    "name_arabic": "النازعات",
+    "name_arabic": "\u0627\u0644\u0646\u0627\u0632\u0639\u0627\u062a",
     "meaning": "Those Who Drag Forth",
     "revelation_type": "Meccan",
     "verses": 46,
@@ -722,7 +722,7 @@ const SURAHS = [
   {
     "number": 80,
     "name": "Abasa",
-    "name_arabic": "عبس",
+    "name_arabic": "\u0639\u0628\u0633",
     "meaning": "He Frowned",
     "revelation_type": "Meccan",
     "verses": 42,
@@ -731,7 +731,7 @@ const SURAHS = [
   {
     "number": 81,
     "name": "At-Takwir",
-    "name_arabic": "التكوير",
+    "name_arabic": "\u0627\u0644\u062a\u0643\u0648\u064a\u0631",
     "meaning": "The Overthrowing",
     "revelation_type": "Meccan",
     "verses": 29,
@@ -740,7 +740,7 @@ const SURAHS = [
   {
     "number": 82,
     "name": "Al-Infitar",
-    "name_arabic": "الانفطار",
+    "name_arabic": "\u0627\u0644\u0627\u0646\u0641\u0637\u0627\u0631",
     "meaning": "The Cleaving",
     "revelation_type": "Meccan",
     "verses": 19,
@@ -749,7 +749,7 @@ const SURAHS = [
   {
     "number": 83,
     "name": "Al-Mutaffifin",
-    "name_arabic": "المطففين",
+    "name_arabic": "\u0627\u0644\u0645\u0637\u0641\u0641\u064a\u0646",
     "meaning": "The Defrauding",
     "revelation_type": "Meccan",
     "verses": 36,
@@ -758,7 +758,7 @@ const SURAHS = [
   {
     "number": 84,
     "name": "Al-Inshiqaq",
-    "name_arabic": "الانشقاق",
+    "name_arabic": "\u0627\u0644\u0627\u0646\u0634\u0642\u0627\u0642",
     "meaning": "The Sundering",
     "revelation_type": "Meccan",
     "verses": 25,
@@ -767,7 +767,7 @@ const SURAHS = [
   {
     "number": 85,
     "name": "Al-Buruj",
-    "name_arabic": "البروج",
+    "name_arabic": "\u0627\u0644\u0628\u0631\u0648\u062c",
     "meaning": "The Mansions of Stars",
     "revelation_type": "Meccan",
     "verses": 22,
@@ -776,7 +776,7 @@ const SURAHS = [
   {
     "number": 86,
     "name": "At-Tariq",
-    "name_arabic": "الطارق",
+    "name_arabic": "\u0627\u0644\u0637\u0627\u0631\u0642",
     "meaning": "The Morning Star",
     "revelation_type": "Meccan",
     "verses": 17,
@@ -785,7 +785,7 @@ const SURAHS = [
   {
     "number": 87,
     "name": "Al-A'la",
-    "name_arabic": "الأعلى",
+    "name_arabic": "\u0627\u0644\u0623\u0639\u0644\u0649",
     "meaning": "The Most High",
     "revelation_type": "Meccan",
     "verses": 19,
@@ -794,7 +794,7 @@ const SURAHS = [
   {
     "number": 88,
     "name": "Al-Ghashiya",
-    "name_arabic": "الغاشية",
+    "name_arabic": "\u0627\u0644\u063a\u0627\u0634\u064a\u0629",
     "meaning": "The Overwhelming",
     "revelation_type": "Meccan",
     "verses": 26,
@@ -803,7 +803,7 @@ const SURAHS = [
   {
     "number": 89,
     "name": "Al-Fajr",
-    "name_arabic": "الفجر",
+    "name_arabic": "\u0627\u0644\u0641\u062c\u0631",
     "meaning": "The Dawn",
     "revelation_type": "Meccan",
     "verses": 30,
@@ -812,7 +812,7 @@ const SURAHS = [
   {
     "number": 90,
     "name": "Al-Balad",
-    "name_arabic": "البلد",
+    "name_arabic": "\u0627\u0644\u0628\u0644\u062f",
     "meaning": "The City",
     "revelation_type": "Meccan",
     "verses": 20,
@@ -821,7 +821,7 @@ const SURAHS = [
   {
     "number": 91,
     "name": "Ash-Shams",
-    "name_arabic": "الشمس",
+    "name_arabic": "\u0627\u0644\u0634\u0645\u0633",
     "meaning": "The Sun",
     "revelation_type": "Meccan",
     "verses": 15,
@@ -830,7 +830,7 @@ const SURAHS = [
   {
     "number": 92,
     "name": "Al-Layl",
-    "name_arabic": "الليل",
+    "name_arabic": "\u0627\u0644\u0644\u064a\u0644",
     "meaning": "The Night",
     "revelation_type": "Meccan",
     "verses": 21,
@@ -839,7 +839,7 @@ const SURAHS = [
   {
     "number": 93,
     "name": "Ad-Duha",
-    "name_arabic": "الضحى",
+    "name_arabic": "\u0627\u0644\u0636\u062d\u0649",
     "meaning": "The Morning Hours",
     "revelation_type": "Meccan",
     "verses": 11,
@@ -848,7 +848,7 @@ const SURAHS = [
   {
     "number": 94,
     "name": "Ash-Sharh",
-    "name_arabic": "الشرح",
+    "name_arabic": "\u0627\u0644\u0634\u0631\u062d",
     "meaning": "The Relief",
     "revelation_type": "Meccan",
     "verses": 8,
@@ -857,7 +857,7 @@ const SURAHS = [
   {
     "number": 95,
     "name": "At-Tin",
-    "name_arabic": "التين",
+    "name_arabic": "\u0627\u0644\u062a\u064a\u0646",
     "meaning": "The Fig",
     "revelation_type": "Meccan",
     "verses": 8,
@@ -866,7 +866,7 @@ const SURAHS = [
   {
     "number": 96,
     "name": "Al-Alaq",
-    "name_arabic": "العلق",
+    "name_arabic": "\u0627\u0644\u0639\u0644\u0642",
     "meaning": "The Clot",
     "revelation_type": "Meccan",
     "verses": 19,
@@ -875,7 +875,7 @@ const SURAHS = [
   {
     "number": 97,
     "name": "Al-Qadr",
-    "name_arabic": "القدر",
+    "name_arabic": "\u0627\u0644\u0642\u062f\u0631",
     "meaning": "The Power",
     "revelation_type": "Meccan",
     "verses": 5,
@@ -884,7 +884,7 @@ const SURAHS = [
   {
     "number": 98,
     "name": "Al-Bayyina",
-    "name_arabic": "البينة",
+    "name_arabic": "\u0627\u0644\u0628\u064a\u0646\u0629",
     "meaning": "The Clear Proof",
     "revelation_type": "Medinan",
     "verses": 8,
@@ -893,7 +893,7 @@ const SURAHS = [
   {
     "number": 99,
     "name": "Az-Zalzala",
-    "name_arabic": "الزلزلة",
+    "name_arabic": "\u0627\u0644\u0632\u0644\u0632\u0644\u0629",
     "meaning": "The Earthquake",
     "revelation_type": "Medinan",
     "verses": 8,
@@ -902,7 +902,7 @@ const SURAHS = [
   {
     "number": 100,
     "name": "Al-Adiyat",
-    "name_arabic": "العاديات",
+    "name_arabic": "\u0627\u0644\u0639\u0627\u062f\u064a\u0627\u062a",
     "meaning": "The Chargers",
     "revelation_type": "Meccan",
     "verses": 11,
@@ -911,7 +911,7 @@ const SURAHS = [
   {
     "number": 101,
     "name": "Al-Qari'a",
-    "name_arabic": "القارعة",
+    "name_arabic": "\u0627\u0644\u0642\u0627\u0631\u0639\u0629",
     "meaning": "The Calamity",
     "revelation_type": "Meccan",
     "verses": 11,
@@ -920,7 +920,7 @@ const SURAHS = [
   {
     "number": 102,
     "name": "At-Takathur",
-    "name_arabic": "التكاثر",
+    "name_arabic": "\u0627\u0644\u062a\u0643\u0627\u062b\u0631",
     "meaning": "The Rivalry",
     "revelation_type": "Meccan",
     "verses": 8,
@@ -929,7 +929,7 @@ const SURAHS = [
   {
     "number": 103,
     "name": "Al-Asr",
-    "name_arabic": "العصر",
+    "name_arabic": "\u0627\u0644\u0639\u0635\u0631",
     "meaning": "The Declining Day",
     "revelation_type": "Meccan",
     "verses": 3,
@@ -938,7 +938,7 @@ const SURAHS = [
   {
     "number": 104,
     "name": "Al-Humaza",
-    "name_arabic": "الهمزة",
+    "name_arabic": "\u0627\u0644\u0647\u0645\u0632\u0629",
     "meaning": "The Traducer",
     "revelation_type": "Meccan",
     "verses": 9,
@@ -947,7 +947,7 @@ const SURAHS = [
   {
     "number": 105,
     "name": "Al-Fil",
-    "name_arabic": "الفيل",
+    "name_arabic": "\u0627\u0644\u0641\u064a\u0644",
     "meaning": "The Elephant",
     "revelation_type": "Meccan",
     "verses": 5,
@@ -956,7 +956,7 @@ const SURAHS = [
   {
     "number": 106,
     "name": "Quraysh",
-    "name_arabic": "قريش",
+    "name_arabic": "\u0642\u0631\u064a\u0634",
     "meaning": "Quraysh",
     "revelation_type": "Meccan",
     "verses": 4,
@@ -965,7 +965,7 @@ const SURAHS = [
   {
     "number": 107,
     "name": "Al-Ma'un",
-    "name_arabic": "الماعون",
+    "name_arabic": "\u0627\u0644\u0645\u0627\u0639\u0648\u0646",
     "meaning": "The Small Kindnesses",
     "revelation_type": "Meccan",
     "verses": 7,
@@ -974,7 +974,7 @@ const SURAHS = [
   {
     "number": 108,
     "name": "Al-Kawthar",
-    "name_arabic": "الكوثر",
+    "name_arabic": "\u0627\u0644\u0643\u0648\u062b\u0631",
     "meaning": "The Abundance",
     "revelation_type": "Meccan",
     "verses": 3,
@@ -983,7 +983,7 @@ const SURAHS = [
   {
     "number": 109,
     "name": "Al-Kafirun",
-    "name_arabic": "الكافرون",
+    "name_arabic": "\u0627\u0644\u0643\u0627\u0641\u0631\u0648\u0646",
     "meaning": "The Disbelievers",
     "revelation_type": "Meccan",
     "verses": 6,
@@ -992,7 +992,7 @@ const SURAHS = [
   {
     "number": 110,
     "name": "An-Nasr",
-    "name_arabic": "النصر",
+    "name_arabic": "\u0627\u0644\u0646\u0635\u0631",
     "meaning": "The Divine Support",
     "revelation_type": "Medinan",
     "verses": 3,
@@ -1001,7 +1001,7 @@ const SURAHS = [
   {
     "number": 111,
     "name": "Al-Masad",
-    "name_arabic": "المسدد",
+    "name_arabic": "\u0627\u0644\u0645\u0633\u062f\u062f",
     "meaning": "The Palm Fibre",
     "revelation_type": "Meccan",
     "verses": 5,
@@ -1010,7 +1010,7 @@ const SURAHS = [
   {
     "number": 112,
     "name": "Al-Ikhlas",
-    "name_arabic": "الإخلاص",
+    "name_arabic": "\u0627\u0644\u0625\u062e\u0644\u0627\u0635",
     "meaning": "The Sincerity",
     "revelation_type": "Meccan",
     "verses": 4,
@@ -1019,7 +1019,7 @@ const SURAHS = [
   {
     "number": 113,
     "name": "Al-Falaq",
-    "name_arabic": "الفلق",
+    "name_arabic": "\u0627\u0644\u0641\u0644\u0642",
     "meaning": "The Daybreak",
     "revelation_type": "Meccan",
     "verses": 5,
@@ -1028,7 +1028,7 @@ const SURAHS = [
   {
     "number": 114,
     "name": "An-Nas",
-    "name_arabic": "الناس",
+    "name_arabic": "\u0627\u0644\u0646\u0627\u0633",
     "meaning": "Mankind",
     "revelation_type": "Meccan",
     "verses": 6,
@@ -1048,7 +1048,7 @@ export default function SurahsIndexPage() {
           {SURAHS.map(s => (
             <Link
               key={s.number}
-              href={"/surah/" + s.number + "/" + s.name.toLowerCase().replace(/'/g,'').replace(/\s+/g,'-')}
+              href={"/surah/" + s.number + "/" + s.name.toLowerCase().replace(/'/g,'').replace(/\\s+/g,'-')}
               className="rounded-lg border border-border bg-surface p-4 hover:border-accent transition-all group"
             >
               <div className="flex items-start justify-between">

@@ -10,31 +10,31 @@ interface Props {
 // ── Static Params ─────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return [{ number: '030', slug: 'ar-rum' }];
+  return [{ number: "030", slug: "ar-rum" }];
 }
 
-// ── Metadata ───────────────────────────────────────────────────────────────────
+// ── Metadata ─────────────────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { number: num } = await params;
   return {
-    title: 'Surah Ar-Rum (الروم) — The Romans | TajweedTranslit',
-    description: 'Read Surah Ar-Rum (The Romans) — 60 verses, Meccan revelation. English transliteration with expert Tajweed colour coding. Free online reader.',
+    title: "Surah Ar-Rum (الروم) — The Romans | TajweedTranslit",
+    description: "Read Surah Ar-Rum (The Romans) — 60 verses, Meccan revelation. English transliteration with expert Tajweed colour coding. Free online reader.",
     keywords: [
-      'Surah Ar-Rum transliteration',
-      'Surah 30 tajweed',
-      'Ar-Rum meaning',
-      'Quran ar-rum transliteration',
-      'learn quran ar-rum',
-      'quran recitation ar-rum',
-      'tajweed ar-rum',
+      "Surah Ar-Rum transliteration",
+      "Surah 30 tajweed",
+      "Ar-Rum meaning",
+      "Quran ar-rum transliteration",
+      "learn quran ar-rum",
+      "quran recitation ar-rum",
+      "tajweed ar-rum",
     ],
-    alternates: { canonical: '/surah/30/ar-rum' },
+    alternates: { canonical: `/surah/30/ar-rum` },
     openGraph: {
-      title: 'Surah Ar-Rum (الروم) — The Romans',
-      description: 'Read Surah Ar-Rum in English transliteration with Tajweed colour coding. 60 verses, Meccan.',
-      url: '/surah/30/ar-rum',
-      type: 'article',
+      title: "Surah Ar-Rum (الروم) — The Romans",
+      description: "Read Surah Ar-Rum in English transliteration with Tajweed colour coding. 60 verses, Meccan.",
+      url: `/surah/30/ar-rum`,
+      type: "article",
     },
   };
 }
@@ -93,13 +93,13 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Ar-Rum</h3>
-          <p className="text-secondary leading-relaxed">Predicted the Roman victory over Persia within 3–9 years — a prophecy fulfilled exactly.</p>
+          <p className="text-secondary leading-relaxed">Predicted the Roman victory over Persia within 3-9 years — a prophecy fulfilled exactly.</p>
         </section>
 
         {/* Significance */}
         <section className="rounded-xl border border-border bg-surface p-6">
           <h3 className="font-brand text-lg text-accent mb-3">Why Surah Ar-Rum is Special</h3>
-          <p className="text-secondary leading-relaxed">Contains the famous verse: "Do they not see how Allah brings the dead to life?"</p>
+          <p className="text-secondary leading-relaxed">Contains: 'Do they not see how Allah brings the dead to life?'</p>
         </section>
 
         {/* Quick Facts */}
@@ -140,46 +140,46 @@ export default async function SurahPage({ params }: Props) {
             When reading Surah Ar-Rum at TajweedTranslit.com, these Tajweed rules are colour-coded:
           </p>
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
-        <span class="text-sm">Necessary Prolongation</span>
-        <span class="text-xs text-muted">(المد اللازم)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
-        <span class="text-sm">Obligatory Prolongation</span>
-        <span class="text-xs text-muted">(المد الواجب المتصل)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
-        <span class="text-sm">Permissible Prolongation</span>
-        <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
-        <span class="text-sm">Nasalisation (Ghunnah)</span>
-        <span class="text-xs text-muted">(الغنة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
-        <span class="text-sm">Emphatic Pronunciation</span>
-        <span class="text-xs text-muted">(التفخيم)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
-        <span class="text-sm">Silent Letters</span>
-        <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
-        <span class="text-sm">Echoing Sound (Qalqalah)</span>
-        <span class="text-xs text-muted">(القلقلة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
-        <span class="text-sm">Normal Prolongation</span>
-        <span class="text-xs text-muted">(المد الطبيعي)</span>
-      </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
+          <span class="text-sm">Necessary Prolongation</span>
+          <span class="text-xs text-muted">(المد اللازم)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
+          <span class="text-sm">Obligatory Prolongation</span>
+          <span class="text-xs text-muted">(المد الواجب المتصل)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
+          <span class="text-sm">Permissible Prolongation</span>
+          <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
+          <span class="text-sm">Nasalisation (Ghunnah)</span>
+          <span class="text-xs text-muted">(الغنة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
+          <span class="text-sm">Emphatic Pronunciation</span>
+          <span class="text-xs text-muted">(التفخيم)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
+          <span class="text-sm">Silent Letters</span>
+          <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
+          <span class="text-sm">Echoing Sound (Qalqalah)</span>
+          <span class="text-xs text-muted">(القلقلة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
+          <span class="text-sm">Normal Prolongation</span>
+          <span class="text-xs text-muted">(المد الطبيعي)</span>
+        </li>
           </ul>
           <p className="mt-4 text-xs text-muted">
             Tap any highlighted word in the reader to see a detailed explanation of the rule.
@@ -188,11 +188,11 @@ export default async function SurahPage({ params }: Props) {
 
         {/* Navigation */}
         <section className="grid grid-cols-2 gap-4">
-          <Link href={"/surah/29/" + "al-ankabut"} className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
+          <Link href="/surah/29/al-ankabut" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
             <p className="mt-1 font-semibold text-foreground">Surah Al-Ankabut</p>
           </Link>
-          <Link href={"/surah/31/" + "luqman"} className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
+          <Link href="/surah/31/luqman" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
             <p className="mt-1 font-semibold text-foreground">Surah Luqman</p>
           </Link>

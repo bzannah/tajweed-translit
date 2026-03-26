@@ -10,31 +10,31 @@ interface Props {
 // ── Static Params ─────────────────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return [{ number: '008', slug: 'al-anfal' }];
+  return [{ number: "008", slug: "al-anfal" }];
 }
 
-// ── Metadata ───────────────────────────────────────────────────────────────────
+// ── Metadata ─────────────────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { number: num } = await params;
   return {
-    title: 'Surah Al-Anfal (الأنفال) — The Spoils of War | TajweedTranslit',
-    description: 'Read Surah Al-Anfal (The Spoils of War) — 75 verses, Medinan revelation. English transliteration with expert Tajweed colour coding. Free online reader.',
+    title: "Surah Al-Anfal (الأنفال) — The Spoils of War | TajweedTranslit",
+    description: "Read Surah Al-Anfal (The Spoils of War) — 75 verses, Medinan revelation. English transliteration with expert Tajweed colour coding. Free online reader.",
     keywords: [
-      'Surah Al-Anfal transliteration',
-      'Surah 8 tajweed',
-      'Al-Anfal meaning',
-      'Quran al-anfal transliteration',
-      'learn quran al-anfal',
-      'quran recitation al-anfal',
-      'tajweed al-anfal',
+      "Surah Al-Anfal transliteration",
+      "Surah 8 tajweed",
+      "Al-Anfal meaning",
+      "Quran al-anfal transliteration",
+      "learn quran al-anfal",
+      "quran recitation al-anfal",
+      "tajweed al-anfal",
     ],
-    alternates: { canonical: '/surah/8/al-anfal' },
+    alternates: { canonical: `/surah/8/al-anfal` },
     openGraph: {
-      title: 'Surah Al-Anfal (الأنفال) — The Spoils of War',
-      description: 'Read Surah Al-Anfal in English transliteration with Tajweed colour coding. 75 verses, Medinan.',
-      url: '/surah/8/al-anfal',
-      type: 'article',
+      title: "Surah Al-Anfal (الأنفال) — The Spoils of War",
+      description: "Read Surah Al-Anfal in English transliteration with Tajweed colour coding. 75 verses, Medinan.",
+      url: `/surah/8/al-anfal`,
+      type: "article",
     },
   };
 }
@@ -93,7 +93,7 @@ export default async function SurahPage({ params }: Props) {
         {/* About */}
         <section>
           <h3 className="font-brand text-xl text-accent mb-4">About Surah Al-Anfal</h3>
-          <p className="text-secondary leading-relaxed">Revealed after the Battle of Badr (624 CE), Al-Anfal addresses the distribution of war spoils and the qualities of true believers.</p>
+          <p className="text-secondary leading-relaxed">Revealed after the Battle of Badr (624 CE), Al-Anfal addresses the distribution of war spoils.</p>
         </section>
 
         {/* Significance */}
@@ -140,46 +140,46 @@ export default async function SurahPage({ params }: Props) {
             When reading Surah Al-Anfal at TajweedTranslit.com, these Tajweed rules are colour-coded:
           </p>
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
-        <span class="text-sm">Necessary Prolongation</span>
-        <span class="text-xs text-muted">(المد اللازم)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
-        <span class="text-sm">Obligatory Prolongation</span>
-        <span class="text-xs text-muted">(المد الواجب المتصل)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
-        <span class="text-sm">Permissible Prolongation</span>
-        <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
-        <span class="text-sm">Nasalisation (Ghunnah)</span>
-        <span class="text-xs text-muted">(الغنة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
-        <span class="text-sm">Emphatic Pronunciation</span>
-        <span class="text-xs text-muted">(التفخيم)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
-        <span class="text-sm">Silent Letters</span>
-        <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
-        <span class="text-sm">Echoing Sound (Qalqalah)</span>
-        <span class="text-xs text-muted">(القلقلة)</span>
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
-        <span class="text-sm">Normal Prolongation</span>
-        <span class="text-xs text-muted">(المد الطبيعي)</span>
-      </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF0000"></span>
+          <span class="text-sm">Necessary Prolongation</span>
+          <span class="text-xs text-muted">(المد اللازم)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#8B0000"></span>
+          <span class="text-sm">Obligatory Prolongation</span>
+          <span class="text-xs text-muted">(المد الواجب المتصل)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#FF8C00"></span>
+          <span class="text-sm">Permissible Prolongation</span>
+          <span class="text-xs text-muted">(المد الجائز المنفصل)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#00AA00"></span>
+          <span class="text-sm">Nasalisation (Ghunnah)</span>
+          <span class="text-xs text-muted">(الغنة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#0066CC"></span>
+          <span class="text-sm">Emphatic Pronunciation</span>
+          <span class="text-xs text-muted">(التفخيم)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#808080"></span>
+          <span class="text-sm">Silent Letters</span>
+          <span class="text-xs text-muted">(الحروف غير الملفوظة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#4B0082"></span>
+          <span class="text-sm">Echoing Sound (Qalqalah)</span>
+          <span class="text-xs text-muted">(القلقلة)</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="inline-block h-3 w-3 rounded-full" style="background:#000000"></span>
+          <span class="text-sm">Normal Prolongation</span>
+          <span class="text-xs text-muted">(المد الطبيعي)</span>
+        </li>
           </ul>
           <p className="mt-4 text-xs text-muted">
             Tap any highlighted word in the reader to see a detailed explanation of the rule.
@@ -188,11 +188,11 @@ export default async function SurahPage({ params }: Props) {
 
         {/* Navigation */}
         <section className="grid grid-cols-2 gap-4">
-          <Link href={"/surah/7/" + "al-araf"} className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
+          <Link href="/surah/7/al-araf" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">← Previous</span>
             <p className="mt-1 font-semibold text-foreground">Surah Al-A'raf</p>
           </Link>
-          <Link href={"/surah/9/" + "at-tawba"} className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
+          <Link href="/surah/9/at-tawba" className="rounded-lg border border-border bg-surface p-4 text-center hover:border-accent transition-colors">
             <span className="text-xs text-muted">Next →</span>
             <p className="mt-1 font-semibold text-foreground">Surah At-Tawba</p>
           </Link>

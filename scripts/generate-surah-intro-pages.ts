@@ -194,22 +194,22 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { number: num } = await params;
   return {
-    title: 'Surah ${name} (${name_arabic}) — ${meaning} | TajweedTranslit',
-    description: 'Read Surah ${name} (${meaning}) — ${verses} verses, ${revelation_type} revelation. English transliteration with expert Tajweed colour coding. Free online reader.',
+    title: `Surah ${name} (${name_arabic}) — ${meaning} | TajweedTranslit`,
+    description: `Read Surah ${name} (${meaning}) — ${verses} verses, ${revelation_type} revelation. English transliteration with expert Tajweed colour coding. Free online reader.`,
     keywords: [
-      'Surah ${name} transliteration',
-      'Surah ${number} tajweed',
-      '${name} meaning',
-      'Quran ${name.toLowerCase()} transliteration',
-      'learn quran ${name.toLowerCase()}',
-      'quran recitation ${name.toLowerCase()}',
-      'tajweed ${name.toLowerCase()}',
+      `Surah ${name} transliteration`,
+      `Surah ${number} tajweed`,
+      `${name} meaning`,
+      `Quran ${name.toLowerCase()} transliteration`,
+      `learn quran ${name.toLowerCase()}`,
+      `quran recitation ${name.toLowerCase()}`,
+      `tajweed ${name.toLowerCase()}`,
     ],
-    alternates: { canonical: '/surah/${number}/${surahSlug}' },
+    alternates: { canonical: `/surah/${number}/${surahSlug}` },
     openGraph: {
-      title: 'Surah ${name} (${name_arabic}) — ${meaning}',
-      description: 'Read Surah ${name} in English transliteration with Tajweed colour coding. ${verses} verses, ${revelation_type}.',
-      url: '/surah/${number}/${surahSlug}',
+      title: `Surah ${name} (${name_arabic}) — ${meaning}`,
+      description: `Read Surah ${name} in English transliteration with Tajweed colour coding. ${verses} verses, ${revelation_type}.`,
+      url: `/surah/${number}/${surahSlug}`,
       type: 'article',
     },
   };
