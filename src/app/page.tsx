@@ -70,6 +70,26 @@ export default function HomePage() {
                   Tajweed for Beginners
                 </a>
               </li>
+              <li>
+                <a href={`${SITE_URL}/learn/how-to-read-quran-in-english`} className="text-accent hover:underline">
+                  How to Read the Quran in English
+                </a>
+              </li>
+              <li>
+                <a href={`${SITE_URL}/learn/surah-al-fatiha-transliteration`} className="text-accent hover:underline">
+                  Surah Al-Fatiha Transliteration
+                </a>
+              </li>
+              <li>
+                <a href={`${SITE_URL}/learn/quran-transliteration-vs-translation`} className="text-accent hover:underline">
+                  Quran Transliteration vs Translation
+                </a>
+              </li>
+              <li>
+                <a href={`${SITE_URL}/learn/how-to-pronounce-arabic-letters`} className="text-accent hover:underline">
+                  How to Pronounce Arabic Letters
+                </a>
+              </li>
             </ul>
           </main>
         </div>
@@ -116,6 +136,10 @@ export default function HomePage() {
           <ul>
             <li><a href="/learn/tajweed-rules">Complete Guide to Tajweed Rules</a></li>
             <li><a href="/learn/tajweed-for-beginners">Tajweed for Beginners</a></li>
+            <li><a href="/learn/how-to-read-quran-in-english">How to Read the Quran in English — Transliteration Guide</a></li>
+            <li><a href="/learn/surah-al-fatiha-transliteration">Surah Al-Fatiha Transliteration with Tajweed</a></li>
+            <li><a href="/learn/quran-transliteration-vs-translation">Quran Transliteration vs Translation — What is the Difference?</a></li>
+            <li><a href="/learn/how-to-pronounce-arabic-letters">How to Pronounce Arabic Letters for Quran Reading</a></li>
           </ul>
         </nav>
       </div>

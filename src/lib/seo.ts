@@ -388,7 +388,14 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
   }
 
   // Learn pages — cornerstone content
-  for (const slug of ['tajweed-rules', 'tajweed-for-beginners', 'how-to-read-quran-in-english']) {
+  for (const slug of [
+    'tajweed-rules',
+    'tajweed-for-beginners',
+    'how-to-read-quran-in-english',
+    'surah-al-fatiha-transliteration',
+    'quran-transliteration-vs-translation',
+    'how-to-pronounce-arabic-letters',
+  ]) {
     entries.push({
       url: getAbsoluteUrl(`/learn/${slug}`),
       lastModified,

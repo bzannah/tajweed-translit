@@ -20,6 +20,9 @@ function getHighPriorityUrls(): string[] {
     `${SITE_URL}/learn/tajweed-rules`,
     `${SITE_URL}/learn/tajweed-for-beginners`,
     `${SITE_URL}/learn/how-to-read-quran-in-english`,
+    `${SITE_URL}/learn/surah-al-fatiha-transliteration`,
+    `${SITE_URL}/learn/quran-transliteration-vs-translation`,
+    `${SITE_URL}/learn/how-to-pronounce-arabic-letters`,
     `${SITE_URL}/donate`,
   ];
 
