@@ -58,7 +58,9 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <h2 className="text-lg font-semibold mb-3">Learn Tajweed</h2>
+            <h2 className="text-lg font-semibold mb-3">
+              <a href={`${SITE_URL}/learn`} className="text-accent hover:underline">Learn Tajweed</a>
+            </h2>
             <ul className="space-y-2 mb-8">
               <li>
                 <a href={`${SITE_URL}/learn/tajweed-rules`} className="text-accent hover:underline">
@@ -132,7 +134,7 @@ export default function HomePage() {
         </nav>
 
         <nav aria-label="Learning resources">
-          <h2>Learn Tajweed</h2>
+          <h2><a href="/learn">Learn Tajweed Online Free</a></h2>
           <ul>
             <li><a href="/learn/tajweed-rules">Complete Guide to Tajweed Rules</a></li>
             <li><a href="/learn/tajweed-for-beginners">Tajweed for Beginners</a></li>

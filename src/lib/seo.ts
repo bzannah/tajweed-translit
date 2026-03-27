@@ -387,6 +387,14 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     });
   }
 
+  // Learn hub page
+  entries.push({
+    url: getAbsoluteUrl('/learn'),
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  });
+
   // Learn pages — cornerstone content
   for (const slug of [
     'tajweed-rules',

@@ -213,6 +213,36 @@ export default async function JuzPage({
             </div>
           </section>
 
+          {/* Learn Tajweed */}
+          <section className="mb-8">
+            <h2 className="text-lg font-semibold mb-3">
+              Learn to Read with Tajweed
+            </h2>
+            <div className="grid gap-2 sm:grid-cols-3">
+              <Link
+                href="/learn/how-to-read-quran-in-english"
+                className="rounded-xl bg-surface p-4 hover:bg-surface-hover transition-colors"
+              >
+                <p className="text-sm font-medium">How to Read the Quran in English</p>
+                <p className="text-xs text-muted mt-1">Transliteration guide for beginners.</p>
+              </Link>
+              <Link
+                href="/learn/tajweed-rules"
+                className="rounded-xl bg-surface p-4 hover:bg-surface-hover transition-colors"
+              >
+                <p className="text-sm font-medium">Tajweed Rules Guide</p>
+                <p className="text-xs text-muted mt-1">What each colour means.</p>
+              </Link>
+              <Link
+                href="/learn/how-to-pronounce-arabic-letters"
+                className="rounded-xl bg-surface p-4 hover:bg-surface-hover transition-colors"
+              >
+                <p className="text-sm font-medium">Arabic Pronunciation Guide</p>
+                <p className="text-xs text-muted mt-1">Every letter explained.</p>
+              </Link>
+            </div>
+          </section>
+
           {/* Juz Navigation (Prev/Next) */}
           <nav className="flex items-center justify-between border-t border-border pt-6" aria-label="Juz navigation">
             {prevJuz ? (

@@ -17,6 +17,7 @@ const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
 function getHighPriorityUrls(): string[] {
   const urls: string[] = [
     `${SITE_URL}`,
+    `${SITE_URL}/learn`,
     `${SITE_URL}/learn/tajweed-rules`,
     `${SITE_URL}/learn/tajweed-for-beginners`,
     `${SITE_URL}/learn/how-to-read-quran-in-english`,
