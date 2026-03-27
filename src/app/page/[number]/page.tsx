@@ -1,7 +1,14 @@
 import type { Metadata } from 'next';
 import { TOTAL_PAGES } from '@/lib/constants';
-import { getSurahForPage } from '@/lib/page-utils';
-import { surahs } from '@/data/surahs';
+import {
+  getPageSeoData,
+  getPageStructuredData,
+  getAbsoluteUrl,
+  SITE_URL,
+} from '@/lib/seo';
+import { parsePageParam } from '@/lib/page-utils';
+import { PageSeoContent } from '@/components/seo/page-seo-content';
+import { JsonLd } from '@/components/seo/json-ld';
 import { PageRoute } from './page-route';
 
 /**
@@ -16,7 +23,8 @@ export function generateStaticParams() {
 
 /**
  * Generates dynamic metadata for each page route.
- * Pages 1-4 are the Tajweed guide; all others show surah name + page number.
+ * Includes enhanced SEO: unique titles, descriptions, OG images,
+ * canonical URLs, and pagination links.
  */
 export async function generateMetadata({
   params,
@@ -24,33 +32,65 @@ export async function generateMetadata({
   params: Promise<{ number: string }>;
 }): Promise<Metadata> {
   const { number } = await params;
-  const pageNum = parseInt(number, 10);
-  const surah = getSurahForPage(pageNum, surahs);
-
-  const isIntro = pageNum <= 4;
-  const title = isIntro
-    ? 'Tajweed Guide'
-    : `${surah.name_english} — Page ${pageNum}`;
-  const description = isIntro
-    ? 'Introduction to Tajweed colour coding rules for Quran recitation.'
-    : `Read ${surah.name_english} (${surah.name_arabic}) in English transliteration with Tajweed colour coding. Page ${pageNum}.`;
+  const pageNum = parsePageParam(number);
+  const seo = getPageSeoData(pageNum);
 
   return {
-    title,
-    description,
+    title: seo.title,
+    description: seo.description,
     alternates: {
-      canonical: `/page/${pageNum}`,
+      canonical: seo.canonicalPath,
+    },
+    openGraph: {
+      type: 'article',
+      url: getAbsoluteUrl(seo.canonicalPath),
+      title: seo.title,
+      description: seo.description,
+      siteName: 'Quran Tajweed Transliteration',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: seo.heading,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.title,
+      description: seo.description,
+      images: ['/og-image.png'],
+    },
+    other: {
+      ...(seo.previousPagePath
+        ? { 'link-prev': `${SITE_URL}${seo.previousPagePath}` }
+        : {}),
+      ...(seo.nextPagePath
+        ? { 'link-next': `${SITE_URL}${seo.nextPagePath}` }
+        : {}),
     },
   };
 }
 
 /**
  * Dynamic page route that displays a specific Quran page.
+ * Includes server-rendered SEO content and structured data.
  */
-export default function Page({
+export default async function Page({
   params,
 }: {
   params: Promise<{ number: string }>;
 }) {
-  return <PageRoute params={params} />;
+  const { number } = await params;
+  const pageNum = parsePageParam(number);
+  const structuredData = getPageStructuredData(pageNum);
+
+  return (
+    <>
+      <JsonLd data={structuredData} />
+      <PageSeoContent page={pageNum} />
+      <PageRoute params={params} />
+    </>
+  );
 }

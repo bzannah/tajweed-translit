@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { getPageImagePath } from '@/lib/page-utils';
+import { getPageImagePath, getSurahForPage } from '@/lib/page-utils';
+import { surahs } from '@/data/surahs';
+import { isIntroPage } from '@/data/intro-pages';
 
 /** Props for the PageImage component. */
 export interface PageImageProps {
@@ -51,7 +53,11 @@ export function PageImage({ page }: PageImageProps) {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={getPageImagePath(page)}
-          alt={`Quran transliteration page ${page}`}
+          alt={
+            isIntroPage(page)
+              ? `Tajweed colour guide and introduction — page ${page} of ${1275}`
+              : `Surah ${getSurahForPage(page, surahs).name_english} English transliteration with Tajweed colour coding — page ${page} of ${1275}`
+          }
           width={800}
           height={1133}
           onLoad={() => setIsLoaded(true)}

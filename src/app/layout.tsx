@@ -16,42 +16,60 @@ const amiri = Amiri({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tajweedtranslit.com'),
   title: {
-    default: 'Quran Tajweed Transliteration — Read the Quran with Tajweed',
+    default:
+      'Quran Tajweed Transliteration — Free Online Quran Reader with Colour-Coded Tajweed',
     template: '%s | Quran Tajweed Transliteration',
   },
   description:
-    'Read the complete Quran in English transliteration with colour-coded Tajweed rules. Free online Quran reader with surah navigation, bookmarks, and audio recitation.',
+    'Read the complete Quran in English transliteration with colour-coded Tajweed rules. Free online Quran reader with 1,275 pages, surah navigation, bookmarks, audio recitation, and mobile-friendly reading.',
   keywords: [
     'quran transliteration',
     'tajweed',
+    'tajweed transliteration',
+    'quran transliteration with tajweed',
     'quran in english',
     'quran reading',
     'tajweed quran',
-    'quran transliteration with tajweed',
     'learn quran',
     'quran for beginners',
     'quran recitation',
-    'islamic',
-    'muslim',
-    'surah',
-    'juz',
+    'tajweed colour coding',
+    'read quran online free',
+    'quran transliteration online',
+    'surah transliteration',
+    'juz transliteration',
+    'learn tajweed',
+    'tajweed rules',
+    'quran pronunciation guide',
   ],
   authors: [{ name: 'Quran Tajweed Transliteration' }],
   creator: 'Quran Tajweed Transliteration',
+  publisher: 'Quran Tajweed Transliteration',
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://tajweedtranslit.com',
     siteName: 'Quran Tajweed Transliteration',
-    title: 'Quran Tajweed Transliteration — Read the Quran with Tajweed',
+    title:
+      'Quran Tajweed Transliteration — Free Online Quran Reader with Colour-Coded Tajweed',
     description:
-      'Read the complete Quran in English transliteration with colour-coded Tajweed rules. Free, beautiful, and easy to use.',
+      'Read the complete Quran in English transliteration with colour-coded Tajweed rules. 1,275 pages, 114 surahs. Free, beautiful, and easy to use.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Quran Tajweed Transliteration — Read the Quran with colour-coded Tajweed rules',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Quran Tajweed Transliteration',
+    title: 'Quran Tajweed Transliteration — Free Online Quran Reader',
     description:
-      'Read the complete Quran in English transliteration with colour-coded Tajweed rules.',
+      'Read the complete Quran in English transliteration with colour-coded Tajweed rules. 1,275 pages. Free.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -59,6 +77,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
     },
   },
   icons: {
@@ -68,6 +89,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://tajweedtranslit.com',
   },
+  category: 'education',
 };
 
 export const viewport: Viewport = {
