@@ -92,6 +92,9 @@ export const metadata: Metadata = {
   category: 'education',
   verification: {
     google: 'y3qMYlqCEaJFZIFrGliTDFWatMf2Z_BBcEv3mtAi_bU',
+    other: {
+      'msvalidate.01': 'D1D3FE61770FB7632511AB2FA2A64FC2',
+    },
   },
 };
 
