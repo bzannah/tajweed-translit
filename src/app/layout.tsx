@@ -14,7 +14,7 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tajweedtranslit.com'),
+  metadataBase: new URL('https://www.tajweedtranslit.com'),
   title: {
     default:
       'Quran Tajweed Transliteration — Free Online Quran Reader with Colour-Coded Tajweed',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://tajweedtranslit.com',
+    url: 'https://www.tajweedtranslit.com',
     siteName: 'Quran Tajweed Transliteration',
     title:
       'Quran Tajweed Transliteration — Free Online Quran Reader with Colour-Coded Tajweed',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://tajweedtranslit.com',
+    canonical: 'https://www.tajweedtranslit.com',
   },
   category: 'education',
   verification: {

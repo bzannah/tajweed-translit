@@ -7,7 +7,7 @@ import { clampPage, getSurahForPage, getJuzForPage } from './page-utils';
 import { getSurahSlug, getSurahEndPage } from './surah-utils';
 
 export const SITE_NAME = 'Quran Tajweed Transliteration';
-export const SITE_URL = 'https://tajweedtranslit.com';
+export const SITE_URL = 'https://www.tajweedtranslit.com';
 export const SITE_DESCRIPTION =
   'Read the complete Quran in English transliteration with colour-coded Tajweed rules. Free online Quran reader with 1,275 pages, surah navigation, bookmarks, audio recitation, and mobile-friendly reading.';
 
