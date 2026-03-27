@@ -237,7 +237,7 @@ export default function TajweedRulesPage() {
           {/* Related Pages */}
           <section className="mb-8">
             <h2 className="text-lg font-semibold mb-3">Continue Learning</h2>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-3">
               <Link
                 href="/learn/tajweed-for-beginners"
                 className="rounded-xl bg-surface p-4 hover:bg-surface-hover transition-colors"
@@ -245,6 +245,15 @@ export default function TajweedRulesPage() {
                 <p className="font-medium">Tajweed for Beginners</p>
                 <p className="text-sm text-muted mt-1">
                   A step-by-step introduction to Tajweed for new learners.
+                </p>
+              </Link>
+              <Link
+                href="/learn/how-to-read-quran-in-english"
+                className="rounded-xl bg-surface p-4 hover:bg-surface-hover transition-colors"
+              >
+                <p className="font-medium">How to Read the Quran in English</p>
+                <p className="text-sm text-muted mt-1">
+                  Complete guide to Quran transliteration for non-Arabic speakers.
                 </p>
               </Link>
               <Link

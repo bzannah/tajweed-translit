@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install:*)",
+      "Bash(pnpm validate:data 2>&1)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm *:*)",
+      "Bash(find /Users/baba/code/english-translit-pdfs -type f \\\\\\( -name \"*.webp\" -o -name \"*.png\" -o -name \"*.jpg\" -o -name \"*.pdf\" \\\\\\) 2>/dev/null | head -20)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(ls /Users/baba/code/tajweed-translit/public/favicon*)",
+      "Bash(ls /Users/baba/code/tajweed-translit/public/apple-touch-icon*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm tsx:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(ls public/pages/*.webp)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 scripts/reink-pages.py -i ./public/pages -o ./public/pages-reinked -q 88 -w 4)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)"
+    ]
+  }
+}

@@ -388,7 +388,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
   }
 
   // Learn pages — cornerstone content
-  for (const slug of ['tajweed-rules', 'tajweed-for-beginners']) {
+  for (const slug of ['tajweed-rules', 'tajweed-for-beginners', 'how-to-read-quran-in-english']) {
     entries.push({
       url: getAbsoluteUrl(`/learn/${slug}`),
       lastModified,
