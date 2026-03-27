@@ -37,6 +37,7 @@ const LEARN_PAGES = [
     description:
       'A complete guide for non-Arabic speakers to start reading the Quran using English transliteration with Tajweed colour coding. Step-by-step instructions from first page to fluency.',
     tag: 'Beginner',
+    readTime: '13 min read',
   },
   {
     href: '/learn/tajweed-for-beginners',
@@ -44,6 +45,7 @@ const LEARN_PAGES = [
     description:
       'An introduction to Tajweed — the rules of Quran recitation. Learn what Tajweed is, why it matters, how colour coding helps, and how to get started with your first recitation.',
     tag: 'Beginner',
+    readTime: '7 min read',
   },
   {
     href: '/learn/surah-al-fatiha-transliteration',
@@ -51,6 +53,7 @@ const LEARN_PAGES = [
     description:
       'The most important surah to learn — verse by verse with Arabic text, transliteration, translation, and detailed pronunciation notes for every line.',
     tag: 'Practice',
+    readTime: '9 min read',
   },
   {
     href: '/learn/quran-transliteration-vs-translation',
@@ -58,6 +61,7 @@ const LEARN_PAGES = [
     description:
       'Understand the difference between transliteration (sounds) and translation (meaning), when to use each, and why combining both gives you the best Quran reading experience.',
     tag: 'Concepts',
+    readTime: '8 min read',
   },
   {
     href: '/learn/tajweed-rules',
@@ -65,6 +69,7 @@ const LEARN_PAGES = [
     description:
       'Every Tajweed rule explained with colour-coded visual chart. Covers Madd (prolongation), Ghunnah (nasalisation), Qalqalah (echoing), Tafkheem (emphasis), and more.',
     tag: 'Reference',
+    readTime: '5 min read',
   },
   {
     href: '/learn/how-to-pronounce-arabic-letters',
@@ -72,6 +77,7 @@ const LEARN_PAGES = [
     description:
       'Every Arabic letter grouped by articulation point (Makharij) with English approximations. Covers the 5 hardest letters, emphatic vs light pairs, and practical tips.',
     tag: 'Pronunciation',
+    readTime: '14 min read',
   },
 ];
 
@@ -283,6 +289,9 @@ export default function LearnHubPage() {
                       </h3>
                       <p className="text-sm text-secondary mt-1 leading-relaxed">
                         {page.description}
+                      </p>
+                      <p className="text-xs text-muted mt-2">
+                        {page.readTime}
                       </p>
                     </div>
                     <span className="flex-shrink-0 rounded-full bg-bg px-2.5 py-0.5 text-xs font-medium text-accent">

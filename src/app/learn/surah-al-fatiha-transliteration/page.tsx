@@ -108,6 +108,8 @@ export default function SurahAlFatihaTransliterationPage() {
       url: getAbsoluteUrl('/learn/surah-al-fatiha-transliteration'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      timeRequired: 'PT9M',
+      wordCount: 1800,
       isPartOf: {
         '@type': 'WebSite',
         name: 'Quran Tajweed Transliteration',

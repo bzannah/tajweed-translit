@@ -46,6 +46,8 @@ export default function TransliterationVsTranslationPage() {
       url: getAbsoluteUrl('/learn/quran-transliteration-vs-translation'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      timeRequired: 'PT8M',
+      wordCount: 1600,
       isPartOf: {
         '@type': 'WebSite',
         name: 'Quran Tajweed Transliteration',

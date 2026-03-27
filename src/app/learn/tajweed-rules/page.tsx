@@ -44,6 +44,9 @@ export default function TajweedRulesPage() {
         'Learn all Tajweed rules for proper Quran recitation with colour-coded visual guides.',
       url: getAbsoluteUrl('/learn/tajweed-rules'),
       inLanguage: 'en',
+      datePublished: '2026-03-27',
+      timeRequired: 'PT5M',
+      wordCount: 1000,
       isPartOf: {
         '@type': 'WebSite',
         name: 'Quran Tajweed Transliteration',

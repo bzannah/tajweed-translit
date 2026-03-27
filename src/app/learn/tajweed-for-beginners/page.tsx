@@ -43,6 +43,9 @@ export default function TajweedForBeginnersPage() {
         'A comprehensive beginner guide to Tajweed rules and Quran recitation using colour-coded transliteration.',
       url: getAbsoluteUrl('/learn/tajweed-for-beginners'),
       inLanguage: 'en',
+      datePublished: '2026-03-27',
+      timeRequired: 'PT7M',
+      wordCount: 1400,
       isPartOf: {
         '@type': 'WebSite',
         name: 'Quran Tajweed Transliteration',

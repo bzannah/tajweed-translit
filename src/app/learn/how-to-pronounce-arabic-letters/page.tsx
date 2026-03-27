@@ -295,6 +295,8 @@ export default function HowToPronounceArabicLettersPage() {
       url: getAbsoluteUrl('/learn/how-to-pronounce-arabic-letters'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      timeRequired: 'PT14M',
+      wordCount: 2800,
       isPartOf: {
         '@type': 'WebSite',
         name: 'Quran Tajweed Transliteration',
