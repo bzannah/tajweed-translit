@@ -1,0 +1,11 @@
+priority,url_slug,query_cluster,intent,reason_to_exist,status
+1,/tajweed-colour-guide,tajweed colour guide,informational,Own a clear educational query cluster that the intro pages only partially satisfy,planned
+1,/quran-transliteration-for-beginners,quran transliteration for beginners,informational,Serve new readers and reverts with clearer onboarding language,planned
+1,/quran-reader-with-audio,quran reader with audio,informational+product,Explain and rank for listen-and-read usage once the feature set is documented,planned
+2,/surah/al-fatiha,al fatiha transliteration,informational,Own surah-name intent with meaning context and links into exact reading pages,planned
+2,/surah/al-baqarah,al baqarah transliteration,informational,Own high-demand surah intent with structured navigation,planned
+2,/surah/yasin,surah yasin transliteration,informational,Target a high-recognition surah query with unique value,planned
+2,/how-to-read-quran-transliteration,how to read quran transliteration,informational,Answer a first-time-user job to be done,planned
+3,/juz/1,quran juz 1 transliteration,informational,Create a clean hub for juz-based navigation once unique content exists,backlog
+3,/mobile-quran-reader,mobile quran transliteration reader,informational+product,Support device-specific reading intent with UX proof,backlog
+3,/about,about quran tajweed transliteration,trust,Strengthen trust and project legitimacy with first-party background,backlog

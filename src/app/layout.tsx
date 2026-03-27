@@ -90,6 +90,9 @@ export const metadata: Metadata = {
     canonical: 'https://tajweedtranslit.com',
   },
   category: 'education',
+  verification: {
+    google: 'y3qMYlqCEaJFZIFrGliTDFWatMf2Z_BBcEv3mtAi_bU',
+  },
 };
 
 export const viewport: Viewport = {

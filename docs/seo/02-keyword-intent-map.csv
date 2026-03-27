@@ -1,0 +1,13 @@
+priority,keyword_cluster,primary_query,intent,canonical_page,current_status,next_action
+1,quran transliteration,quran transliteration,informational+product,/,strengthened in this pass,monitor Search Console queries and refine homepage title/description
+1,quran transliteration with tajweed,quran transliteration with tajweed,informational+product,/,strengthened in this pass,add supporting Tajweed hub page
+1,read quran transliteration online,read quran transliteration online,transactional-lite+product,/page/5,strengthened in this pass,add deeper homepage-to-reader internal links
+2,english transliteration quran,english transliteration quran,informational,/,partially covered,expand beginner-focused copy
+2,tajweed quran transliteration,tajweed quran transliteration,informational,/,partially covered,create dedicated Tajweed guide hub
+2,quran transliteration for beginners,quran transliteration for beginners,informational,/quran-transliteration-for-beginners,missing,create net-new landing page
+2,quran reader with audio,quran reader with audio,informational+product,/quran-reader-with-audio,missing,create audio-focused landing page after feature copy review
+2,tajweed colour guide,tajweed colour guide,informational,/tajweed-colour-guide,missing,create guide hub linked from homepage and intro pages
+3,al-fatiha transliteration,al fatiha transliteration,informational,/surah/al-fatiha,missing,create surah hub with page entry points
+3,al-baqarah transliteration,al baqarah transliteration,informational,/surah/al-baqarah,missing,create surah hub with page entry points
+3,read quran on mobile,read quran transliteration on mobile,informational+product,/,implicitly covered,add mobile-reading section or screenshot evidence
+3,support quran project,donate quran transliteration project,transactional,/donate,covered,improve trust/support copy over time
