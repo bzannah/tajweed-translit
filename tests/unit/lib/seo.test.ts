@@ -11,7 +11,7 @@ describe('getPageSeoData', () => {
     const seo = getPageSeoData(1);
 
     expect(seo.canonicalPath).toBe('/page/1');
-    expect(seo.title).toContain('Tajweed Guide');
+    expect(seo.title).toContain('Tajweed Colour Guide');
     expect(seo.breadcrumbLabel).toBe('Tajweed Guide');
   });
 
