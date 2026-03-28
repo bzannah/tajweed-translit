@@ -41,44 +41,9 @@ export default function LearnLayout({
         </div>
       </nav>
 
-      <div className="mx-auto max-w-7xl lg:flex lg:gap-8">
-        {/* Desktop: sticky sidebar */}
-        <aside className="hidden lg:block lg:w-56 lg:flex-shrink-0">
-          <nav
-            aria-label="Learn guides navigation"
-            className="sticky top-20 py-8 pl-6"
-          >
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
-              Learn Tajweed
-            </p>
-            <ul className="space-y-1">
-              {LEARN_NAV.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="block rounded-lg px-3 py-2 text-sm text-secondary hover:bg-surface-hover hover:text-accent transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 border-t border-border pt-4">
-              <Link
-                href="/page/5"
-                className="block rounded-lg bg-accent/10 px-3 py-2 text-sm font-medium text-accent hover:bg-accent/20 transition-colors text-center"
-              >
-                Open the Reader →
-              </Link>
-            </div>
-          </nav>
-        </aside>
-
-        {/* Main content */}
-        <div className="flex-1 min-w-0">
-          {children}
-        </div>
+      {/* Main content — no desktop sidebar since AppShell already provides the surah sidebar */}
+      <div className="flex-1 min-w-0">
+        {children}
       </div>
     </div>
   );
