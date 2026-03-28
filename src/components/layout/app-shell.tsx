@@ -68,7 +68,7 @@ export function AppShell({ children }: AppShellProps) {
         <DonationBanner />
 
         {/* Main content */}
-        <main className="reading-surface flex flex-1 flex-col overflow-hidden p-0" id="main-content">
+        <main className="reading-surface flex flex-1 flex-col overflow-hidden p-0" id="main-content" tabIndex={-1}>
           {children}
         </main>
 
