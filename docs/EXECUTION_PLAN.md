@@ -47,7 +47,7 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Create `src/components/layout/bottom-bar.tsx` — Previous | Explanation | Translation | Listen | Settings | Next
 - [x] Create `src/components/layout/zoom-controls.tsx` — zoom in, zoom out, fit width, fit page (positioned bottom-right)
 - [x] Style everything using the dark theme from @docs/STYLE_GUIDE.md
-- [ ] Verify layout at 320px, 768px, 1024px, 1440px widths
+- [x] Verify layout at 320px, 768px, 1024px, 1440px widths
 - [x] Run `pnpm test` — verify passing
 
 ## Phase 3: Sidebar Navigation
@@ -134,22 +134,22 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 
 ## Phase 8: Polish & Responsive
 
-- [ ] Test and fix layout at 320px (iPhone SE)
-- [ ] Test and fix layout at 390px (iPhone 14)
-- [ ] Test and fix layout at 768px (iPad)
-- [ ] Test and fix layout at 1024px (laptop)
-- [ ] Test and fix layout at 1440px (desktop)
-- [ ] Verify sidebar overlay on mobile, persistent on desktop
-- [ ] Verify swipe navigation on mobile
-- [ ] Verify keyboard navigation on desktop
+- [x] Test and fix layout at 320px (iPhone SE)
+- [x] Test and fix layout at 390px (iPhone 14)
+- [x] Test and fix layout at 768px (iPad)
+- [x] Test and fix layout at 1024px (laptop)
+- [x] Test and fix layout at 1440px (desktop)
+- [x] Verify sidebar overlay on mobile, persistent on desktop
+- [x] Verify swipe navigation on mobile
+- [x] Verify keyboard navigation on desktop
 - [x] Add focus management: after page nav, focus moves to main content
 - [x] Add skip-to-content link
 - [x] Verify all buttons have aria-labels
-- [ ] Verify colour contrast meets WCAG AA in both themes
+- [x] Verify colour contrast meets WCAG AA in both themes
 - [x] Add meta tags: title, description, og:image
 - [x] Create dynamic metadata for `/page/[number]` routes
 - [x] Add `robots.txt` and basic `sitemap.xml`
-- [ ] Run Lighthouse audit — target ≥90 in all categories
+- [x] Run Lighthouse audit — target ≥90 in all categories
 - [x] Run `pnpm test` — verify passing
 
 ## Phase 9: E2E Tests
@@ -167,5 +167,5 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Verify all 1275 page routes generate correctly
 - [x] Final `pnpm test` — all passing
 - [x] Final `pnpm lint` — no errors
-- [ ] Update README.md with: project description, screenshots, setup instructions, commands
-- [ ] Commit everything with message: `feat: complete Quran Tajweed Transliteration v1.0`
+- [x] Update README.md with: project description, screenshots, setup instructions, commands
+- [x] Commit everything with message: `feat: complete Quran Tajweed Transliteration v1.0`
