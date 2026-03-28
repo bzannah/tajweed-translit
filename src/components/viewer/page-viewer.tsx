@@ -95,6 +95,14 @@ export function PageViewer() {
 
   useSwipeNav(isDualMode, containerRef);
 
+  // Move focus to main content area after page navigation for accessibility
+  useEffect(() => {
+    const main = document.getElementById('main-content');
+    if (main && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
+      main.focus({ preventScroll: true });
+    }
+  }, [currentPage]);
+
   // Prefetch adjacent page images so they're cached before the user swipes.
   // 3 pages ahead + 1 behind covers both forward reading and quick back-glances.
   const prefetchPages = useMemo(() => {
