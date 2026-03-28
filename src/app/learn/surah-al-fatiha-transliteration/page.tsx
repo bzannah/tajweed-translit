@@ -108,6 +108,21 @@ export default function SurahAlFatihaTransliterationPage() {
       url: getAbsoluteUrl('/learn/surah-al-fatiha-transliteration'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      dateModified: '2026-03-28',
+      author: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.tajweedtranslit.com/og-image.png',
+        },
+      },
       timeRequired: 'PT9M',
       wordCount: 1800,
       isPartOf: {
