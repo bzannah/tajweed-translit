@@ -9,7 +9,7 @@ const LEARN_NAV = [
   { href: '/learn/quran-transliteration-vs-translation', label: 'Transliteration vs Translation' },
   { href: '/learn/tajweed-rules', label: 'Tajweed Rules Guide' },
   { href: '/learn/how-to-pronounce-arabic-letters', label: 'Arabic Pronunciation' },
-];
+] as const;
 
 /**
  * Shared layout for all /learn/* pages.
