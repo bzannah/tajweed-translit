@@ -125,6 +125,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={amiri.variable} suppressHydrationWarning>
+      <head>
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://api.alquran.cloud" />
+        <link rel="dns-prefetch" href="https://api.alquran.cloud" />
+        <link rel="preconnect" href="https://va.vercel-scripts.com" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+      </head>
       <body>
         {/* Skip-to-content link for keyboard accessibility */}
         <a
