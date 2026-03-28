@@ -45,6 +45,21 @@ export default function TajweedRulesPage() {
       url: getAbsoluteUrl('/learn/tajweed-rules'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      dateModified: '2026-03-28',
+      author: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.tajweedtranslit.com/og-image.png',
+        },
+      },
       timeRequired: 'PT5M',
       wordCount: 1000,
       isPartOf: {
