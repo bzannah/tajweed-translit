@@ -12,7 +12,7 @@ export const SITE_DESCRIPTION =
   'Read the complete Quran in English transliteration with colour-coded Tajweed rules. Free online Quran reader with 1,275 pages, surah navigation, bookmarks, audio recitation, and mobile-friendly reading.';
 
 /** Last deployment date — update on each deploy for sitemap lastmod. */
-export const LAST_MODIFIED = '2026-03-27';
+export const LAST_MODIFIED = '2026-03-28';
 
 export interface PageSeoData {
   canonicalPath: string;
@@ -132,6 +132,9 @@ export function getHomeStructuredData() {
       logo: `${SITE_URL}/og-image.png`,
       description:
         'Helping the global community recite the Quran with confidence and precision, bridging language barriers through expert transliteration that honors the rules of Tajweed.',
+      sameAs: [
+        'https://github.com/bzannah/tajweed-translit',
+      ],
     },
   ];
 }
@@ -412,12 +415,12 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     });
   }
 
-  // All 1275 Quran page routes
+  // All 1275 Quran page routes — yearly because Quranic content is static
   for (let page = 1; page <= TOTAL_PAGES; page += 1) {
     entries.push({
       url: getAbsoluteUrl(`/page/${page}`),
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'yearly',
       priority: page === DEFAULT_PAGE ? 0.9 : 0.7,
     });
   }
