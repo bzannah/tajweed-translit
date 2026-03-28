@@ -4,6 +4,10 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  css: {
+    // Disable PostCSS in tests to avoid native binary requirements
+    postcss: {},
+  },
   test: {
     environment: 'jsdom',
     globals: true,
