@@ -295,6 +295,21 @@ export default function HowToPronounceArabicLettersPage() {
       url: getAbsoluteUrl('/learn/how-to-pronounce-arabic-letters'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      dateModified: '2026-03-28',
+      author: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.tajweedtranslit.com/og-image.png',
+        },
+      },
       timeRequired: 'PT14M',
       wordCount: 2800,
       isPartOf: {
@@ -362,6 +377,44 @@ export default function HowToPronounceArabicLettersPage() {
             '@type': 'Answer',
             text: 'Learning basic Arabic letter pronunciation typically takes 2-4 weeks of daily practice. Achieving fluent, natural pronunciation with proper Tajweed can take 3-6 months. Using colour-coded Tajweed transliteration accelerates the process because it shows pronunciation rules visually as you read. Consistent daily practice is more effective than infrequent long sessions.',
           },
+        },
+      ],
+    },,
+    {
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: 'How to Pronounce Arabic Letters for Quran Recitation',
+      description: 'Learn to pronounce all Arabic letters correctly by understanding their articulation points (Makharij) and using English approximations.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Understand Articulation Points (Makharij)',
+          text: 'Arabic letters are grouped by where in the mouth or throat they are produced. Learning these 5 areas — throat, tongue, lips, nasal cavity, and empty mouth — gives you a framework for every letter.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Learn the Throat Letters',
+          text: 'Master the 6 throat letters (Haa, Hamza, Ain, Haa, Ghain, Khaa) which have no direct English equivalents. Practice producing sounds from deep, middle, and upper throat positions.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Master Tongue Letters',
+          text: 'Practice the tongue letters by paying attention to which part of the tongue touches which part of the mouth. Letters like Qaaf, Kaaf, Taa, and Daad each use different tongue positions.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Practice Lip Letters',
+          text: 'The lip letters (Baa, Meem, Waw, Faa) are the most familiar to English speakers. Focus on the subtle differences in how firmly the lips meet.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Apply Colour-Coded Tajweed While Reading',
+          text: 'Use the colour-coded transliteration at tajweedtranslit.com to practise pronunciation in context. Each colour represents a Tajweed rule that affects how letters are pronounced.',
         },
       ],
     },
