@@ -64,7 +64,7 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Highlight currently active surah based on currentPage using page-surah-map
 - [x] Add bookmark count badge to Bookmarks tab
 - [x] Add page indicator badge ("PAGE 42") in sidebar header
-- [ ] Write integration tests for Sidebar (renders 114 surahs, tab switching, click navigation)
+- [x] Write integration tests for Sidebar (renders 114 surahs, tab switching, click navigation)
 - [x] Run `pnpm test` — verify passing
 
 ## Phase 4: Page Viewer
@@ -80,7 +80,7 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Show page number indicator below the content area
 - [x] Handle missing images gracefully (placeholder with message)
 - [x] Create `src/app/not-found.tsx` — 404 page
-- [ ] Write integration tests for PageViewer
+- [x] Write integration tests for PageViewer
 - [x] Run `pnpm test` — verify passing
 
 ## Phase 5: Navigation Logic
@@ -92,7 +92,7 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Save currentPage to store on every navigation (auto-persisted to localStorage)
 - [x] Disable Previous on page 1, Next on page 1275
 - [x] Handle edge case: dual mode on page 1275 (single page, no partner)
-- [ ] Write unit tests for keyboard and swipe hooks
+- [x] Write unit tests for keyboard and swipe hooks
 - [x] Run `pnpm test` — verify passing
 
 ## Phase 6: User Features
@@ -127,7 +127,7 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [x] Create `src/components/features/audio-player.tsx` — play/pause button, loading spinner, error message with retry
 - [x] Wire Listen button in bottom-bar to play audio for current page's surah
 - [x] Handle audio API errors gracefully: "Audio unavailable — tap to retry"
-- [ ] Create `src/components/viewer/page-transition.tsx` — subtle fade transition between pages (300ms max)
+- [x] Create `src/components/viewer/page-transition.tsx` — subtle fade transition between pages (300ms max)
 - [x] Wire zoom controls: zoom in (+10%), zoom out (-10%), fit width, fit page
 - [x] Persist zoom level to settings store
 - [x] Run `pnpm test` — verify passing
@@ -142,12 +142,12 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [ ] Verify sidebar overlay on mobile, persistent on desktop
 - [ ] Verify swipe navigation on mobile
 - [ ] Verify keyboard navigation on desktop
-- [ ] Add focus management: after page nav, focus moves to main content
-- [ ] Add skip-to-content link
+- [x] Add focus management: after page nav, focus moves to main content
+- [x] Add skip-to-content link
 - [x] Verify all buttons have aria-labels
 - [ ] Verify colour contrast meets WCAG AA in both themes
 - [x] Add meta tags: title, description, og:image
-- [ ] Create dynamic metadata for `/page/[number]` routes
+- [x] Create dynamic metadata for `/page/[number]` routes
 - [ ] Add `robots.txt` and basic `sitemap.xml`
 - [ ] Run Lighthouse audit — target ≥90 in all categories
 - [x] Run `pnpm test` — verify passing
