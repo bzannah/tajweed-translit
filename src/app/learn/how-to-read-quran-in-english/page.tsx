@@ -47,6 +47,21 @@ export default function HowToReadQuranInEnglishPage() {
       url: getAbsoluteUrl('/learn/how-to-read-quran-in-english'),
       inLanguage: 'en',
       datePublished: '2026-03-27',
+      dateModified: '2026-03-28',
+      author: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Quran Tajweed Transliteration',
+        url: 'https://www.tajweedtranslit.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.tajweedtranslit.com/og-image.png',
+        },
+      },
       timeRequired: 'PT13M',
       wordCount: 2600,
       isPartOf: {
