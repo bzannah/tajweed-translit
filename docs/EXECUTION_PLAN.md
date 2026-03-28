@@ -148,18 +148,18 @@ Follow this plan sequentially. Check off each item as you complete it. Do NOT sk
 - [ ] Verify colour contrast meets WCAG AA in both themes
 - [x] Add meta tags: title, description, og:image
 - [x] Create dynamic metadata for `/page/[number]` routes
-- [ ] Add `robots.txt` and basic `sitemap.xml`
+- [x] Add `robots.txt` and basic `sitemap.xml`
 - [ ] Run Lighthouse audit — target ≥90 in all categories
 - [x] Run `pnpm test` — verify passing
 
 ## Phase 9: E2E Tests
 
-- [ ] Write Playwright test: full page navigation (next, previous, keyboard, URL)
-- [ ] Write Playwright test: surah navigation via sidebar
-- [ ] Write Playwright test: bookmark lifecycle (add, verify in list, navigate, delete)
-- [ ] Write Playwright test: settings persistence (change theme, reload, verify)
-- [ ] Write Playwright test: responsive layout (resize, verify single vs dual)
-- [ ] Run `pnpm test:e2e` — verify passing
+- [x] Write Playwright test: full page navigation (next, previous, keyboard, URL)
+- [x] Write Playwright test: surah navigation via sidebar
+- [x] Write Playwright test: bookmark lifecycle (add, verify in list, navigate, delete)
+- [x] Write Playwright test: settings persistence (change theme, reload, verify)
+- [x] Write Playwright test: responsive layout (resize, verify single vs dual)
+- [x] Run `pnpm test:e2e` — verify passing
 
 ## Phase 10: Build & Deploy Readiness
 
