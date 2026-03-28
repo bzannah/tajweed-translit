@@ -478,6 +478,8 @@ body {
   .page-surface {
     display: flex;
     justify-content: center;
+    padding-left: 6px;
+    padding-right: 6px;
   }
   .page-surface img,
   .single-page img {
