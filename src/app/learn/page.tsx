@@ -79,7 +79,7 @@ const LEARN_PAGES = [
     tag: 'Pronunciation',
     readTime: '14 min read',
   },
-];
+] as const;
 
 /**
  * Hub page for all learning content. Acts as a topical authority centre
