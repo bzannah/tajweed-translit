@@ -379,7 +379,7 @@ export default function HowToPronounceArabicLettersPage() {
           },
         },
       ],
-    },,
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'HowTo',
